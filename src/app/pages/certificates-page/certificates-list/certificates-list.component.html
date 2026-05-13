@@ -29,14 +29,6 @@
                     <div class="certificate-content">
                         <h4 class="certificate-title">{{ certificate.title }}</h4>
                         <p class="certificate-date">{{ certificate.created_at | date:'longDate' }}</p>
-                        <div class="certificate-status" [ngClass]="'status-' + certificate.status">
-                            <span *ngIf="certificate.status === 1" class="badge bg-success">
-                                {{ 'APPROVED' | translate }}
-                            </span>
-                            <span *ngIf="certificate.status === 0" class="badge bg-warning">
-                                {{ 'PENDING' | translate }}
-                            </span>
-                        </div>
                     </div>
                 </div>
             </div>
