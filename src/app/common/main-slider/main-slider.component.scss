@@ -83,25 +83,47 @@
 .content-wrapper {
     text-align: center;
     color: #ffffff;
-    max-width: 900px;
+    max-width: 840px;
     width: 100%;
+    padding: clamp(16px, 2.8vw, 28px);
+    border-radius: 22px;
+    background: rgba(6, 12, 10, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(4px);
+}
+
+.slide-kicker {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #e5f5eb;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
 }
 .slide-title {
-    font-size: clamp(1.8rem, 4vw, 3.5rem);
-    font-weight: 800;
-    margin-bottom: 1rem;
-    line-height: 1.2;
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    letter-spacing: -0.02em;
+    font-size: clamp(1.7rem, 3.5vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+    letter-spacing: 0;
+    text-wrap: balance;
+    color: #ffffff;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.35);
     animation: slideInUp 0.8s ease-out;
 }
 .slide-description {
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    opacity: 0.95;
+    font-size: clamp(0.94rem, 1.65vw, 1.15rem);
+    font-weight: 500;
+    line-height: 1.8;
+    margin: 0 auto 1.35rem;
+    max-width: 62ch;
+    color: rgba(247, 252, 249, 0.95);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
     animation: slideInUp 0.8s ease-out 0.2s backwards;
 }
 .slide-cta {
@@ -112,17 +134,17 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2.5rem;
-    background: linear-gradient(135deg, #1a7a52 0%, #2ea36f 100%);
-    border: 2px solid #2ea36f;
+    padding: 0.9rem 2.1rem;
+    background: #1b7f54;
+    border: 1px solid #2f9c6d;
     border-radius: 50px;
     color: #ffffff;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
-    box-shadow: 0 10px 25px rgba(201, 169, 97, 0.4);
+    box-shadow: 0 10px 22px rgba(14, 68, 46, 0.35);
 
     i {
         transition: transform 0.3s ease;
@@ -352,6 +374,11 @@
 
     .overlay-content {
         padding: 1rem;
+    }
+
+    .content-wrapper {
+        border-radius: 16px;
+        padding: 14px 12px;
     }
 
     .slide-title {

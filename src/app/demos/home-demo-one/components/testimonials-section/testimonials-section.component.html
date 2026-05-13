@@ -1,37 +1,38 @@
-﻿<section class="testimonials-section section-padding" *ngIf="testimonials.length > 0">
+<section class="testimonials-section section-padding" *ngIf="testimonials.length > 0">
     <div class="container">
-        <div class="section-header text-center">
-            
+        <div class="section-header">
+            <span class="section-kicker">{{ 'NAV_TESTIMONIALS' | translate }}</span>
             <h2 class="section-title">{{ 'FEEDBACK_TITLE' | translate }}</h2>
-            
         </div>
 
         <div class="testimonials-carousel-shell" [class.is-rtl]="isRtl">
             <div #testimonialsTrack class="testimonials-track" [class.is-rtl]="isRtl">
                 <div #testimonialSlide class="testimonial-slide" *ngFor="let testimonial of testimonials">
                     <article class="testimonial-card">
-                        <div class="quote-icon">
-                            <i class="fa-solid fa-quote-left"></i>
-                        </div>
-
-                        <div class="testimonial-content">
-                            <p class="testimonial-text">{{ testimonial.comment }}</p>
-                        </div>
-
-                        <div class="testimonial-author">
+                        <div class="card-top">
                             <div class="author-avatar">
                                 <span>{{ getInitials(testimonial.client_name) }}</span>
                             </div>
                             <div class="author-info">
-                                <h5>
-                                    {{ testimonial.client_name }}
+                                <h5>{{ testimonial.client_name }}</h5>
+                                <p class="meta-line">
                                     <span class="author-country" *ngIf="testimonial.country">
                                         <i class="fa-solid fa-location-dot"></i> {{ testimonial.country }}
                                     </span>
-                                </h5>
-                                <p *ngIf="testimonial.created_at">{{ formatDate(testimonial.created_at) }}</p>
+                                    <span class="author-date" *ngIf="testimonial.created_at">{{ formatDate(testimonial.created_at) }}</span>
+                                </p>
                             </div>
                         </div>
+
+                        <div class="stars" aria-hidden="true">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <p class="testimonial-text">{{ testimonial.comment }}</p>
                     </article>
                 </div>
             </div>
@@ -56,8 +57,8 @@
                 </button>
             </div>
 
-            <div class="text-center mt-4">
-                <a routerLink="/testimonials" class="btn btn-outline-primary">
+            <div class="cta-wrap">
+                <a routerLink="/testimonials" class="btn-all-reviews">
                     {{ 'VIEW_ALL_TESTIMONIALS' | translate }}
                     <i class="fa-solid" [ngClass]="isRtl ? 'fa-arrow-left' : 'fa-arrow-right'"></i>
                 </a>
@@ -65,4 +66,3 @@
         </div>
     </div>
 </section>
-
