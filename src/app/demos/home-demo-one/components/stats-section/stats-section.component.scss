@@ -44,7 +44,7 @@
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            background: #d4b574;
+            background: #2ea36f;
             border-radius: 50%;
         }
         
@@ -63,8 +63,8 @@
     }
     .btn-islamic-light {
         background: rgba(255, 255, 255, 0.1);
-        border: 2px solid #d4b574;
-        color: #d4b574;
+        border: 2px solid #2ea36f;
+        color: #2ea36f;
         padding: 12px 30px;
         border-radius: 50px;
         font-weight: 700;
@@ -72,7 +72,7 @@
         backdrop-filter: blur(10px);
         
         &:hover {
-            background: #c9a961;
+            background: #1a7a52;
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(201, 169, 97, 0.4);
@@ -103,7 +103,7 @@
             &::after {
                 content: '';
                 position: absolute;
-                background: #c9a961;
+                background: #1a7a52;
                 opacity: 0.2;
             }
             
@@ -128,15 +128,15 @@
             left: 10px;
             width: 20px;
             height: 20px;
-            border-left: 2px solid #c9a961;
-            border-bottom: 2px solid #c9a961;
+            border-left: 2px solid #1a7a52;
+            border-bottom: 2px solid #1a7a52;
             opacity: 0.2;
         }
         
         &:hover {
             transform: translateY(-15px) scale(1.02);
             background: rgba(255, 255, 255, 0.08);
-            border-color: #c9a961;
+            border-color: #1a7a52;
             box-shadow: 
                 0 20px 40px rgba(0, 0, 0, 0.3),
                 0 0 30px rgba(201, 169, 97, 0.2),
@@ -144,17 +144,17 @@
             
             .islamic-frame {
                 transform: rotate(360deg) scale(1.1);
-                border-color: #c9a961;
+                border-color: #1a7a52;
                 box-shadow: 0 0 30px rgba(201, 169, 97, 0.4);
             }
             
             .stat-icon i {
-                color: #d4b574;
+                color: #2ea36f;
                 transform: scale(1.2);
             }
             
             .stat-number {
-                color: #c9a961;
+                color: #1a7a52;
                 text-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
             }
         }
@@ -196,7 +196,7 @@
         
         .stat-icon {
             font-size: 2.8rem;
-            color: #c9a961;
+            color: #1a7a52;
             position: relative;
             z-index: 2;
             
@@ -331,5 +331,6 @@
         }
     }
 }
+
 
 

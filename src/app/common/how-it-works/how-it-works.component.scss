@@ -20,7 +20,7 @@
         z-index: 2;
 
         .subtitle {
-            color: #c9a961; 
+            color: #1a7a52; 
             font-size: 14px;
             font-weight: 600;
             text-transform: uppercase;
@@ -73,7 +73,7 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
 
             &.purple {
-                background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%);
+                background: linear-gradient(135deg, #1a7a52 0%, #176a47 100%);
             }
 
             &.blue {
@@ -81,14 +81,14 @@
             }
 
             &.green {
-                background: linear-gradient(135deg, #d4b574 0%, #c9a961 100%);
+                background: linear-gradient(135deg, #2ea36f 0%, #1a7a52 100%);
             }
         }
 
         h3 {
             font-size: 20px;
             font-weight: 600;
-            color: #c9a961; 
+            color: #1a7a52; 
             margin-bottom: 15px;
         }
 
@@ -130,7 +130,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%); 
+            background: linear-gradient(135deg, #1a7a52 0%, #176a47 100%); 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -146,7 +146,7 @@
 
         .download-btn {
             display: inline-block;
-            background: #c9a961; 
+            background: #1a7a52; 
             color: #0f5a3a;
             padding: 12px 30px;
             border-radius: 5px;
@@ -161,7 +161,7 @@
             }
 
             &:hover {
-                background: #d4b574; 
+                background: #2ea36f; 
                 transform: translateY(-2px);
                 box-shadow: 0 5px 15px rgba(201, 169, 97, 0.4);
                 color: #0f5a3a;
@@ -186,4 +186,5 @@
         }
     }
 }
+
 

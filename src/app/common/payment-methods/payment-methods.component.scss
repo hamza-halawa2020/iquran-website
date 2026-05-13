@@ -21,11 +21,11 @@
                 content: ''; 
                 display: block;
                 font-size: 24px;
-                color: #c9a961;
+                color: #1a7a52;
                 margin: 10px auto 0;
                 width: 60px;
                 height: 3px;
-                background: #c9a961;
+                background: #1a7a52;
             }
         }
     }
@@ -57,7 +57,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #c9a961, #d4b574);
+            background: linear-gradient(90deg, #1a7a52, #2ea36f);
             opacity: 0;
             transition: 0.4s;
         }
@@ -65,7 +65,7 @@
         &:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
-            border-color: #d4b574;
+            border-color: #2ea36f;
 
             &::before {
                 opacity: 1;
@@ -74,10 +74,10 @@
             .payment-icon {
                 background: #0f5a3a;
                 transform: rotate(0deg);
-                border-color: #d4b574;
+                border-color: #2ea36f;
                 
                 i {
-                    color: #d4b574;
+                    color: #2ea36f;
                     transform: rotate(0deg);
                 }
             }
@@ -88,7 +88,7 @@
             height: 70px;
             margin: 0 auto 20px;
             background: #f0fdf4;
-            border: 1px solid #c9a961;
+            border: 1px solid #1a7a52;
             border-radius: 15px; 
             display: flex;
             align-items: center;
@@ -122,7 +122,7 @@
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
-        border-left: 5px solid #c9a961;
+        border-left: 5px solid #1a7a52;
 
         .islamic-note {
             font-size: 1.05rem;
@@ -135,7 +135,7 @@
             justify-content: center;
 
             i {
-                color: #c9a961;
+                color: #1a7a52;
                 margin: 0 10px;
                 font-size: 24px;
             }
@@ -176,4 +176,5 @@
         }
     }
 }
+
 

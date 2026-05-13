@@ -1,5 +1,5 @@
-﻿$primary: #c89b3c;
-$secondary: #e2c57a;
+﻿$primary: #1a7a52;
+$secondary: #2ea36f;
 $white: #ffffff;
 $dark: #0f5a3a;
 $gray-light: #fdfbf7;
@@ -11,7 +11,7 @@ $gray: #9ca3af;
     right: 0;
     z-index: 1000;
     background: rgba(7, 12, 9, 0.9);
-    border-bottom: 1px solid rgba(200, 155, 60, 0.28);
+    border-bottom: 1px solid rgba(26, 122, 82, 0.28);
     transition: all 0.3s ease;
     padding: 0;
 
@@ -476,4 +476,5 @@ $gray: #9ca3af;
 html {
     scroll-behavior: smooth;
 }
+
 

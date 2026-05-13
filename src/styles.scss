@@ -121,9 +121,9 @@ body.loaded #loading-screen {
 
 :root {
     --primaryColor: #0f5a3a; 
-    --secondaryColor: #c89b3c; 
+    --secondaryColor: #1a7a52; 
     --accentColor: #1a7a52; 
-    --goldLight: #e2c57a; 
+    --goldLight: #2ea36f; 
     --creamBg: #f8faf8; 
     --whiteColor: #ffffff;
     --blackColor: #070c09; 
@@ -137,7 +137,7 @@ body.loaded #loading-screen {
     --fontSize: 20px;
     --fontFamily: "Outfit", sans-serif;
     --headingFontFamily: "Outfit", sans-serif;
-    --islamicPattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 7.5L40 10l-7.5 2.5L30 20l-2.5-7.5L20 10l7.5-2.5L30 0z' fill='%23c9a961' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    --islamicPattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l2.5 7.5L40 10l-7.5 2.5L30 20l-2.5-7.5L20 10l7.5-2.5L30 0z' fill='%231a7a52' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 body {
     position: relative;
@@ -440,7 +440,7 @@ p {
     font-weight: 600;
     transition: var(--transition);
     background-color: var(--secondaryColor);
-    box-shadow: 0 4px 15px rgba(200, 155, 60, 0.28);
+    box-shadow: 0 4px 15px rgba(26, 122, 82, 0.28);
 
     &:hover {
         color: var(--whiteColor);
@@ -695,7 +695,7 @@ p {
     width: 60px;
     overflow: hidden;
     position: absolute;
-    border-left: 1px solid rgba(200, 155, 60, 0.5);
+    border-left: 1px solid rgba(26, 122, 82, 0.5);
 
     div {
         margin-left: -64px;
@@ -715,7 +715,7 @@ p {
         left: 0;
         border: {
             left-width: 0;
-            right: 1px solid rgba(200, 155, 60, 0.5);
+            right: 1px solid rgba(26, 122, 82, 0.5);
         }
     }
 }
@@ -732,7 +732,7 @@ input:focus,
 textarea:focus,
 select:focus {
     border-color: var(--secondaryColor);
-    box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.18);
+    box-shadow: 0 0 0 3px rgba(26, 122, 82, 0.18);
 }
 
 .card,
@@ -746,7 +746,7 @@ select:focus {
 }
 
 ::selection {
-    background: rgba(200, 155, 60, 0.28);
+    background: rgba(26, 122, 82, 0.28);
     color: #113a2a;
 }
 .shape1 {
@@ -1080,5 +1080,6 @@ body {
         line-height: 1.7 !important;
     }
 }
+
 
 
