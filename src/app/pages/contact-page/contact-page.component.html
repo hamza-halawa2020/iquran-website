@@ -1,10 +1,5 @@
 <section class="contact-page">
     <div class="container">
-        <div class="contact-hero">
-            <h1>{{ 'CONTACT_US' | translate }}</h1>
-            <p>{{ 'BOOK_TRIAL' | translate }}</p>
-        </div>
-
         <div class="contact-layout">
             <aside class="contact-panel" *ngIf="!isLoading">
                 <div class="info-card">
@@ -25,21 +20,12 @@
                     <p *ngIf="!settings.email">info&#64;iquran.com</p>
                 </div>
 
-                <div class="info-card">
-                    <div class="icon-wrap">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>{{ 'LOCATION' | translate }}</h3>
-                    <p *ngIf="settings.address">{{ settings.address }}</p>
-                    <p *ngIf="!settings.address">{{ "NEW_CAIRO" | translate }}</p>
-                </div>
             </aside>
 
             <section class="form-panel">
                 <div class="form-card">
                     <div class="form-header">
                         <h2>{{ 'BOOK_TRIAL' | translate }}</h2>
-                        <p>{{ 'CONTACT_US' | translate }}</p>
                     </div>
                     <app-contact class="embedded-contact" />
                 </div>
