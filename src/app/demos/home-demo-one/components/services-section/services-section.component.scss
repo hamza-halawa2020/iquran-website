@@ -24,11 +24,11 @@
 
 // Services Section
 .services-section {
-    background-color: #fdfbf7; // Cream background
-    background-image: var(--islamicPattern);
+    // background-color: #fdfbf7; // Cream background
+    // background-image: var(--islamicPattern);
     
     .service-card {
-        background: white;
+        // background: white;
         padding: 40px 30px;
         border-radius: 20px;
         text-align: center;
@@ -47,7 +47,7 @@
             left: 0;
             right: 0;
             height: 5px;
-            background: linear-gradient(90deg, var(--secondaryColor), var(--goldLight));
+            // background: linear-gradient(90deg, var(--secondaryColor), var(--goldLight));
             opacity: 0;
             transition: 0.4s;
         }
@@ -62,7 +62,7 @@
             }
 
             .service-icon {
-                background: var(--primaryColor);
+                // background: var(--primaryColor);
                 transform: rotate(0deg);
                 border-color: var(--goldLight);
                 
@@ -76,7 +76,7 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: #f0fdf4;
+            // background: #f0fdf4;
             border: 1px solid var(--secondaryColor);
             border-radius: 20px;
             display: flex;
@@ -142,19 +142,19 @@
     border-radius: 26px;
     margin: 30px 0;
     width: 100%;
-    background: linear-gradient(180deg, rgba(30, 58, 95, 0.04), rgba(201, 169, 97, 0.08));
+    // background: linear-gradient(180deg, rgba(30, 58, 95, 0.04), rgba(201, 169, 97, 0.08));
 
     &::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(
-            90deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.55) 45%,
-            rgba(255, 255, 255, 0.1) 55%,
-            transparent 100%
-        );
+        // background: linear-gradient(
+        //     90deg,
+        //     transparent 0%,
+        //     rgba(255, 255, 255, 0.55) 45%,
+        //     rgba(255, 255, 255, 0.1) 55%,
+        //     transparent 100%
+        // );
         transform: translateX(-100%);
         will-change: transform;
         animation: servicesDeferShimmer 1.4s linear infinite;

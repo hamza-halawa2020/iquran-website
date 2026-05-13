@@ -34,10 +34,10 @@
 
 // Team Section
 .team-section {
-    background-color: #fdfbf7;
+    // background-color: #fdfbf7;
     
     .team-card {
-        background: white;
+        // background: white;
         padding: 40px 30px;
         border-radius: 30px;
         box-shadow: 0 15px 35px rgba(6, 78, 59, 0.05);
@@ -71,7 +71,7 @@
                 right: -5px;
                 width: 40px;
                 height: 40px;
-                background: var(--goldLight);
+                // background: var(--goldLight);
                 border-radius: 50%;
                 border: 4px solid white;
             }
@@ -101,7 +101,7 @@
                     justify-content: center;
                     width: 45px;
                     height: 45px;
-                    background: var(--creamBg);
+                    // background: var(--creamBg);
                     color: var(--primaryColor);
                     border-radius: 12px;
                     text-decoration: none;
@@ -110,7 +110,7 @@
                     font-size: 1.1rem;
                     
                     &:hover {
-                        background: var(--primaryColor);
+                        // background: var(--primaryColor);
                         color: white;
                         transform: translateY(-5px) rotate(8deg);
                     }

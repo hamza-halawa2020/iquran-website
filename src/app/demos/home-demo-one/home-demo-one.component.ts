@@ -11,7 +11,6 @@ import { TeamSectionComponent } from './components/team-section/team-section.com
 import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
 import { LatestPostsSectionComponent } from './components/latest-posts-section/latest-posts-section.component';
 import { CertificatesSectionComponent } from './components/certificates-section/certificates-section.component';
-import { CtaSectionComponent } from './components/cta-section/cta-section.component';
 import { PartnersSectionComponent } from './components/partners-section/partners-section.component';
 import { MediaGallerySectionComponent } from './components/media-gallery-section/media-gallery-section.component';
 import { PaymentMethodsComponent } from '../../common/payment-methods/payment-methods.component';
@@ -40,7 +39,6 @@ type IdleWindow = Window & {
         LatestPostsSectionComponent,
         CertificatesSectionComponent,
         MediaGallerySectionComponent,
-        CtaSectionComponent,
         PartnersSectionComponent,
         PaymentMethodsComponent,
         ContactComponent,
