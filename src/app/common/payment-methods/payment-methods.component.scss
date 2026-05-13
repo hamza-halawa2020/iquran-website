@@ -1,180 +1,107 @@
-﻿.payment-methods-section {
-    padding: 100px 0;
-    background-image: var(--islamicPattern);
-    position: relative;
-    overflow: hidden;
+.payment-methods-section {
+    padding: 72px 0;
+}
 
-    .section-title {
-        margin-bottom: 60px;
-        position: relative;
+.section-head {
+    margin-bottom: 28px;
 
-        h3 {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #0f5a3a;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            position: relative;
-            display: inline-block;
+    h2 {
+        margin: 0;
+        font-size: clamp(1.35rem, 2.6vw, 2rem);
+        font-weight: 800;
+        color: #123524;
+    }
+}
 
-            &::after {
-                content: ''; 
-                display: block;
-                font-size: 24px;
-                color: #1a7a52;
-                margin: 10px auto 0;
-                width: 60px;
-                height: 3px;
-                background: #1a7a52;
-            }
-        }
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.payment-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 90, 58, 0.14);
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(9, 20, 14, 0.05);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+        transform: translateY(-2px);
+        border-color: rgba(15, 90, 58, 0.3);
     }
 
-    .payment-methods-wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 30px;
-        margin: 0 auto;
-        padding: 0 15px;
+    p {
+        margin: 0;
+        color: #0f2f22;
+        font-size: 0.94rem;
+        font-weight: 600;
+        line-height: 1.35;
+    }
+}
+
+.icon-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(26, 122, 82, 0.12);
+    color: #0f5a3a;
+    flex-shrink: 0;
+
+    i {
+        font-size: 0.95rem;
+    }
+}
+
+.payment-note {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 90, 58, 0.18);
+    background: rgba(248, 255, 250, 0.9);
+    color: #2f4d3e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    i {
+        color: #0f5a3a;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .payment-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .payment-methods-section {
+        padding: 52px 0;
     }
 
-    .payment-method-item {
-        background: white;
-        padding: 30px 20px;
-        border-radius: 20px;
-        text-align: center;
-        transition: all 0.4s ease;
-        box-shadow: 0 10px 30px rgba(30, 58, 95, 0.05);
-        border: 1px solid rgba(30, 58, 95, 0.1);
-        position: relative;
-        overflow: hidden;
-        height: 100%;
+    .payment-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
 
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #1a7a52, #2ea36f);
-            opacity: 0;
-            transition: 0.4s;
-        }
-
-        &:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
-            border-color: #2ea36f;
-
-            &::before {
-                opacity: 1;
-            }
-
-            .payment-icon {
-                background: #0f5a3a;
-                transform: rotate(0deg);
-                border-color: #2ea36f;
-                
-                i {
-                    color: #2ea36f;
-                    transform: rotate(0deg);
-                }
-            }
-        }
-
-        .payment-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            background: #f0fdf4;
-            border: 1px solid #1a7a52;
-            border-radius: 15px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transform: rotate(45deg); 
-
-            i {
-                font-size: 28px;
-                color: #0f5a3a;
-                transition: all 0.5s ease;
-                transform: rotate(-45deg);
-            }
-        }
+    .payment-card {
+        padding: 12px;
 
         p {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #0f5a3a;
-            margin: 0;
-            line-height: 1.4;
-        }
-    }
-
-    .payment-note {
-        margin-top: 60px;
-        padding: 30px;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        border-left: 5px solid #1a7a52;
-
-        .islamic-note {
-            font-size: 1.05rem;
-            color: #4b5563;
-            margin: 0;
-            line-height: 1.8;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            i {
-                color: #1a7a52;
-                margin: 0 10px;
-                font-size: 24px;
-            }
+            font-size: 0.9rem;
         }
     }
 }
-
-@media (max-width: 768px) {
-    .payment-methods-section {
-        padding: 60px 0;
-
-        .section-title h3 {
-            font-size: 2rem;
-        }
-
-        .payment-methods-wrapper {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
-            padding: 0;
-        }
-
-        .payment-method-item {
-            padding: 24px 16px;
-
-            .payment-icon {
-                width: 60px;
-                height: 60px;
-                margin-bottom: 16px;
-
-                i {
-                    font-size: 24px;
-                }
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-    }
-}
-
-

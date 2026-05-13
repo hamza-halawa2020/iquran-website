@@ -1,58 +1,44 @@
 <section class="payment-methods-section">
     <div class="container">
-        <div class="section-title text-center">
-            <h4>{{ 'PAYMENT_METHODS.TITLE' | translate }}</h4>
-        </div>
+        <header class="section-head text-center">
+            <h2>{{ 'PAYMENT_METHODS.TITLE' | translate }}</h2>
+        </header>
 
-        <div class="payment-methods-wrapper">
-            <div class="payment-method-item">
-                <div class="payment-icon">
-                    <i class="fa-solid fa-money-bill-wave"></i>
-                </div>
+        <div class="payment-grid" role="list">
+            <article class="payment-card" role="listitem">
+                <span class="icon-wrap"><i class="fa-solid fa-money-bill-wave"></i></span>
                 <p>{{ 'PAYMENT_METHODS.CASH' | translate }}</p>
-            </div>
+            </article>
 
-            <div class="payment-method-item">
-                <div class="payment-icon">
-                    <i class="fa-solid fa-building-columns"></i>
-                </div>
+            <article class="payment-card" role="listitem">
+                <span class="icon-wrap"><i class="fa-solid fa-building-columns"></i></span>
                 <p>{{ 'PAYMENT_METHODS.BANK_TRANSFER' | translate }}</p>
-            </div>
+            </article>
 
-            <div class="payment-method-item">
-                <div class="payment-icon">
-                    <i class="fa-solid fa-credit-card"></i>
-                </div>
+            <article class="payment-card" role="listitem">
+                <span class="icon-wrap"><i class="fa-solid fa-credit-card"></i></span>
                 <p>{{ 'PAYMENT_METHODS.DEBIT_CARD' | translate }}</p>
-            </div>
+            </article>
 
-            <div class="payment-method-item">
-                <div class="payment-icon">
-                    <i class="fa-solid fa-mobile-screen"></i>
-                </div>
+            <article class="payment-card" role="listitem">
+                <span class="icon-wrap"><i class="fa-solid fa-mobile-screen"></i></span>
                 <p>{{ 'PAYMENT_METHODS.MOBILE_WALLET' | translate }}</p>
-            </div>
+            </article>
 
-            <div class="payment-method-item">
-                <div class="payment-icon">
-                    <i class="fa-solid fa-money-check"></i>
-                </div>
+            <article class="payment-card" role="listitem">
+                <span class="icon-wrap"><i class="fa-solid fa-money-check"></i></span>
                 <p>{{ 'PAYMENT_METHODS.CHECK' | translate }}</p>
-            </div>
+            </article>
 
-            <div class="payment-method-item">
-                <div class="payment-icon">
-                    <i class="fa-solid fa-handshake"></i>
-                </div>
+            <article class="payment-card" role="listitem">
+                <span class="icon-wrap"><i class="fa-solid fa-handshake"></i></span>
                 <p>{{ 'PAYMENT_METHODS.INSTALLMENT' | translate }}</p>
-            </div>
+            </article>
         </div>
 
-        <div class="payment-note text-center">
-            <p class="islamic-note">
-                <i class="fa-solid fa-info-circle"></i>
-                {{ 'PAYMENT_METHODS.ISLAMIC_NOTE' | translate }}
-            </p>
+        <div class="payment-note" role="note">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>{{ 'PAYMENT_METHODS.ISLAMIC_NOTE' | translate }}</span>
         </div>
     </div>
 </section>
