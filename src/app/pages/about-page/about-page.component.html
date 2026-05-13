@@ -1,97 +1,69 @@
-﻿<section class="about-area">
+﻿<section class="">
     <div class="container">
-        <div class="section-title text-center mt-5">
-            <h2>{{ 'ABOUT_US' | translate }}</h2>
-            <p class="mt-5" *ngIf="settings.about_us_footer">{{ settings.about_us_footer }}</p>
-            <p class="mt-5" *ngIf="!settings.about_us_footer">{{ 'ABOUT_DESC' | translate }}</p>
-
-        </div>
-
-        
-        <section class="about-section section-padding">
-            <div class="">
-                
-                <div class="row align-items-center mb-5">
-                    <div class="">
-                        <div class="about-content text-center">
-                            <div class="section-title text-center">
-                                <span class="subtitle">{{ 'WHO_WE_ARE_TITLE' | translate }}</span>
-                            </div>
-                            <p class="lead" *ngIf="settings.about_us">{{ settings.about_us }}</p>
-                            <p class="lead" *ngIf="!settings.about_us">{{ 'ABOUT_US_DESC_1' | translate }}</p>
-                            <p>{{ 'ABOUT_US_DESC_2' | translate }}</p>
-
-                            
-                        </div>
-                    </div>
-
+        <section class="">
+            <div class="features-grid">
+                <div class="section-title text-center mb-5">
+                    <span class="subtitle">{{ 'WHY_CHOOSE_PENN' | translate }}</span>
                 </div>
 
-                
-                <div class="features-grid">
-                    <div class="section-title text-center mb-5">
-                        <span class="subtitle">{{ 'WHY_CHOOSE_PENN' | translate }}</span>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-book-quran"></i>
+                            </div>
+                            <h4>{{ 'LEARN_ANYWHERE' | translate }}</h4>
+                            <p>{{ 'LEARN_ANYWHERE_DESC' | translate }}</p>
+                        </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="fa-solid fa-book-quran"></i>
-                                </div>
-                                <h4>{{ 'LEARN_ANYWHERE' | translate }}</h4>
-                                <p>{{ 'LEARN_ANYWHERE_DESC' | translate }}</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-chalkboard-user"></i>
                             </div>
+                            <h4>{{ 'EXPERT_INSTRUCTOR' | translate }}</h4>
+                            <p>{{ 'EXPERT_INSTRUCTOR_DESC' | translate }}</p>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="fa-solid fa-chalkboard-user"></i>
-                                </div>
-                                <h4>{{ 'EXPERT_INSTRUCTOR' | translate }}</h4>
-                                <p>{{ 'EXPERT_INSTRUCTOR_DESC' | translate }}</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-scroll"></i>
                             </div>
+                            <h4>{{ 'TEAM_MANAGEMENT' | translate }}</h4>
+                            <p>{{ 'TEAM_MANAGEMENT_DESC' | translate }}</p>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="fa-solid fa-scroll"></i>
-                                </div>
-                                <h4>{{ 'TEAM_MANAGEMENT' | translate }}</h4>
-                                <p>{{ 'TEAM_MANAGEMENT_DESC' | translate }}</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-clipboard-list"></i>
                             </div>
+                            <h4>{{ 'COURSE_PLANNING' | translate }}</h4>
+                            <p>{{ 'COURSE_PLANNING_DESC' | translate }}</p>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="fa-solid fa-clipboard-list"></i>
-                                </div>
-                                <h4>{{ 'COURSE_PLANNING' | translate }}</h4>
-                                <p>{{ 'COURSE_PLANNING_DESC' | translate }}</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-chart-line"></i>
                             </div>
+                            <h4>{{ 'TEACHER_MONITORING' | translate }}</h4>
+                            <p>{{ 'TEACHER_MONITORING_DESC' | translate }}</p>
                         </div>
+                    </div>
 
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="fa-solid fa-chart-line"></i>
-                                </div>
-                                <h4>{{ 'TEACHER_MONITORING' | translate }}</h4>
-                                <p>{{ 'TEACHER_MONITORING_DESC' | translate }}</p>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
                             </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 mb-4">
-                            <div class="feature-card">
-                                <div class="feature-icon">
-                                    <i class="fa-solid fa-hand-holding-heart"></i>
-                                </div>
-                                <h4>{{ 'STRONG_SUPPORT' | translate }}</h4>
-                                <p>{{ 'STRONG_SUPPORT_DESC' | translate }}</p>
-                            </div>
+                            <h4>{{ 'STRONG_SUPPORT' | translate }}</h4>
+                            <p>{{ 'STRONG_SUPPORT_DESC' | translate }}</p>
                         </div>
                     </div>
                 </div>

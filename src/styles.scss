@@ -124,7 +124,7 @@ body.loaded #loading-screen {
     --secondaryColor: #c89b3c; 
     --accentColor: #1a7a52; 
     --goldLight: #e2c57a; 
-    --creamBg: #f7f3e7; 
+    --creamBg: #f8faf8; 
     --whiteColor: #ffffff;
     --blackColor: #070c09; 
     --paragraphColor: #374151;
@@ -148,7 +148,7 @@ body {
     padding-top: calc(70px + env(safe-area-inset-top));
     color: var(--primaryColor);
     background-color: var(--creamBg);
-    background-image: radial-gradient(circle at 12% 10%, rgba(200, 155, 60, 0.06), transparent 26%);
+    background-image: none;
     font-family: var(--fontFamily);
 }
 
