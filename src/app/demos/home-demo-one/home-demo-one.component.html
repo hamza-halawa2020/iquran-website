@@ -2,86 +2,75 @@
 <div #homeDataTrigger class="home-data-trigger" aria-hidden="true"></div>
 
 @defer (on viewport) {
-    <div scrollReveal>
-        <app-services-section [courses]="homeData?.latestCourses || []"></app-services-section>
-    </div>
+<div scrollReveal>
+    <app-services-section [courses]="homeData?.latestCourses || []"></app-services-section>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 420px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 420px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <app-media-gallery-section [items]="homeData?.mediaItems || []" [openInPage]="true"></app-media-gallery-section>
-    </div>
+<div scrollReveal [revealDelay]="60">
+    <app-media-gallery-section [items]="homeData?.mediaItems || []" [openInPage]="true"></app-media-gallery-section>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <app-testimonials-section [testimonials]="homeData?.testimonials || []"></app-testimonials-section>
-    </div>
+<div scrollReveal [revealDelay]="60">
+    <app-testimonials-section [testimonials]="homeData?.testimonials || []"></app-testimonials-section>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 460px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 460px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <app-certificates-section [certificates]="homeData?.certificates || []"></app-certificates-section>
-    </div>
+<div scrollReveal [revealDelay]="60">
+    <app-certificates-section [certificates]="homeData?.certificates || []"></app-certificates-section>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <app-team-section [teamMembers]="homeData?.teamMembers || []"></app-team-section>
-    </div>
+<div scrollReveal [revealDelay]="60">
+    <app-team-section [teamMembers]="homeData?.teamMembers || []"></app-team-section>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <app-latest-posts-section [posts]="homeData?.latestPosts || []"></app-latest-posts-section>
-    </div>
+<div scrollReveal [revealDelay]="60">
+    <app-latest-posts-section [posts]="homeData?.latestPosts || []"></app-latest-posts-section>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <app-payment-methods></app-payment-methods>
-    </div>
+<div scrollReveal [revealDelay]="60">
+    <app-payment-methods></app-payment-methods>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 320px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 320px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <app-partners-section [partners]="homeData?.partners || []"></app-partners-section>
-    </div>
+<div scrollReveal [revealDelay]="60">
+    <app-partners-section [partners]="homeData?.partners || []"></app-partners-section>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 360px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 360px"></div>
 }
 
 @defer (on viewport) {
-    <div scrollReveal [revealDelay]="60">
-        <section class="contact-home-section section-padding">
-            <div class="container">
-                <div class="section-title text-center mb-4">
-                    <h2>{{ 'BOOK_TRIAL' | translate }}</h2>
-                    
-                </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <app-contact />
-                    </div>
-                </div>
-            </div>
-        </section>
+<div scrollReveal [revealDelay]="60">
+    <div class="col-lg-8 mx-auto">
+        <app-contact />
     </div>
+</div>
 } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 500px"></div>
+<div class="home-defer-placeholder" style="--home-defer-min-h: 500px"></div>
 }
-

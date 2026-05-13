@@ -1,50 +1,49 @@
-﻿<section class="contact-area">
-    
-    <section class="contact-form-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="contact-form-wrapper">
-                        <div class="section-title text-center mb-4">
-                            <h2>{{ 'BOOK_TRIAL' | translate }}</h2>
-                            
-                        </div>
-
-                        <app-contact class="embedded-contact" />
-                    </div>
-                </div>
-            </div>
+<section class="contact-page">
+    <div class="container">
+        <div class="contact-hero">
+            <h1>{{ 'CONTACT_US' | translate }}</h1>
+            <p>{{ 'BOOK_TRIAL' | translate }}</p>
         </div>
-    </section>
 
-    
-    <section class="contact-info-section section-padding">
-        <div class="container">
-            <div class="row" *ngIf="!isLoading">
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h4>{{ 'TELEPHONE' | translate }}</h4>
-                        <p *ngIf="settings.phone"><a href="tel:{{ settings.phone }}">{{ settings.phone }}</a></p>
-                        <p *ngIf="settings.whatsapp"><a href="tel:{{ settings.whatsapp }}">{{ settings.whatsapp }}</a>
-                        </p>
-                        <p *ngIf="!settings.phone && !settings.whatsapp"></p>
+        <div class="contact-layout">
+            <aside class="contact-panel" *ngIf="!isLoading">
+                <div class="info-card">
+                    <div class="icon-wrap">
+                        <i class="fas fa-phone"></i>
                     </div>
+                    <h3>{{ 'TELEPHONE' | translate }}</h3>
+                    <p *ngIf="settings.phone"><a href="tel:{{ settings.phone }}">{{ settings.phone }}</a></p>
+                    <p *ngIf="settings.whatsapp"><a href="tel:{{ settings.whatsapp }}">{{ settings.whatsapp }}</a></p>
                 </div>
 
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h4>{{ 'SEND_EMAIL' | translate }}</h4>
-                        <p *ngIf="settings.email"><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></p>
-                        <p *ngIf="!settings.email">info&#64;iquran.com</p>
+                <div class="info-card">
+                    <div class="icon-wrap">
+                        <i class="fas fa-envelope"></i>
                     </div>
+                    <h3>{{ 'SEND_EMAIL' | translate }}</h3>
+                    <p *ngIf="settings.email"><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></p>
+                    <p *ngIf="!settings.email">info&#64;iquran.com</p>
                 </div>
-            </div>
+
+                <div class="info-card">
+                    <div class="icon-wrap">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>{{ 'LOCATION' | translate }}</h3>
+                    <p *ngIf="settings.address">{{ settings.address }}</p>
+                    <p *ngIf="!settings.address">{{ "NEW_CAIRO" | translate }}</p>
+                </div>
+            </aside>
+
+            <section class="form-panel">
+                <div class="form-card">
+                    <div class="form-header">
+                        <h2>{{ 'BOOK_TRIAL' | translate }}</h2>
+                        <p>{{ 'CONTACT_US' | translate }}</p>
+                    </div>
+                    <app-contact class="embedded-contact" />
+                </div>
+            </section>
         </div>
-    </section>
+    </div>
 </section>
