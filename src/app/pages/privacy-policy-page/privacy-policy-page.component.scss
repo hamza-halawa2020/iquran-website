@@ -1,4 +1,4 @@
-// Colors
+﻿// Colors
 $primary: var(--primaryColor); /* Navy Blue from Logo */
 $secondary: var(--secondaryColor); /* Gold from Logo */
 $dark: var(--accentColor);
@@ -188,7 +188,7 @@ $gray: var(--paragraphColor);
                     position: relative;
 
                     &::before {
-                        content: '•';
+                        content: 'â€¢';
                         color: $primary;
                         font-weight: bold;
                         position: absolute;
@@ -322,3 +322,4 @@ $gray: var(--paragraphColor);
         padding: 60px 0;
     }
 }
+
