@@ -120,13 +120,13 @@ body.loaded #loading-screen {
 }
 
 :root {
-    --primaryColor: #0f5a3a; /* Logo green */
-    --secondaryColor: #c89b3c; /* Logo gold */
-    --accentColor: #1a7a52; /* Lighter green accent */
-    --goldLight: #e2c57a; /* Soft gold highlight */
-    --creamBg: #f7f3e7; /* Warm background */
+    --primaryColor: #0f5a3a; 
+    --secondaryColor: #c89b3c; 
+    --accentColor: #1a7a52; 
+    --goldLight: #e2c57a; 
+    --creamBg: #f7f3e7; 
     --whiteColor: #ffffff;
-    --blackColor: #070c09; /* Near-black from logo background */
+    --blackColor: #070c09; 
     --paragraphColor: #374151;
     --surfaceColor: #fffdf7;
     --surfaceAltColor: #f2ead7;
@@ -143,7 +143,7 @@ body {
     position: relative;
     margin: 0;
     padding: 0;
-    /* Add padding for fixed navbar (with iOS safe-area support). */
+    
     padding-top: 70px;
     padding-top: calc(70px + env(safe-area-inset-top));
     color: var(--primaryColor);
@@ -165,7 +165,6 @@ body::before {
     opacity: 0.045;
 }
 
-/* Responsive navbar padding */
 @media (max-width: 767px) {
     body {
         padding-top: 60px;
@@ -388,8 +387,6 @@ p {
 .pb-95 {
     padding-bottom: 95px;
 }
-
-// BG Color
 .bg-fbfbfb {
     background-color: var(--creamBg);
     background-image: var(--islamicPattern);
@@ -430,18 +427,14 @@ p {
 .bg-282828 {
     background-color: #282828;
 }
-
-// Border
 .border-top,
 .border-bottom {
     border-color: var(--paragraphColor) !important;
 }
-
-// Default Btn
 .default-btn {
     border: 0;
     padding: 15px 35px;
-    border-radius: 50px; /* More rounded for modern feel */
+    border-radius: 50px; 
     display: inline-block;
     color: var(--whiteColor);
     font-weight: 600;
@@ -457,7 +450,6 @@ p {
     }
 }
 
-/* Lightweight shared component styles used across the app after trimming full Bootstrap. */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -648,8 +640,6 @@ p {
 .btn-close-white {
     color: var(--whiteColor);
 }
-
-// Section Title
 .section-title {
     margin-bottom: 30px;
 
@@ -698,8 +688,6 @@ p {
         }
     }
 }
-
-// Scroll Down Text
 .scroll-down-text {
     top: 0;
     right: 0;
@@ -761,8 +749,6 @@ select:focus {
     background: rgba(200, 155, 60, 0.28);
     color: #113a2a;
 }
-
-// Shapes
 .shape1 {
     top: 10.9%;
     z-index: -1;
@@ -794,7 +780,6 @@ select:focus {
     position: absolute;
 }
 
-/* Max width 767px */
 @media only screen and (max-width: 767px) {
     .ptb-120 {
         padding: {
@@ -820,13 +805,9 @@ select:focus {
     .pb-95 {
         padding-bottom: 35px;
     }
-
-    // Default Btn
     .default-btn {
         padding: 13px 25px;
     }
-
-    // Section Title
     .section-title {
         margin-bottom: 30px;
         text-align: center;
@@ -869,13 +850,9 @@ select:focus {
             }
         }
     }
-
-    // Scroll Down Text
     .scroll-down-text {
         display: none !important;
     }
-
-    // Shapes
     .shape1,
     .shape2,
     .shape3,
@@ -885,11 +862,9 @@ select:focus {
     }
 }
 
-/* Min width 576px to Max width 767px */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
 }
 
-/* Min width 768px to Max width 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
     .ptb-120 {
         padding: {
@@ -915,13 +890,9 @@ select:focus {
     .pb-95 {
         padding-bottom: 55px;
     }
-
-    // Default Btn
     .default-btn {
         padding: 13px 30px;
     }
-
-    // Section Title
     .section-title {
         h2 {
             max-width: 470px;
@@ -946,13 +917,9 @@ select:focus {
             padding-top: 31px;
         }
     }
-
-    // Scroll Down Text
     .scroll-down-text {
         display: none !important;
     }
-
-    // Shapes
     .shape1,
     .shape2,
     .shape3,
@@ -962,7 +929,6 @@ select:focus {
     }
 }
 
-/* Min width 992px to Max width 1199px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
     .ptb-120 {
         padding: {
@@ -988,25 +954,17 @@ select:focus {
     .pb-95 {
         padding-bottom: 75px;
     }
-
-    // Default Btn
     .default-btn {
         padding: 14px 30px;
     }
-
-    // Section Title
     .section-title {
         p {
             margin-top: 15px;
         }
     }
-
-    // Scroll Down Text
     .scroll-down-text {
         display: none !important;
     }
-
-    // Shapes
     .shape1 {
         top: 12%;
         right: 5%;
@@ -1018,9 +976,7 @@ select:focus {
     }
 }
 
-/* Min width 1200px to Max width 1399px */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
-    // Scroll Down Text
     .scroll-down-text {
         width: 40px;
 
@@ -1028,16 +984,12 @@ select:focus {
             margin-left: -75px;
         }
     }
-
-    // Shapes
     .shape1 {
         right: 5%;
     }
 }
 
-/* Min width 1600px */
 @media only screen and (min-width: 1600px) {
-    // Scroll Down Text
     .scroll-down-text {
         width: 150px;
 
@@ -1045,8 +997,6 @@ select:focus {
             margin-left: -21px;
         }
     }
-
-    // Shapes
     .shape1 {
         right: 25.74%;
     }
@@ -1055,19 +1005,18 @@ select:focus {
     }
 }
 
-/* Custom Cursor Global Styles - Show default cursor with pointer on clickables */
 @media (hover: hover) and (pointer: fine) {
   * {
-    cursor: auto !important; /* Keep default cursor visible */
+    cursor: auto !important; 
   }
   
-  /* Show pointer cursor on clickable elements */
+  
   a, button, .btn, [role="button"], input[type="submit"], input[type="button"], 
   .clickable, [onclick], .cursor-pointer {
     cursor: pointer !important;
   }
   
-  /* Show text cursor on text inputs */
+  
   input[type="text"], input[type="email"], input[type="password"], 
   input[type="search"], textarea, [contenteditable] {
     cursor: text !important;
@@ -1080,10 +1029,9 @@ select:focus {
   }
 }
 
-/* Global mobile overrides (keep pages consistent on small screens). */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 90px; /* accounts for fixed navbar */
+    scroll-padding-top: 90px; 
 }
 @media (max-width: 767px) {
     html {
@@ -1091,13 +1039,11 @@ html {
     }
 }
 
-/* Avoid horizontal scroll caused by decorative elements/overflows. */
 html,
 body {
     max-width: 100%;
 }
 
-/* Template/common utilities used across pages */
 .section-padding {
     padding: 80px 0;
 }
@@ -1107,7 +1053,6 @@ body {
     }
 }
 
-/* Common page wrappers (lists/details/policies) */
 @media (max-width: 767px) {
     .posts-area,
     .courses-area,
@@ -1121,7 +1066,6 @@ body {
     }
 }
 
-/* Section headers used in many components (h2 has `.section-title`). */
 @media (max-width: 767px) {
     .section-header .section-title,
     .section-title h1,
@@ -1136,4 +1080,5 @@ body {
         line-height: 1.7 !important;
     }
 }
+
 

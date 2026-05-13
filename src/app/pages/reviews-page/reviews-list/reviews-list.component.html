@@ -1,8 +1,8 @@
-<section class="review-area">
+﻿<section class="review-area">
     <div class="container">
         <div class="section-title text-center">
             <h2>{{ 'CLIENT_TESTIMONIALS' | translate }}</h2>
-            <!-- <p class="mt-5">{{ 'TESTIMONIALS_SUBTITLE' | translate }}</p> -->
+            
         </div>
 
         <div class="row" *ngIf="isLoading">
@@ -11,11 +11,11 @@
             </div>
         </div>
 
-        <!-- Reviews Section -->
+        
         <section class="reviews-area">
             <div class="container">
 
-                <!-- Reviews Grid -->
+                
                 <div class="row" *ngIf="!isLoading">
                     <div class="col-lg-6 col-md-12 mb-4" *ngFor="let review of reviews; let i = index">
                         <div class="review-card animate__animated animate__fadeInUp"
@@ -43,11 +43,10 @@
                                 </div>
                             </div>
 
-
                         </div>
                     </div>
 
-                    <!-- No Reviews Message -->
+                    
                     <div class="col-12 text-center py-5" *ngIf="reviews.length === 0">
                         <div class="alert alert-info">
                             <i class="fa-solid fa-info-circle"></i>
@@ -56,7 +55,7 @@
                     </div>
                 </div>
 
-                <!-- Pagination -->
+                
                 <app-pagination [meta]="meta" (pageChange)="onPageChange($event)"
                     *ngIf="!isLoading && meta"></app-pagination>
             </div>

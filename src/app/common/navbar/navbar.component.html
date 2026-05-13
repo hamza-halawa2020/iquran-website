@@ -1,6 +1,6 @@
-<nav class="main-navbar" [class.sticky]="isSticky">
+﻿<nav class="main-navbar" [class.sticky]="isSticky">
     <div class="navbar-container">
-        <!-- Brand Logo -->
+        
         <div class="navbar-brand">
             <a routerLink="/" (click)="closeMobileMenu()" aria-label="I Quran home">
                 <img
@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <!-- Desktop Navigation Menu -->
+        
         <div id="primary-navigation" class="navbar-menu" [class.active]="!isCollapsed">
             <ul class="nav-links">
                 <li *ngFor="let item of menuItems">
@@ -26,26 +26,12 @@
                 </li>
             </ul>
 
-            <!-- Action Buttons -->
+            
             <div class="navbar-actions">
-                <!-- Language Switcher -->
-                <!-- <div class="language-switcher" ngbDropdown placement="bottom-end">
-                    <button class="lang-btn" ngbDropdownToggle id="languageDropdown">
-                        <span class="flag">{{ getCurrentLanguageData().flag }}</span>
-                        <span class="lang-name">{{ getCurrentLanguageData().name }}</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="dropdown-menu" ngbDropdownMenu>
-                        <button class="dropdown-item" *ngFor="let lang of languages"
-                            [class.active]="lang.code === currentLanguage" (click)="switchLanguage(lang.code)">
-                            <span class="flag">{{ lang.flag }}</span>
-                            <span>{{ lang.name }}</span>
-                            <i class="fas fa-check" *ngIf="lang.code === currentLanguage"></i>
-                        </button>
-                    </div>
-                </div> -->
+                
+                
 
-                <!-- CTA Buttons -->
+                
                 <a routerLink="/contacts" class="btn btn-outline" (click)="closeMobileMenu()">
                     {{ 'BOOK_TRIAL' | translate }}
                 </a>
@@ -57,7 +43,7 @@
                 {{ 'BOOK_TRIAL' | translate }}
             </a>
 
-            <!-- Mobile Menu Toggle -->
+            
             <button
             type="button"
             class="mobile-toggle"
@@ -65,7 +51,7 @@
             [class.active]="!isCollapsed"
             [attr.aria-expanded]="!isCollapsed"
             aria-controls="primary-navigation"
-            [attr.aria-label]="currentLanguage === 'ar' ? (!isCollapsed ? 'إغلاق القائمة الرئيسية' : 'فتح القائمة الرئيسية') : (!isCollapsed ? 'Close main menu' : 'Open main menu')"
+            [attr.aria-label]="currentLanguage === 'ar' ? (!isCollapsed ? 'Ø¥ØºÙ„Ø§Ù‚ Ø§Ù„Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©' : 'ÙØªØ­ Ø§Ù„Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ø±Ø¦ÙŠØ³ÙŠØ©') : (!isCollapsed ? 'Close main menu' : 'Open main menu')"
         >
             <span></span>
             <span></span>
@@ -74,3 +60,4 @@
         </div>
     </div>
 </nav>
+

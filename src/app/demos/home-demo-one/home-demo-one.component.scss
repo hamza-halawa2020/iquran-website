@@ -14,20 +14,12 @@
     margin: 30px auto;
     max-width: 1200px;
     width: calc(100% - 40px);
-    // background: linear-gradient(180deg, rgba(30, 58, 95, 0.04), rgba(201, 169, 97, 0.08));
 }
 
 .home-defer-placeholder::before {
     content: '';
     position: absolute;
     inset: 0;
-    // background: linear-gradient(
-    //     90deg,
-    //     transparent 0%,
-    //     rgba(255, 255, 255, 0.55) 45%,
-    //     rgba(255, 255, 255, 0.1) 55%,
-    //     transparent 100%
-    // );
     transform: translateX(-100%);
     will-change: transform;
     animation: homeDeferShimmer 1.4s linear infinite;
@@ -46,4 +38,5 @@
         transform: translateX(100%);
     }
 }
+
 

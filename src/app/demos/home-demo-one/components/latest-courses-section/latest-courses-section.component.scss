@@ -10,9 +10,9 @@
 .section-header {
     margin-bottom: 70px;
     position: relative;
-    
+
     &::before {
-        content: ''; /* Islamic Star motif placeholder or icon */
+        content: '';
         display: block;
         font-size: 24px;
         color: var(--secondaryColor);
@@ -26,7 +26,7 @@
         margin-bottom: 20px;
         line-height: 1.2;
     }
-    
+
     .section-description {
         font-size: 1.15rem;
         color: #4b5563;
@@ -97,7 +97,6 @@
     height: 52px;
     border: 1px solid rgba(30, 58, 95, 0.1);
     border-radius: 50%;
-    // background: linear-gradient(180deg, #ffffff 0%, #f7f3ea 100%);
     color: var(--primaryColor);
     box-shadow: 0 12px 24px rgba(30, 58, 95, 0.12);
     display: inline-flex;
@@ -108,14 +107,12 @@
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 
     &:hover {
-        // background: linear-gradient(135deg, var(--secondaryColor) 0%, var(--goldLight) 100%);
         color: var(--whiteColor);
         box-shadow: 0 16px 28px rgba(201, 169, 97, 0.24);
         transform: translateY(-2px);
     }
 
     &:disabled {
-        // background: #f3f4f6;
         color: rgba(30, 58, 95, 0.35);
         border-color: rgba(30, 58, 95, 0.08);
         box-shadow: none;

@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+﻿import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -11,8 +11,6 @@ import { TranslateModule } from '@ngx-translate/core';
     styleUrl: './about.component.scss'
 })
 export class AboutComponent {
-
-    // Video Popup
     isOpen = false;
     openPopup(): void {
         this.isOpen = true;

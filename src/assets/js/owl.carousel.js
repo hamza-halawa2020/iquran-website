@@ -1,16 +1,4 @@
-/*
- *  jQuery OwlCarousel v1.3.3
- *
- *  Copyright (c) 2013 Bartosz Wojciechowski
- *  http://www.owlgraphic.com/owlcarousel/
- *
- *  Licensed under MIT
- *
- */
-
-/*JS Lint helpers: */
-/*global dragMove: false, dragEnd: false, $, jQuery, alert, window, document */
-/*jslint nomen: true, continue:true */
+﻿
 
 if (typeof Object.create !== "function") {
     Object.create = function (obj) {
@@ -230,7 +218,6 @@ if (typeof Object.create !== "function") {
                 base.options.items = base.orignalItems;
             }
             if (base.options.itemsCustom !== false) {
-                //Reorder array by screen size
                 base.options.itemsCustom.sort(function (a, b) {return a[0] - b[0]; });
 
                 for (i = 0; i < base.options.itemsCustom.length; i += 1) {
@@ -261,8 +248,6 @@ if (typeof Object.create !== "function") {
                     base.options.items = base.options.itemsMobile[1];
                 }
             }
-
-            //if number of items is less than declared
             if (base.options.items > base.itemsAmount && base.options.itemsScaleUp === true) {
                 base.options.items = base.itemsAmount;
             }
@@ -859,7 +844,7 @@ if (typeof Object.create !== "function") {
         },
 
         gestures : function () {
-            /*jslint unparam: true*/
+            
             var base = this,
                 locals = {
                     offsetX : 0,
@@ -1089,7 +1074,7 @@ if (typeof Object.create !== "function") {
         },
 
         customEvents : function () {
-            /*jslint unparam: true*/
+            
             var base = this;
             base.$elem.on("owl.next", function () {
                 base.next();
@@ -1274,7 +1259,6 @@ if (typeof Object.create !== "function") {
 
         transitionTypes : function (className) {
             var base = this;
-            //Currently available: "fade", "backSlide", "goDown", "fadeUp"
             base.outClass = "owl-" + className + "-out";
             base.inClass = "owl-" + className + "-in";
         },

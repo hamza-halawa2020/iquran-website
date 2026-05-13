@@ -1,13 +1,12 @@
-.section-padding {
+﻿.section-padding {
     position: relative;
 }
-
 
 .section-header {
     position: relative;
     
     &::before {
-        content: ''; /* Islamic Star motif placeholder or icon */
+        content: ''; 
         display: block;
         font-size: 24px;
         color: var(--secondaryColor);
@@ -31,7 +30,6 @@
 }
 
 .about-section {
-    // background-image: var(--islamicPattern);
     background-size: 400px;
 
     .about-content {
@@ -40,7 +38,6 @@
             align-items: flex-start;
             margin-bottom: 35px;
             padding: 20px;
-            // background: white;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(6, 78, 59, 0.05);
             transition: var(--transition);
@@ -53,14 +50,13 @@
             .feature-icon {
                 width: 60px;
                 height: 60px;
-                // background: linear-gradient(135deg, var(--primaryColor) 0%, var(--accentColor) 100%);
-                border-radius: 15px; /* Squarish for Islamic pattern feel */
+                border-radius: 15px; 
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin-right: 20px;
                 flex-shrink: 0;
-                transform: rotate(45deg); /* Diamond shape */
+                transform: rotate(45deg); 
                 
                 i {
                     color: white;
@@ -114,7 +110,6 @@
             position: absolute;
             bottom: 40px;
             left: 0;
-            // background: var(--primaryColor);
             color: var(--goldLight);
             padding: 30px;
             border-radius: 25px;
@@ -141,12 +136,10 @@
     }
 }
 
-/* Custom About CTA button style */
 .about-cta {
     .about-btn {
         display: inline-flex;
         align-items: center;
-        // background: var(--secondaryColor);
         color: #fff;
         border: none;
         box-shadow: 0 12px 30px rgba(201, 169, 97, 0.3);
@@ -158,7 +151,6 @@
         }
 
         &:hover {
-            // background: var(--primaryColor);
             transform: translateY(-3px);
             box-shadow: 0 20px 40px rgba(30, 58, 95, 0.3);
             text-decoration: none;
@@ -174,7 +166,7 @@
     position: relative;
     
     &::before {
-        content: ''; /* Islamic Star motif placeholder or icon */
+        content: ''; 
         display: block;
         font-size: 24px;
         color: var(--secondaryColor);
@@ -199,7 +191,6 @@
 }
 
 .about-section {
-    // background-image: var(--islamicPattern);
     background-size: 400px;
 
     .about-content {
@@ -208,7 +199,6 @@
             align-items: flex-start;
             margin-bottom: 35px;
             padding: 20px;
-            // background: white;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(6, 78, 59, 0.05);
             transition: var(--transition);
@@ -221,14 +211,13 @@
             .feature-icon {
                 width: 60px;
                 height: 60px;
-                // background: linear-gradient(135deg, var(--primaryColor) 0%, var(--accentColor) 100%);
-                border-radius: 15px; /* Squarish for Islamic pattern feel */
+                border-radius: 15px; 
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin-right: 20px;
                 flex-shrink: 0;
-                transform: rotate(45deg); /* Diamond shape */
+                transform: rotate(45deg); 
                 
                 i {
                     color: white;
@@ -280,7 +269,6 @@
             position: absolute;
             bottom: 40px;
             left: 0;
-            // background: var(--primaryColor);
             color: var(--goldLight);
             padding: 30px;
             border-radius: 25px;
@@ -306,3 +294,4 @@
         }
     }
 }
+

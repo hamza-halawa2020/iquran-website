@@ -1,4 +1,4 @@
-<footer class="site-footer">
+﻿<footer class="site-footer">
     <div class="footer-shell">
         <div class="footer-top">
             <div class="brand-block">
@@ -25,7 +25,7 @@
             <div class="footer-col">
                 <h3>{{ 'LOCATION' | translate }}</h3>
                 <ul>
-                    <!-- <li *ngIf="settings.address">{{ settings.address }}</li> -->
+
                     <li *ngIf="!settings.address">{{ "NEW_CAIRO" | translate }}</li>
                     <li *ngIf="settings.email"><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li>
                     <li *ngIf="settings.phone"><a href="tel:{{ settings.phone }}">{{ settings.phone }}</a></li>
@@ -54,7 +54,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p>{{ 'ALL_RIGHTS_RESERVED' | translate }} © {{ currentYear }}</p>
+            <p>{{ 'ALL_RIGHTS_RESERVED' | translate }} Â© {{ currentYear }}</p>
             <div class="bottom-links">
                 <a routerLink="/privacy-policy">{{ 'PRIVACY' | translate }}</a>
                 <a routerLink="/terms-conditions">{{ 'TERMS' | translate }}</a>
@@ -62,3 +62,4 @@
         </div>
     </div>
 </footer>
+

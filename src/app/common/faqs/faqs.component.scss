@@ -1,4 +1,4 @@
-$primary-color: var(--primaryColor);
+﻿$primary-color: var(--primaryColor);
 $secondary-color: var(--secondaryColor);
 $text-color: var(--paragraphColor);
 
@@ -116,8 +116,6 @@ $text-color: var(--paragraphColor);
     width: 3rem;
     height: 3rem;
 }
-
-// RTL Support
 :host-context([dir="rtl"]) {
     .faq-question {
         text-align: right;
@@ -133,8 +131,6 @@ $text-color: var(--paragraphColor);
         margin-left: 10px;
     }
 }
-
-// Responsive Design
 @media (max-width: 768px) {
     .faqs-area {
         padding: 60px 0;

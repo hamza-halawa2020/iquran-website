@@ -1,82 +1,4 @@
-/*
-Author       : themes_mountain
-Template Name: Penn - Education HTML Template
-Version      : 1.0
-*/
-/*=============================================================
-    CSS INDEX
-    =============================
-    01. GENERAL STYLE (body, link color, section-title, preloader btn, overlay, section-padding etc)
-    02. START BOOTSTRAP NAVIGATION OVERRIDES
-    03. START HOMEPAGE CSS STYLE
-    04. START TOP PROMO DESIGN
-    05. START ABOUT CSS DESIGN
-    06. START COUNTER DESIGN
-    07. START FEATURES DESIGN
-    08. START COURSE DESIGN
-    09. START COURSE PROMOTION DESIGN
-    10. START TOPIC DESIGN
-    11. START REVIEWS DESIGN
-    12. START TEAM DESIGN
-    13. START BLOG DESIGN
-    14. START FOOTER DESIGN
-    15. START PARTNER DESIGN
-    16. START SECTION TOP DESIGN
-    17. START PRICING DESIGN
-    18. START EVENTS DESIGN
-    19. START FAQ DESIGN
-    20. START ERROR DESIGN
-    21. START LOGIN AND REGISTER DESIGN
-    22. START CONTACT DESIGN
-    23. START ABOUT PAGE DESIGN
-    23. START NEWSLETTER DESIGN
-    24. START FREE COURSE+INSTRUCTOR DESIGN
-  =============================================================*/
-/*
-* ----------------------------------------------------------------------------------------
-* 01.GENERAL STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-Author       : themes_mountain
-Template Name: Penn - Education HTML Template
-Version      : 1.0
-*/
-/*=============================================================
-    CSS INDEX
-    =============================
-    01. GENERAL STYLE
-    02. START BOOTSTRAP NAVIGATION OVERRIDES
-    03. START HOMEPAGE CSS STYLE
-    04. START TOP PROMO DESIGN
-    05. START ABOUT CSS DESIGN
-    06. START COUNTER DESIGN
-    07. START FEATURES DESIGN
-    08. START COURSE DESIGN
-    09. START COURSE PROMOTION DESIGN
-    10. START TOPIC DESIGN
-    11. START REVIEWS DESIGN
-    12. START TEAM DESIGN
-    13. START BLOG DESIGN
-    14. START FOOTER DESIGN
-    15. START PARTNER DESIGN
-    16. START SECTION TOP DESIGN
-    17. START PRICING DESIGN
-    18. START EVENTS DESIGN
-    19. START FAQ DESIGN
-    20. START ERROR DESIGN
-    21. START LOGIN AND REGISTER DESIGN
-    22. START CONTACT DESIGN
-    23. START ABOUT PAGE DESIGN
-    23. START NEWSLETTER DESIGN
-    24. START FREE COURSE+INSTRUCTOR DESIGN
-  =============================================================*/
-/*
-* ----------------------------------------------------------------------------------------
-* 01.GENERAL STYLE
-* ----------------------------------------------------------------------------------------
-*/
+﻿
 
 @font-face {
     font-family: "LyonArabic";
@@ -162,17 +84,15 @@ strong {
     padding: 0;
 }
 
-/*END PRELOADER DESIGN*/
 .section-padding {
     padding: 80px 0;
 }
 
-/*START SECTION TITLE DESIGN*/
 .section-title {
     margin-bottom: 60px;
     position: relative;
     text-align: left;
-    /* Default LTR */
+    
 }
 
 .section-title h2 {
@@ -236,19 +156,15 @@ p.section-title-white {
     color: #4c0048;
 }
 
-/* RTL Adjustments */
 [dir="rtl"] .section-title {
     text-align: right;
 }
 
 [dir="rtl"] .section-title h2::after {
     margin: 4px 0 4px 10px;
-    /* Swap LTR margin-right to margin-left */
+    
 }
 
-/*END SECTION TITLE DESIGN*/
-
-/*START SCROLL TO TOP*/
 .topcontrol {
     background: #4c0048;
     border-radius: 30px;
@@ -281,15 +197,11 @@ p.section-title-white {
     color: #fff;
 }
 
-/* RTL Adjustments */
 [dir="rtl"] .topcontrol {
     right: unset;
     left: 5px;
 }
 
-/*END SCROLL TO TOP*/
-
-/*START PRELOADER DESIGN*/
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -433,7 +345,6 @@ p.section-title-white {
     transition: all 0.3s 1s ease-out;
 }
 
-/* RTL Adjustments */
 [dir="rtl"] #loader-wrapper .loader-section.section-left {
     left: unset;
     right: 0;
@@ -454,8 +365,6 @@ p.section-title-white {
     transform: translateX(-100%);
 }
 
-/*END LOADER*/
-
 ::-moz-selection {
     background: #000;
     color: #fff;
@@ -468,7 +377,6 @@ p.section-title-white {
     text-shadow: none;
 }
 
-/*BTN START*/
 .btn_one {
     background: #4c0048;
     font-size: 15px;
@@ -541,14 +449,10 @@ p.section-title-white {
     }
 }
 
-/* RTL Adjustments */
 [dir="rtl"] .btn_one {
     text-align: right;
 }
 
-/*END BTN ONE*/
-
-/*START BTN TWO*/
 .cta {
     position: relative;
     margin: auto;
@@ -611,21 +515,17 @@ p.section-title-white {
     stroke: #fff;
 }
 
-/* RTL Adjustments */
 [dir="rtl"] .cta svg {
     margin-left: 0;
     margin-right: 10px;
     transform: translateX(5px);
-    /* Reverse direction for RTL */
+    
 }
 
 [dir="rtl"] .cta:hover svg {
     transform: translateX(0);
 }
 
-/*END BTN TWO*/
-
-/*START BTN THREE*/
 .btn_two {
     color: #000;
     border: 1px solid #ededed;
@@ -643,12 +543,9 @@ p.section-title-white {
     background: #4c0048;
 }
 
-/* RTL Adjustments */
 [dir="rtl"] .btn_two {
     text-align: right;
 }
-
-/*END BTN THREE*/
 
 .logo-img a {
     color: #fff;
@@ -688,7 +585,6 @@ p.section-title-white {
     color: #fff;
 }
 
-/*TOP SOCIAL PROFILES*/
 .top_social_profile ul {
     list-style: outside none none;
 }
@@ -726,7 +622,6 @@ p.section-title-white {
     background: #0e76a8;
 }
 
-/* RTL Adjustments */
 [dir="rtl"] .single-top-contact i {
     float: right;
     margin-right: 0;
@@ -742,13 +637,6 @@ p.section-title-white {
     margin-left: 5px;
 }
 
-/*END LOGO WITH CONTACT*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 02.START BOOTSTRAP NAVIGATION OVERRIDES
-* ----------------------------------------------------------------------------------------
-*/
 .site-logo img {
     width: 150px;
     height: auto;
@@ -867,7 +755,6 @@ p.section-title-white {
     display: none;
 }
 
-/* Responsive Design */
 @media only screen and (max-width: 1024px) {
     #main-menu ul li {
         margin-left: 30px;
@@ -947,7 +834,6 @@ p.section-title-white {
     }
 }
 
-/* Dropdown Menu */
 #navigation #main-menu ul li ul,
 #navigation #main-menu ul li ul li ul {
     background: #fff;
@@ -1087,10 +973,9 @@ p.section-title-white {
     box-shadow: none;
 }
 
-/* RTL Adjustments */
 [dir="rtl"] #main-menu ul {
     text-align: center;
-    /* Keep centered for consistency */
+    
 }
 
 [dir="rtl"] #main-menu ul li {
@@ -1133,13 +1018,6 @@ p.section-title-white {
     float: right;
 }
 
-/*END BOOTSTRAP NAVIGATION OVERRIDES*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 03. START HOMEPAGE CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
 .home_bg {
     height: 900px;
     position: relative;
@@ -1214,7 +1092,6 @@ p.section-title-white {
     }
 }
 
-/*HOME THREE CSS*/
 .home_img_bg {
     height: 750px;
     position: relative;
@@ -1276,8 +1153,6 @@ p.section-title-white {
         display: none;
     }
 }
-
-/*END HOME THREE CSS*/
 
 .home_ps {
     background: #fff;
@@ -1352,7 +1227,6 @@ p.section-title-white {
     }
 }
 
-/* RTL Adjustments */
 [dir="rtl"] .home_content {
     text-align: right;
 }
@@ -1383,15 +1257,6 @@ p.section-title-white {
     margin-right: 0;
     margin-left: 10px;
 }
-
-/*END HOMEPAGE CSS STYLE*/
-
-/* @font-face {
-    font-family: "LyonArabic";
-    src: url("/assets/fonts/LyonArabicTextRegular.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
-} */
 
 body {
     color: #888;
@@ -1430,7 +1295,7 @@ a {
 }
 
 a:hover {
-    /* color: #fff; */
+    
     text-decoration: none;
 }
 
@@ -1471,12 +1336,10 @@ span {}
     padding: 0;
 }
 
-/*END PRELOADER DESIGN*/
 .section-padding {
     padding: 80px 0;
 }
 
-/*START SECTION TITLE DESIGN*/
 .section-title {
     margin-bottom: 60px;
     position: relative;
@@ -1503,7 +1366,7 @@ span {}
 }
 
 .section-title p {
-    /* width: 60%; */
+    
     margin: 0;
     font-size: 42px;
     font-weight: 800;
@@ -1544,8 +1407,6 @@ p.section-title-white {
     color: #4c0048;
 }
 
-/*END SECTION TITLE DESIGN*/
-/*START SCROLL TO TOP*/
 .topcontrol {
     background: #4c0048;
     border-radius: 30px;
@@ -1578,8 +1439,6 @@ p.section-title-white {
     color: #fff;
 }
 
-/*END SCROLL TO TOP*/
-/*START PRELOADER DESIGN*/
 #loader-wrapper {
     position: fixed;
     top: 0;
@@ -1723,8 +1582,6 @@ p.section-title-white {
     transition: all 0.3s 1s ease-out;
 }
 
-/*END LOADER*/
-
 ::-moz-selection {
     background: #000;
     color: #fff;
@@ -1737,7 +1594,6 @@ p.section-title-white {
     text-shadow: none;
 }
 
-/*BTN START*/
 .btn_one {
     background: #4c0048;
     font-size: 15px;
@@ -1810,9 +1666,6 @@ p.section-title-white {
     }
 }
 
-/*BTN END*/
-
-/*START BTN TWO*/
 .cta {
     position: relative;
     margin: auto;
@@ -1884,8 +1737,6 @@ p.section-title-white {
     transition: all 0.3s ease;
 }
 
-/*END BTN TWO*/
-/*START BTN THREE*/
 .btn_two {
     color: #000;
     border: 1px solid #ededed;
@@ -1902,14 +1753,6 @@ p.section-title-white {
     border: 1px solid #4c0048;
     background: #4c0048;
 }
-
-/*END BTN THREE*/
-/*
-* ----------------------------------------------------------------------------------------
-* 01.END GENERAL STYLE
-* ----------------------------------------------------------------------------------------
-*/
-/*START TOP HEADER DESIGN*/
 
 .logo-img a {
     color: #fff;
@@ -1949,7 +1792,6 @@ p.section-title-white {
     color: #fff;
 }
 
-/*TOP SOCIAL PROFILES*/
 .top_social_profile ul {
     list-style: outside none none;
 }
@@ -1987,12 +1829,6 @@ p.section-title-white {
     background: #0e76a8;
 }
 
-/*END LOGO WITH CONTACT*/
-/*
-* ----------------------------------------------------------------------------------------
-* 02.START BOOTSTRAP NAVIGATION OVERRIDES
-* ----------------------------------------------------------------------------------------
-*/
 .site-logo img {
     width: 150px;
     height: auto;
@@ -2111,14 +1947,12 @@ p.section-title-white {
     display: none;
 }
 
-/* Responsive Design */
 @media only screen and (max-width: 1024px) {
     #main-menu ul li {
         margin-left: 30px;
     }
 }
 
-/*END 1024px*/
 @media only screen and (max-width: 991px) {
     #main-menu ul li {
         margin-left: 9px;
@@ -2134,7 +1968,6 @@ p.section-title-white {
     }
 }
 
-/*END 991px*/
 @media only screen and (max-width: 880px) {
     #main-menu {
         display: none;
@@ -2177,7 +2010,6 @@ p.section-title-white {
     }
 }
 
-/*END 767px*/
 .slicknav_nav .slicknav_arrow {
     font-size: 0.8em;
     margin: 0 0 0 0.4em;
@@ -2193,11 +2025,6 @@ p.section-title-white {
         right: 17px;
     }
 }
-
-/*END 575px*/
-/*-------------------------------
-# Dropdwon menu 
---------------------------------*/
 
 #navigation #main-menu ul li ul,
 #navigation #main-menu ul li ul li ul {
@@ -2280,7 +2107,7 @@ p.section-title-white {
 
 .home_lc {
     display: inline-block;
-    /* margin-top:30px; */
+    
 }
 
 .hlc {
@@ -2339,16 +2166,6 @@ p.section-title-white {
     box-shadow: none;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 02.END BOOTSTRAP NAVIGATION OVERRIDES
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 03. START HOMEPAGE CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
 .home_bg {
     height: 900px;
     position: relative;
@@ -2425,7 +2242,6 @@ p.section-title-white {
     }
 }
 
-/*HOME THREE CSS*/
 .home_img_bg {
     height: 750px;
     position: relative;
@@ -2488,7 +2304,6 @@ p.section-title-white {
     }
 }
 
-/*END HOME THREE CSS*/
 .home_ps {
     background: #fff;
     width: 200px;
@@ -2562,16 +2377,6 @@ p.section-title-white {
     }
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 03. END HOMEPAGE CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 04. START TOP PROMO STYLE
-* ----------------------------------------------------------------------------------------
-*/
 .tp_feature {
     padding-bottom: 50px;
 }
@@ -2603,16 +2408,6 @@ p.section-title-white {
     margin-bottom: 40px;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 04. END TOP PROMO CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 04. START ABOUT CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
 .ab_one {
     padding-bottom: 50px;
 }
@@ -2708,16 +2503,6 @@ p.section-title-white {
     }
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 05. END ABOUT CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 06. START COUNTER CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
 .counts .count-box {
     display: flex;
     align-items: center;
@@ -2747,22 +2532,11 @@ p.section-title-white {
     margin-top: 5px;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 06. END COUNTER CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 07.START FEATURES DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .marketing_content_area {
     padding-bottom: 50px;
     background-size: cover;
     background-position: center;
-    /* padding: 100px 0; */
+    
 }
 
 .single_feature_one {
@@ -2847,16 +2621,6 @@ p.section-title-white {
     background: #fbe8fe;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 07.END FEATURES DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 08.START COURSE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .course-slide {
     position: relative;
     background: #fff;
@@ -2886,14 +2650,14 @@ p.section-title-white {
 }
 
 .course-slide .month {
-    /* display: inline-block; */
+    
     color: #fff;
     font-size: 20px;
     font-weight: 700;
     background: #4c0048;
     width: 60px;
     height: 60px;
-    /* line-height: 60px; */
+    
     text-align: center;
     border-radius: 100px;
     padding: 10px;
@@ -2935,7 +2699,6 @@ p.section-title-white {
     font-weight: 700;
 }
 
-/*START COURSE STYLR TWO*/
 .course-slide2 {
     position: relative;
     background: #fff;
@@ -3043,8 +2806,6 @@ p.section-title-white {
     font-weight: 800;
 }
 
-/*END COURSE STYLR TWO*/
-/*START COURSE THREE*/
 .course-slide3 {
     margin-bottom: 30px;
 }
@@ -3075,14 +2836,14 @@ p.section-title-white {
 
 .co-video-play i {
     background: rgba(255, 255, 255, 0.3);
-    /* border: 2px solid #ffde67; */
+    
     color: #fff;
     width: 80px;
     height: 80px;
     line-height: 80px;
     text-align: center;
     border-radius: 100px;
-    /* margin-right: 15px; */
+    
     display: inline-block;
     transition: all 0.3s ease 0s;
     font-size: 30px;
@@ -3118,9 +2879,6 @@ p.section-title-white {
     color: #4c0048;
 }
 
-/*END COURSE THREE*/
-
-/*START SINGLE COURSE SIDEBAR CSS*/
 .course_features h3 {
     font-weight: 800;
     margin-bottom: 20px;
@@ -3131,7 +2889,7 @@ p.section-title-white {
 }
 
 .course_features ul li {
-    /* font-weight: 600; */
+    
     padding-top: 10px;
     color: #000;
     overflow: hidden;
@@ -3219,11 +2977,9 @@ p.section-title-white {
 
 .single_rat a {
     line-height: 42px;
-    /* font-size: 40px; */
+    
     display: inline-block;
 }
-
-/*END SINGLE COURSE SIDEBAR CSS*/
 
 .c_btn {
     background: #4c0048;
@@ -3394,7 +3150,6 @@ blockquote::before,
     background-repeat: no-repeat;
 }
 
-/*START COURSE DETAILS TAB CSS*/
 .course-details-content {
     -webkit-border-radius: 8px;
     -moz-border-radius: 8px;
@@ -3796,17 +3551,6 @@ blockquote::before,
     transform: scale(1.1);
 }
 
-/*END COURSE DETAILS TAB CSS*/
-/*
-* ----------------------------------------------------------------------------------------
-* 08.END COURSE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 09.START COURSE PROMOTION DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .course_promo {
     background-size: cover;
     background-position: center;
@@ -3926,16 +3670,6 @@ blockquote::before,
     }
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 09.END COURSE PROMOTION DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 10.START TOPIC DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .topic_content_area {
     padding-bottom: 50px;
     background-position: center;
@@ -3976,16 +3710,6 @@ blockquote::before,
     font-weight: 600;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 10.END TOPIC DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 11. START REVIEWS DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .testi_home_area {
     background-position: top center;
     background-size: cover;
@@ -4103,38 +3827,6 @@ blockquote::before,
     display: block;
 }
 
-/* .owl-prev{
-    position: absolute;
-    left:89%;
-} */
-/* .owl-next{
-    position: absolute;
-    right: 1%;
-} */
-/* .owl-prev:after,
-.owl-next:after{
-    content: "\f104";
-    font-family: 'FontAwesome';
-    font-size: 26px;
-    color: #000;
-    opacity: 1;
-} */
-/* .owl-next:after{ content: "\f105"; }
-@media only screen and (max-width: 768px){
-    .owl-theme .owl-controls{ margin-top: 20px; }
-	 .owl-theme .owl-controls{display:none!important; }
-} */
-/*
-* ----------------------------------------------------------------------------------------
-* 11.END REVIEWS DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 12. START TEAM CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-/*START HOME PAGE TEAM DESIGN*/
 .team_home_area {
     padding-bottom: 50px;
 }
@@ -4244,14 +3936,11 @@ blockquote::before,
     font-weight: 600;
     display: block;
     margin: 15px 0;
-    /* margin: 0 5px; */
+    
 }
 
 .sth_det u {}
 
-/*END HOME PAGE TEAM DESIGN*/
-
-/*START TEAM PAGE THREE CSS*/
 .team_member {
     background: rgba(199, 201, 209, 0.09);
     padding-bottom: 50px;
@@ -4408,8 +4097,6 @@ blockquote::before,
     font-variant-numeric: lining-nums;
 }
 
-/*END TEAM PAGE THREE CSS*/
-/*START SINGLE TEAM DETAILS*/
 .template_agent {
     padding-bottom: 0;
 }
@@ -4493,17 +4180,6 @@ blockquote::before,
     color: #fff;
 }
 
-/*END SINGLE TEAM DETAILS*/
-/*
-* ----------------------------------------------------------------------------------------
-* 12. END TEAM CSS STYLE
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 13.START BLOG DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .blog_area {
     padding-bottom: 50px;
     background-position: top center;
@@ -4635,7 +4311,6 @@ blockquote::before,
     background: #000;
 }
 
-/*START BLOG SIDEBAR DESIGN*/
 .blog_search {
     background: #fff;
     box-shadow: 0px 0px 150px 0px rgba(78, 67, 250, 0.06);
@@ -4658,7 +4333,6 @@ blockquote::before,
     box-shadow: none;
 }
 
-/*START NEWSLETTER FORM*/
 .newsletter-form {
     background: #000;
     padding: 40px;
@@ -4719,9 +4393,6 @@ blockquote::before,
     color: #000;
 }
 
-/*END NEWSLETTER FORM*/
-
-/*Popular post*/
 .sidebar_title h4 {
     font-size: 16px;
     font-weight: 800;
@@ -4770,9 +4441,6 @@ blockquote::before,
     color: #554c86;
 }
 
-/*End Popular post*/
-
-/*Start Social media*/
 .social_item {
     padding: 8px 12px;
     border-radius: 4px;
@@ -4822,9 +4490,6 @@ blockquote::before,
     background: #e8a50e;
 }
 
-/*End Social media*/
-
-/*Start category*/
 .single_category {
     overflow: hidden;
 }
@@ -4852,7 +4517,6 @@ blockquote::before,
     color: #4c0048;
 }
 
-/*End category*/
 .tag {
     overflow: hidden;
 }
@@ -4883,7 +4547,6 @@ blockquote::before,
     width: 100%;
 }
 
-/*START SINGLE BLOG PAGE DESIGN*/
 .author_part {
     margin-bottom: 30px;
     overflow: hidden;
@@ -4986,17 +4649,6 @@ blockquote::before,
     }
 }
 
-/*END SINGLE BLOG PAGE DESIGN*/
-/*
-* ----------------------------------------------------------------------------------------
-* 13.END BLOG DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 14.START FOOTER DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .footer {
     background: #000;
     padding-bottom: 40px;
@@ -5111,7 +4763,7 @@ blockquote::before,
 
 .fc {
     margin-top: 60px;
-    /* background: #2b2a5e; */
+    
     padding-top: 40px;
     border-top: 1px solid #243c80;
 }
@@ -5164,16 +4816,6 @@ blockquote::before,
     text-decoration: underline;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 14.END FOOTER DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 15.START PARTNER DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .pl_bg {
     background: #000;
 }
@@ -5201,17 +4843,6 @@ blockquote::before,
     display: none !important;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 15.END PARTNER DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 16.START SECTION TOP DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .section-top {
     padding-top: 200px;
     position: relative;
@@ -5262,17 +4893,6 @@ blockquote::before,
     color: #000 !important;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 16.END SECTION TOP DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 17.START PRICING DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .pricing-content {
     position: relative;
 }
@@ -5316,7 +4936,7 @@ blockquote::before,
 }
 
 .price-head h2 {
-    /* margin-bottom: 20px; */
+    
     font-size: 26px;
     font-weight: 700;
 }
@@ -5375,17 +4995,6 @@ blockquote::before,
     background: #3f3eed;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 17.END PRICING DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 18.START EVENT DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .our-event {
     padding-bottom: 50px;
 }
@@ -5506,7 +5115,6 @@ blockquote::before,
     margin-bottom: 20px;
 }
 
-/*START SINGLE EVENT DESIGN*/
 .single_event_single img {
     width: 100%;
 }
@@ -5610,17 +5218,6 @@ blockquote::before,
     text-align: center;
 }
 
-/*END SINGLE EVENT DESIGN*/
-/*
-* ----------------------------------------------------------------------------------------
-* 18.END EVENT DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-/* ----------------------------------------------------------------------------------------
-* 19.START FAQ DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .faq_area {
     padding-bottom: 40px;
 }
@@ -5671,16 +5268,6 @@ blockquote::before,
     padding-left: 50px;
 }
 
-/* ----------------------------------------------------------------------------------------
-* 19.END FAQ DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 20.START ERROR PAGE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .error_page h2 {
     font-weight: 800;
     margin: 30px 0;
@@ -5695,17 +5282,6 @@ blockquote::before,
     margin-bottom: 40px;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 20.END ERROR PAGE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 21.START LOGIN AND REGISTER PAGE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .login_register {
     background: rgba(199, 201, 209, 0.09);
 }
@@ -5790,17 +5366,6 @@ blockquote::before,
     color: #4c0048;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 21.END LOGIN AND REGISTER PAGE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 22.START CONTACT PAGE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
 .contact label {
     margin-bottom: 5px;
     font-weight: 700;
@@ -5881,16 +5446,6 @@ blockquote::before,
     border-left: 1px solid #d9d9d9;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 22.END CONTACT PAGE DESIGN
-* ----------------------------------------------------------------------------------------
-*/
-/*
-* ----------------------------------------------------------------------------------------
-* 23. START ABOUT PAGE & SINGLE USE CASE CSS
-* ----------------------------------------------------------------------------------------
-*/
 .about-page {
     padding-bottom: 50px;
 }
@@ -5983,13 +5538,6 @@ blockquote::before,
     margin-bottom: 250px;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 23. END ABOUT PAGE & SINGLE USE CASE CSS
-* ----------------------------------------------------------------------------------------
-*/
-
-/*24. START NEWSLETTER*/
 .subs_form h3 {
     font-weight: 800;
     font-size: 40px;
@@ -6099,13 +5647,6 @@ blockquote::before,
     background: #000;
 }
 
-/*24. END NEWSLETTER*/
-
-/*
-* ----------------------------------------------------------------------------------------
-* 24. START FREE COURSE+INSTRUCTOR CSS
-* ----------------------------------------------------------------------------------------
-*/
 .insfreecourse {
     background: rgba(199, 201, 209, 0.09);
     padding-bottom: 30px;
@@ -6152,13 +5693,6 @@ blockquote::before,
     width: 50%;
 }
 
-/*
-* ----------------------------------------------------------------------------------------
-* 24. END FREE COURSE+INSTRUCTOR CSS
-* ----------------------------------------------------------------------------------------
-*/
-
-/*START RANGE SLIDER*/
 .rs-slider {
     position: relative;
     background: #fff;
@@ -6258,10 +5792,6 @@ blockquote::before,
     border: 0;
 }
 
-/*END RANGE SLIDER*/
-
-/*START SHOP CSS*/
-
 .product_item .mix {
     display: none;
 }
@@ -6285,7 +5815,7 @@ blockquote::before,
     font-size: 16px;
     border: 1px solid transparent;
     transition: 0.5s;
-    /* letter-spacing: 1px; */
+    
     border-radius: 20px;
     margin: 0px;
     color: #000;
@@ -6517,8 +6047,6 @@ blockquote::before,
     font-size: 13px;
     font-weight: 600;
 }
-
-/* -------- Product Details Page Css -------- */
 
 .pd_title {
     color: #4c0048;
@@ -6941,4 +6469,4 @@ blockquote::before,
     padding: 20px;
 }
 
-/*END SHOP CSS*/
+

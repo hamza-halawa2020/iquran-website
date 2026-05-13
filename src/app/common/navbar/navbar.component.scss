@@ -1,12 +1,9 @@
-// Colors
-$primary: #c89b3c; /* Gold from Logo */
-$secondary: #e2c57a; /* Light Gold */
+﻿$primary: #c89b3c;
+$secondary: #e2c57a;
 $white: #ffffff;
-$dark: #0f5a3a; /* Logo Green */
+$dark: #0f5a3a;
 $gray-light: #fdfbf7;
 $gray: #9ca3af;
-
-// Main Navbar
 .main-navbar {
     position: fixed;
     top: 0;
@@ -23,8 +20,6 @@ $gray: #9ca3af;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
     }
 }
-
-// Navbar Container
 .navbar-container {
     margin: 0 auto;
     padding: 30px;
@@ -34,12 +29,10 @@ $gray: #9ca3af;
     height: 70px;
     position: relative;
 }
-
-// Brand Logo
 .navbar-brand {
     z-index: 1001;
     min-width: 0;
-    
+
     a {
         display: flex;
         align-items: center;
@@ -68,8 +61,6 @@ $gray: #9ca3af;
         filter: drop-shadow(0 12px 24px rgba(30, 58, 95, 0.14));
     }
 }
-
-// Desktop Navigation Menu
 .navbar-menu {
     display: flex;
     align-items: center;
@@ -129,8 +120,6 @@ $gray: #9ca3af;
         }
     }
 }
-
-// Navbar Actions
 .navbar-actions {
     display: flex;
     align-items: center;
@@ -144,8 +133,6 @@ $gray: #9ca3af;
     flex-shrink: 0;
     z-index: 1001;
 }
-
-// Language Switcher
 .language-switcher {
     position: relative;
 
@@ -241,8 +228,6 @@ $gray: #9ca3af;
         }
     }
 }
-
-// Action Buttons
 .btn {
     display: inline-flex;
     align-items: center;
@@ -289,8 +274,6 @@ $gray: #9ca3af;
         }
     }
 }
-
-// Mobile Toggle Button
 .mobile-toggle {
     display: none;
     flex-direction: column;
@@ -339,8 +322,6 @@ $gray: #9ca3af;
     white-space: nowrap;
     box-shadow: 0 8px 20px rgba(30, 58, 95, 0.08);
 }
-
-// Mobile Styles
 @media (max-width: 1655px) {
     .navbar-container {
         padding: 0 20px;
@@ -475,8 +456,6 @@ $gray: #9ca3af;
         font-size: 12px;
     }
 }
-
-// RTL Support
 :host-context([dir="rtl"]) {
     .navbar-mobile-controls {
         margin-left: 0;
@@ -494,8 +473,7 @@ $gray: #9ca3af;
         }
     }
 }
-
-// Smooth scrolling
 html {
     scroll-behavior: smooth;
 }
+

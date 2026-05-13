@@ -1,4 +1,4 @@
-
+﻿
 .color-plate {
 	position: fixed;
 	display: block;
@@ -92,7 +92,7 @@
 .color-plate span.color12{
 	background:#FF1D38;
 }
-/* Preloader */
+
 .preloader {
   position: fixed;
   top: 0;
@@ -139,7 +139,6 @@
   0% {-webkit-transform: scale(0, 0); opacity:0.5;}
   100% {-webkit-transform: scale(1, 1); opacity:0;}
 }
-/* End Preloader */
 
 .btn {
 	position: relative;
@@ -186,16 +185,13 @@
 	background:#4c0048;
 	color:#fff;
 }
-/*======================================
-	01. Header CSS
-========================================*/
-/* Topbar */
+
 .topbar {
 	background-color: #fff;
 	border-bottom: 1px solid #e2e2e2;
 	padding: 15px 0;
 }
-/* Logo */
+
 .header .logo {
 	float: left;
 	margin-top: 35px;
@@ -206,9 +202,9 @@
 .header .navbar {
 	padding: 0;
 }
-/* Main Menu */
+
 .navbar-expand-lg .navbar-collapse{
-	/* display:block !important; */
+	
 }
 .header.v3 .navbar-expand-lg .navbar-collapse{
 	display:block !important;
@@ -218,7 +214,7 @@
 	margin-left: 6px;
 	font-size: 10px;
 }
-/* Dropdown Menu */
+
 .header .nav li .dropdown {
 	background: #fff;
 	width: 220px;
@@ -341,7 +337,7 @@
 .header.shop .topbar .login a {
 	color: #4c0048;
 }
-/* Topbar Left Nav */
+
 .header.shop .left-nav{
 	
 }
@@ -418,7 +414,7 @@
 	border-left-color: transparent;
 	border-right-color: transparent;
 }
-/* Shopping Cart */
+
 .header .shopping {
 	display: inline-block;
 	z-index: 9999;
@@ -593,7 +589,7 @@
 .header.shop .top-contact {
 	margin-top:0px;
 }
-/* Header Middle */
+
 .header.shop .search-bar-top {
 	text-align: center;
 	margin-top: 10px;
@@ -689,7 +685,7 @@
 	color:#fff;
 	background:#4c0048;
 }
-/* Search Form */
+
 .header.shop .search-top {
 	opacity: 1;
 	visibility: visible;
@@ -1029,8 +1025,7 @@
 .mobile-search{
 	display:none;
 }
-/* Header Search */
-/* Search */
+
 .header .search-top{
 	display:none;
 }
@@ -1100,7 +1095,7 @@
 	background:#4c0048;
 	border-color:transparent;
 }
-/* Header Sticky */
+
 .header .header-inner{
 	width:100%;
 	z-index:999;
@@ -1165,13 +1160,8 @@
 	-moz-box-shadow:0px 0px 10px rgba(0, 0, 0, 0.3);
 	box-shadow:0px 0px 10px rgba(0, 0, 0, 0.3);
 }
-/*======================================
-	End Header CSS
-========================================*/
 
-/*======================================
-   Hero Area CSS
-========================================*/ 
+ 
 .hero-slider {
 	background: #fff;
 	overflow: hidden;
@@ -1224,7 +1214,7 @@
 	background:#4c0048;
 	color:#fff;
 }
-/* Start Hero Area 2 CSS */
+
 .hero-area2{
 	position:relative;
 }
@@ -1297,7 +1287,7 @@
 	color:#333;
 	border-color:transparent;
 }
-/* Owl Nav CSS */
+
 .hero-area2 .owl-carousel .owl-nav {
 	margin: 0;
     position: absolute;
@@ -1325,13 +1315,7 @@
 	background:#4c0048;
 	color:#fff;
 }
-/* .hero-area2 .owl-carousel .owl-controls .owl-nav .owl-prev{
-	left:0;
-} */
-/* .hero-area2 .owl-carousel .owl-controls .owl-nav .owl-next{
-	right:0;
-} */
-/* Hero Area 3 */
+
 .hero-area3{}
 .hero-area3 .big-content{
 	background-image: url('https://via.placeholder.com/850x530');
@@ -1414,7 +1398,7 @@
 	color:#4c0048;
 	border-color:#4c0048;
 }
-/* Hero Area 4 */
+
 .hero-area4 .big-content{
 	
 	background-size: cover;
@@ -1476,20 +1460,10 @@
 	background:#4c0048;
 	color:#fff;
 }
-/* .hero-area4 .owl-carousel .owl-controls .owl-nav .owl-prev{
-	left:0;
-} */
-/* .hero-area4 .owl-carousel .owl-controls .owl-nav .owl-next{
-	right:0;
-} */
 
-/*======================================
-   End Hero Area CSS
-========================================*/ 
+ 
 
-/*======================================
-   Start Small Banner CSS
-========================================*/ 
+ 
 .small-banner{
 	padding:30px 0;
 	padding-bottom:0;
@@ -1542,13 +1516,9 @@
 	color:#4c0048;
 	border-color:#4c0048;
 }
-/*======================================
-   End Small Banner CSS
-========================================*/ 
+ 
 
-/*======================================
-   Start Mid Banner CSS
-========================================*/ 
+ 
 .midium-banner{
 	padding:0;
 }
@@ -1608,13 +1578,8 @@
 	background:#4c0048;
 	color:#fff;
 }
-/*======================================
-   End Mid Banner CSS
-========================================*/ 
+ 
 
-/*======================================
-   Start Most Popular CSS
-========================================*/
 .pro-tab-viewmore-wrap {
 	position: relative;
 	text-align: center;
@@ -1630,7 +1595,7 @@
 .most-popular .single-product{
 	margin:50px 15px 0 15px;
 }
-/* Slider Nav */
+
 .most-popular .owl-nav{
 	margin: 0;
     position: absolute;
@@ -1658,19 +1623,7 @@
 	color:#fff;
 	background:#4c0048;
 }
-/* .most-popular .owl-carousel .owl-controls .owl-nav .owl-prev{
-	left:0;
-} */
-/* .most-popular .owl-carousel .owl-controls .owl-nav .owl-next{
-	right:0;
-} */
-/*======================================
-   End Most Popular CSS
-========================================*/
 
-/*======================================
-   Start Single Product CSS
-========================================*/
 .product-area .nav-tabs {
 	text-align: center;
 	display: inline-block;
@@ -1706,7 +1659,7 @@
 	color:#fff;
 	border-color:transparent;
 }
-/* Sinlge Product */
+
 .single-product{
 	margin-top:50px;
 }
@@ -1983,13 +1936,7 @@
   opacity: .6;
   margin-right: 2px;
 }
-/*======================================
-   End Single Product CSS
-========================================*/
 
-/*======================================
-   Start Shop Sidebar CSS
-========================================*/
 .shop-sidebar .single-widget {
 	margin-top: 30px;
 	background: #F6F7FB;
@@ -2008,7 +1955,7 @@
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 15px;
 }
-/* Shop Price */
+
 .shop .range .price-filter {
 	display: block;
 	margin-top: 20px;
@@ -2082,7 +2029,7 @@
 	margin-left:5px;
 	color:#666;
 }
-/* Category List */
+
 .shop-sidebar .categor-list {
 	margin-top: 10px;
 }
@@ -2105,7 +2052,7 @@
 .shop-sidebar .categor-list li a:hover{
 	color:#4c0048;
 }
-/* Recent Post */
+
 .shop-sidebar .single-post {
 	position: relative;
 	margin-top: 30px;
@@ -2160,7 +2107,7 @@
 .shop-sidebar .single-post .reviews li.yellow i{
 	color:#4c0048;
 }
-/* Shop Topbar */
+
 .shop .shop-top {
 	clear: both;
 	background: #f6f7fb;
@@ -2237,13 +2184,7 @@
 	color:#fff;
 	border-color:transparent;
 }
-/*======================================
-   End Shop Sidebar CSS
-========================================*/
 
-/*======================================
-   Start Shop Single CSS
-========================================*/
 .shop.single{
 	padding:70px 0 100px;
 }
@@ -2393,7 +2334,7 @@
 .shop.single .product-des .color ul li .four{
 	background:#2ecc71;
 }
-/* Size */
+
 .shop.single .product-des .size{
 	display:inline-block;
 }
@@ -2525,7 +2466,7 @@
 	font-size:14px;
 	margin-top:6px;
 }
-/* Product Tab */
+
 .shop.single .product-info {
 	margin-top: 50px;
 }
@@ -2749,13 +2690,7 @@
 .shop.single .review-panel{
 	margin-top:35px;
 }
-/*======================================
-   End Shop Single CSS
-========================================*/
 
-/*======================================
-   Start Shop Home List CSS
-========================================*/
 .shop-home-list{
 	padding:0;
 	padding-bottom:100px;
@@ -2870,13 +2805,7 @@
 	font-size: 14px;
 	font-weight: 500;
 }
-/*======================================
-   End Shop Home List CSS
-========================================*/
 
-/*======================================
-   Start Shopping Cart CSS
-========================================*/
 .table.shopping-summery {
 	background: #fff;
 }
@@ -2944,7 +2873,7 @@
 .shopping-cart .table td {
 	vertical-align: middle;
 	border-top: 1px solid #eee;
-	/* padding: 30px; */
+	
 }
 .shopping-summery tbody .price {
 	text-align: center;
@@ -3031,11 +2960,7 @@
 	background:#fff;
 	color:#4c0048;
 }
-/* .shopping-cart .total-amount .left label{
-	font-size:22px;
-	font-weight:500;
-	color:#333;
-} */
+
 .shopping-cart .total-amount .left .checkbox {
 	text-align: left;
 	margin: 0;
@@ -3090,7 +3015,7 @@
 	transform:scale(1);
 }
 .shopping-cart .total-amount .right {
-	/* padding-left: 100px; */
+	
 }
 .shopping-cart .total-amount .right ul{
 	
@@ -3122,13 +3047,7 @@
 	font-size: 13px;
 	color: #fff;
 }
-/*======================================
-   End Shopping Cart CSS
-========================================*/
 
-/*======================================
-   Start Checkout Form CSS
-========================================*/
 .shop.checkout {
 	padding: 0;
 	background: #fff;
@@ -3352,13 +3271,7 @@
 	text-transform: uppercase;
 	color: #fff;
 }
-/*======================================
-   End Checkout Form CSS
-========================================*/
 
-/*======================================
-   Login & Register CSS
-========================================*/
 .shop.login {
 	padding: 100px 0;
 }
@@ -3502,13 +3415,7 @@
 .shop.login .login-form .lost-pass:hover{
 	color:#4c0048;
 }
-/*======================================
-	End Login CSS
-========================================*/
 
-/*======================================
-   Start Shop List CSS
-========================================*/
 .shop-list .list-content{
 	margin-top:50px;
 }
@@ -3562,7 +3469,7 @@
 	color:#fff;
 	border-color:transparent;
 }
-/* Pagination CSS */
+
 .pagination {
 	text-align: left;
 	margin: 50px 0 0 0;
@@ -3601,13 +3508,7 @@
 	margin-top:50px;
 	text-align:center;
 }
-/*======================================
-   End Shop List CSS
-========================================*/
 
-/*=============================
-	Start Cowndown CSS
-===============================*/
 .cown-down {
 	position: relative;
 	height: 515px;
@@ -3687,13 +3588,7 @@
 	color:#666;
 	text-transform:uppercase;
 }
-/*=============================
-	End Cowndown CSS
-===============================*/
 
-/*======================================
-   Start Shop Services CSS
-========================================*/
 .shop-services.section {
 	padding: 80px 0 0px 0;
 	background: #fff;
@@ -3732,13 +3627,7 @@
 	line-height: 28px;
 	font-size:14px;
 }
-/*======================================
-   End Shop Services CSS
-========================================*/
 
-/*======================================
-   Start Shop Newsletter CSS
-========================================*/
 .shop-newsletter{
 	background:#fff;
 }
@@ -3803,13 +3692,7 @@
 	background:#333;
 	color:#fff;
 }
-/*======================================
-   End Shop Newsletter CSS
-========================================*/
 
-/*=============================
-	About US CSS
-===============================*/
 .about-us{
 	background:#fff;
 }
@@ -3929,13 +3812,8 @@
 	width:100%;
 	
 }
-/*=============================
-	End About US CSS
-===============================*/
 
-/*======================================
-  10. Start Team CSS
-========================================*/  
+  
 .team{
 	background:#F6F7FB;
 }
@@ -3996,13 +3874,8 @@
 .team .single-team .social-links .social li a:hover{
 	color:#4c0048;
 }
-/*======================================
-  End Team CSS
-========================================*/ 
+ 
 
-/*======================================
-   Start Shop Blog CSS
-========================================*/
 .shop-blog.grid .shop-single-blog{
 	margin-top:30px;
 }
@@ -4046,7 +3919,7 @@
 .shop-blog .shop-single-blog .content .more-btn:hover{
 	color:#4c0048;
 }
-/* Related Product */
+
 .related-product{
 	padding-top:0;
 }
@@ -4064,7 +3937,7 @@
 	font-weight: 700;
 	padding-bottom: 15px;
 }
-/* Blog Sidebar */
+
 .main-sidebar {
 	background: #fff;
 	margin-top: 30px;
@@ -4138,7 +4011,7 @@
 	background:#4c0048;
 	color:#fff;
 }
-/* Category List */
+
 .main-sidebar .categor-list {
 	margin-top: 15px;
 }
@@ -4176,7 +4049,7 @@
 	opacity:1;
 	visibility:visible;
 }
-/* Recent Post */
+
 .main-sidebar .recent-post{}
 .main-sidebar .single-post {
 	position: relative;
@@ -4231,7 +4104,7 @@
 	display:inline-block;
 	margin-right:5px;
 }
-/* Blog Tags */
+
 .main-sidebar .side-tags{}
 .main-sidebar .side-tags .tag{
 	margin-top:40px;
@@ -4255,7 +4128,7 @@
 	background:#4c0048;
 	border-color:transparent;
 }
-/* Blog Newslatter CSS */
+
 .main-sidebar .newsletter{
 	
 }
@@ -4307,7 +4180,7 @@
 	background:#333;
 	color:#fff;
 }
-/* Blog Single CSS */
+
 .blog-single{
 	background:#fff;
 	padding:70px 0 100px;
@@ -4432,7 +4305,7 @@
 	color:#fff;
 	background:#4c0048;
 }
-/* Comments */
+
 .blog-single .comments{
 	margin-top:40px;
 }
@@ -4523,7 +4396,7 @@
 .blog-single .single-comment .content a:hover{
 	color:#4c0048;
 }
-/* Comment Form */
+
 .blog-single .reply form {
 	padding: 40px;
 	border: 1px solid #eee;
@@ -4590,14 +4463,7 @@
 	height: 50px;
 	border: none;
 }
-/*======================================
-   End Shop Blog CSS
-========================================*/
 
-
-/*======================================
-  21. Contact CSS
-========================================*/
 .contact-us {
 	position: relative;
 	z-index: 43;
@@ -4704,11 +4570,7 @@
 	height: 500px;
 	width: 100%;
 }
-/*======================================
-  End Contact CSS
-========================================*/
 
-/* Mail Success */
 .mail-success .mail-inner {
 	text-align: center;
 	background: #fff;
@@ -4736,9 +4598,6 @@
 	margin-right:5px;
 }
 
-/*=============================
-	Start 404 Error CSS
-===============================*/
 .error-page {
 	background:#fff;
 	width: 100%;
@@ -4796,9 +4655,6 @@
 	background:#4c0048;
 	border-color:transparent;
 }
-/*=============================
-	/End 404 Error CSS
-===============================*/
 
 .free-version-banner {
   position: relative;
@@ -4838,9 +4694,6 @@
   text-transform:capitalize;
 }
 
-/*=============================
-	20. Start Footer CSS
-===============================*/
 .footer{
 	background:#222;
 }
@@ -4917,7 +4770,6 @@
 .footer .social ul li a:hover{
 	color:#4c0048;
 }
-/* Copyright */
 
 .footer .copyright .inner{
 	border-top:1px solid #eeeeee3d;
@@ -4933,7 +4785,5 @@
 	color:#fff;
 	text-decoration:underline;
 }
-/*=============================
-	End Footer CSS
-===============================*/
+
 

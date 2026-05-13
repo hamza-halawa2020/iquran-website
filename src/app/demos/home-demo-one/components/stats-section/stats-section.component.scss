@@ -2,42 +2,28 @@
     padding: 100px 0;
     position: relative;
 }
-
-// Statistics Section - Islamic Theme
 .stats-section {
-    // background: linear-gradient(135deg, #0f5a3a 0%, #0b3f2a 100%); /* Navy Blue from Logo */
     color: white;
     position: relative;
     overflow: hidden;
     padding: 120px 0;
-    
-    // Islamic pattern overlay
     .islamic-overlay {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        // background-image: url('/assets/images/islamic-mosque-pattern.svg');
         background-size: 150px 150px;
         background-repeat: repeat;
         opacity: 0.15;
         z-index: 0;
         pointer-events: none;
     }
-    
-    // Decorative borders (top and bottom)
     .decorative-border {
         position: absolute;
         left: 0;
         width: 100%;
         height: 8px;
-        // background: linear-gradient(90deg, 
-        //     transparent 0%, 
-        //     #c9a961 20%, 
-        //     #d4b574 50%, 
-        //     #c9a961 80%, 
-        //     transparent 100%);
         z-index: 1;
         
         &.top {
@@ -75,8 +61,6 @@
         position: relative;
         z-index: 2;
     }
-    
-    // Islamic button style
     .btn-islamic-light {
         background: rgba(255, 255, 255, 0.1);
         border: 2px solid #d4b574;
@@ -108,8 +92,6 @@
         transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
-        
-        // Card decoration (corner ornaments)
         .card-decoration {
             position: absolute;
             top: 10px;
@@ -139,8 +121,6 @@
                 height: 2px;
             }
         }
-        
-        // Bottom left decoration
         &::before {
             content: '';
             position: absolute;
@@ -178,8 +158,6 @@
                 text-shadow: 0 0 20px rgba(201, 169, 97, 0.5);
             }
         }
-        
-        // Islamic geometric frame for icon
         .islamic-frame {
             width: 100px;
             height: 100px;
@@ -192,8 +170,6 @@
             justify-content: center;
             transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             background: rgba(201, 169, 97, 0.05);
-            
-            // Octagon overlay
             &::before {
                 content: '';
                 position: absolute;
@@ -205,8 +181,6 @@
                 border: 2px solid rgba(201, 169, 97, 0.2);
                 transition: all 0.6s ease;
             }
-            
-            // Inner circle
             &::after {
                 content: '';
                 position: absolute;
@@ -256,8 +230,6 @@
             letter-spacing: 1.5px;
             line-height: 1.4;
         }
-        
-        // Animation for when stats are counting
         &.counting {
             .stat-number {
                 animation: pulse 0.5s ease-in-out;
@@ -273,8 +245,6 @@
         }
     }
 }
-
-// Keyframes for animations
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
@@ -304,8 +274,6 @@
         filter: drop-shadow(0 0 20px rgba(201, 169, 97, 0.8));
     }
 }
-
-// Responsive adjustments
 @media (max-width: 991px) {
     .stats-section {
         padding: 80px 0;
@@ -363,4 +331,5 @@
         }
     }
 }
+
 

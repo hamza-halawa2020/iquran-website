@@ -1,9 +1,9 @@
-<section class="certificates-section section-padding" *ngIf="certificates.length > 0">
+﻿<section class="certificates-section section-padding" *ngIf="certificates.length > 0">
     <div class="container">
         <div class="section-header text-center">
             <span>{{ 'CERTIFICATIONS' | translate }}</span>
             <h2 class="section-title">{{ 'OUR_CERTIFICATES' | translate }}</h2>
-            <!-- <p class="section-description">{{ 'CERTIFICATES_DESC' | translate }}</p> -->
+
         </div>
 
         <div class="certificates-carousel-shell" [class.is-rtl]="isRtl">
@@ -25,7 +25,7 @@
                         <div class="certificate-content">
                             <h4 class="certificate-title">{{ cert.title }}</h4>
                             <p class="certificate-date">{{ cert.created_at | date:'longDate' }}</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -61,3 +61,4 @@
 
     </div>
 </section>
+

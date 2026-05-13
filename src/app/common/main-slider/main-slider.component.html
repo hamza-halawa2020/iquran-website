@@ -1,4 +1,4 @@
-<div class="main-slider-wrapper position-relative">
+﻿<div class="main-slider-wrapper position-relative">
     <div
         class="main-slider mx-auto"
         *ngIf="sliderData.length > 0"
@@ -47,7 +47,7 @@
             </article>
         </div>
 
-        <!-- Custom Navigation Buttons -->
+        
         <div class="custom-nav" *ngIf="sliderData.length > 1">
             <button class="nav-btn prev-btn" (click)="prevSlide()" [attr.aria-label]="'PREVIOUS' | translate">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -70,3 +70,4 @@
         </div>
     </div>
 </div>
+

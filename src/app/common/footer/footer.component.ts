@@ -1,4 +1,4 @@
-import { NgClass, NgIf } from '@angular/common';
+﻿import { NgClass, NgIf } from '@angular/common';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -44,7 +44,6 @@ export class FooterComponent implements OnInit, OnDestroy {
 
     subscribeNewsletter(email: string) {
         if (email && this.isValidEmail(email)) {
-            // Handle newsletter subscription
         }
     }
 
@@ -53,3 +52,4 @@ export class FooterComponent implements OnInit, OnDestroy {
         return emailRegex.test(email);
     }
 }
+

@@ -1,6 +1,5 @@
-.payment-methods-section {
+﻿.payment-methods-section {
     padding: 100px 0;
-    // background-color: #fdfbf7; // Cream background
     background-image: var(--islamicPattern);
     position: relative;
     overflow: hidden;
@@ -19,7 +18,7 @@
             display: inline-block;
 
             &::after {
-                content: ''; /* Islamic Star motif placeholder or icon */
+                content: ''; 
                 display: block;
                 font-size: 24px;
                 color: #c9a961;
@@ -90,12 +89,12 @@
             margin: 0 auto 20px;
             background: #f0fdf4;
             border: 1px solid #c9a961;
-            border-radius: 15px; /* Squarish */
+            border-radius: 15px; 
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            transform: rotate(45deg); /* Diamond shape */
+            transform: rotate(45deg); 
 
             i {
                 font-size: 28px;
@@ -177,3 +176,4 @@
         }
     }
 }
+

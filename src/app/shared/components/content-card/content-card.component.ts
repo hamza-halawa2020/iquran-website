@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+﻿import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,13 +18,9 @@ export class ContentCardComponent {
 
     getImageUrl(): string {
         if (!this.item) return '';
-        
-        // If image_url exists, use it directly
         if (this.item.image_url) {
             return this.item.image_url;
         }
-        
-        // If only image filename exists, construct the full URL
         if (this.item.image) {
             return `${environment.imgUrl}storage/${this.item.image}`;
         }
@@ -32,3 +28,4 @@ export class ContentCardComponent {
         return '';
     }
 }
+

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of } from 'rxjs';
 import { map, catchError, switchMap } from 'rxjs/operators';
@@ -32,7 +32,6 @@ export class HomeService {
   constructor(
     private http: HttpClient,
   ) { }
-
 
   getHomeData(): Observable<HomeData> {
     const features = environment.features || {
@@ -153,8 +152,6 @@ export class HomeService {
           if (lastPage <= 1) {
             return of(firstPageCourses);
           }
-
-          // Keep the home page in sync with the full courses listing by merging all pages.
           const remainingPageRequests: Observable<any>[] = [];
           for (let page = 2; page <= lastPage; page++) {
             remainingPageRequests.push(this.http.get<any>(`${this.apiUrl}/courses?page=${page}`));
@@ -296,3 +293,4 @@ export class HomeService {
       );
   }
 }
+

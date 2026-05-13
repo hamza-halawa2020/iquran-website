@@ -1,9 +1,9 @@
-<section class="media-gallery-section section-padding">
+﻿<section class="media-gallery-section section-padding">
   <div class="islamic-overlay"></div>
   <div class="decorative-border top"></div>
 
   <div class="container">
-    <!-- Section Header -->
+    
     <div class="section-header text-center">
       <div class="section-icon">
         <i class="fa-solid fa-images"></i>
@@ -12,7 +12,7 @@
       <p class="section-description">{{ 'MEDIA_GALLERY.SUBTITLE' | translate }}</p>
     </div>
 
-    <!-- Filter Buttons -->
+    
     <div class="filter-buttons text-center mb-5">
       <button type="button" class="filter-btn" [class.active]="activeFilter === 'all'" (click)="filterMedia('all')">
         <i class="fa-solid fa-th"></i>
@@ -28,23 +28,23 @@
       </button>
     </div>
 
-    <!-- Loading State -->
+    
     <div class="row" *ngIf="isLoading">
       <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of [1,2,3,4,5,6]">
         <div class="skeleton-loader"></div>
       </div>
     </div>
 
-    <!-- Media Grid -->
+    
     <div class="media-grid" *ngIf="!isLoading && filteredMedia.length > 0">
       <div class="media-item" *ngFor="let item of filteredMedia"
         (click)="openInPage ? navigateToMediaPage(item) : (item.type === 'image' ? openLightbox(item) : playVideo(item))">
         <div class="media-card">
           <div class="media-thumbnail">
-            <!-- Image -->
+            
             <img *ngIf="item.type === 'image' && item.file" [src]="item.file" [alt]="item.title" loading="lazy">
 
-            <!-- Video Thumbnail -->
+            
             <div *ngIf="item.type === 'video'" class="video-thumbnail">
               <img [src]="getVideoThumbnail(item)" [alt]="item.title" loading="lazy">
               <div class="play-button">
@@ -73,13 +73,13 @@
       </div>
     </div>
 
-    <!-- Empty State -->
+    
     <div class="empty-state text-center" *ngIf="!isLoading && filteredMedia.length === 0">
       <i class="fa-solid fa-folder-open"></i>
       <p>{{ 'MEDIA_GALLERY.NO_MEDIA' | translate }}</p>
     </div>
 
-    <!-- Pagination -->
+    
     <div class="pagination-wrapper" *ngIf="!isLoading && meta">
       <app-pagination [meta]="meta" (pageChange)="onPageChange($event)"></app-pagination>
     </div>
@@ -87,7 +87,7 @@
 
   <div class="decorative-border bottom"></div>
 
-  <!-- Lightbox -->
+  
   <div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
     <div class="lightbox-content" (click)="$event.stopPropagation()">
       <button class="close-btn" (click)="closeLightbox()">
@@ -105,7 +105,7 @@
     </div>
   </div>
 
-  <!-- Video Modal -->
+  
   <div class="lightbox video-modal" *ngIf="videoModalOpen">
     <div class="lightbox-content">
       <button class="close-btn" (click)="closeVideoModal()">
@@ -127,3 +127,4 @@
     </div>
   </div>
 </section>
+

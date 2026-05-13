@@ -1,5 +1,4 @@
-// WhatsApp Floating Button with Animation
-.whatsapp-float {
+﻿.whatsapp-float {
     position: fixed;
     bottom: 25px; // above back-to-top
     left: 30px; // always on the left
@@ -33,8 +32,6 @@
         transform: scale(0.95);
     }
 }
-
-// Pulse Animation Rings
 .pulse-ring {
     position: absolute;
     width: 100%;
@@ -54,8 +51,6 @@
     animation: pulse 2s ease-out infinite 1s;
     opacity: 0;
 }
-
-// Floating Animation
 @keyframes float {
     0%,
     100% {
@@ -65,8 +60,6 @@
         transform: translateY(-10px);
     }
 }
-
-// Pulse Animation
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -77,8 +70,6 @@
         opacity: 0;
     }
 }
-
-// Bounce Animation Class
 .animate-bounce {
     animation: bounce 2s infinite;
 }
@@ -105,11 +96,9 @@
         transform: translate3d(0, -2px, 0);
     }
 }
-
-// Responsive Design
 @media (max-width: 768px) {
     .whatsapp-float {
-        /* Align with back-to-top on mobile */
+        
         bottom: calc(20px + env(safe-area-inset-bottom));
         left: 20px;
         width: 45px;
@@ -143,3 +132,4 @@
         animation: none !important;
     }
 }
+

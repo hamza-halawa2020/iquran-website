@@ -1,7 +1,4 @@
-// ============================================
-// Main Slider Wrapper
-// ============================================
-.main-slider-wrapper {
+﻿.main-slider-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -19,10 +16,6 @@
     position: relative;
     min-height: inherit;
 }
-
-// ============================================
-// Slide Item
-// ============================================
 .slide-item {
     position: absolute;
     inset: 0;
@@ -57,10 +50,6 @@
         }
     }
 }
-
-// ============================================
-// Image Container
-// ============================================
 .image-container {
     position: relative;
     width: 100%;
@@ -78,10 +67,6 @@
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
-
-// ============================================
-// Content Overlay
-// ============================================
 .overlay-content {
     position: absolute;
     top: 0;
@@ -101,10 +86,6 @@
     max-width: 900px;
     width: 100%;
 }
-
-// ============================================
-// Slide Title
-// ============================================
 .slide-title {
     font-size: clamp(1.8rem, 4vw, 3.5rem);
     font-weight: 800;
@@ -114,10 +95,6 @@
     letter-spacing: -0.02em;
     animation: slideInUp 0.8s ease-out;
 }
-
-// ============================================
-// Slide Description
-// ============================================
 .slide-description {
     font-size: clamp(1rem, 2vw, 1.4rem);
     font-weight: 400;
@@ -127,10 +104,6 @@
     opacity: 0.95;
     animation: slideInUp 0.8s ease-out 0.2s backwards;
 }
-
-// ============================================
-// Call to Action Button
-// ============================================
 .slide-cta {
     animation: slideInUp 0.8s ease-out 0.4s backwards;
 }
@@ -155,10 +128,6 @@
         transition: transform 0.3s ease;
     }
 }
-
-// ============================================
-// Custom Navigation Buttons
-// ============================================
 .custom-nav {
     .nav-btn {
         position: absolute;
@@ -206,10 +175,6 @@
         opacity: 1;
     }
 }
-
-// ============================================
-// Slider Dots
-// ============================================
 .slider-dots {
     position: absolute;
     bottom: 2rem;
@@ -264,10 +229,6 @@
         }
     }
 }
-
-// ============================================
-// Animations
-// ============================================
 @keyframes slideInUp {
     from {
         opacity: 0;
@@ -291,10 +252,6 @@
 .animate-fade-in {
     animation: fadeIn 0.6s ease-out;
 }
-
-// ============================================
-// RTL Support
-// ============================================
 [dir="rtl"] {
     .custom-nav {
         .prev-btn {
@@ -322,10 +279,6 @@
         }
     }
 }
-
-// ============================================
-// Responsive Design
-// ============================================
 
 @media (max-width: 768px) {
     .image-container {
@@ -490,3 +443,4 @@
         transform: none !important;
     }
 }
+

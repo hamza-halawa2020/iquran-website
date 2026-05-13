@@ -1,4 +1,4 @@
-<app-main-slider />
+﻿<app-main-slider />
 <div #homeDataTrigger class="home-data-trigger" aria-hidden="true"></div>
 
 @defer (on viewport) {
@@ -33,7 +33,6 @@
     <div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
 }
 
-
 @defer (on viewport) {
     <div scrollReveal [revealDelay]="60">
         <app-team-section [teamMembers]="homeData?.teamMembers || []"></app-team-section>
@@ -41,7 +40,6 @@
 } @placeholder {
     <div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
 }
-
 
 @defer (on viewport) {
     <div scrollReveal [revealDelay]="60">
@@ -67,15 +65,13 @@
     <div class="home-defer-placeholder" style="--home-defer-min-h: 360px"></div>
 }
 
-
-
 @defer (on viewport) {
     <div scrollReveal [revealDelay]="60">
         <section class="contact-home-section section-padding">
             <div class="container">
                 <div class="section-title text-center mb-4">
                     <h2>{{ 'BOOK_TRIAL' | translate }}</h2>
-                    <!-- <p>{{ 'EMAIL_DISCLAIMER' | translate }}</p> -->
+                    
                 </div>
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
@@ -88,3 +84,4 @@
 } @placeholder {
     <div class="home-defer-placeholder" style="--home-defer-min-h: 500px"></div>
 }
+

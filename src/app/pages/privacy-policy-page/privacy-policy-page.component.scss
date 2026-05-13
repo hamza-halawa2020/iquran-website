@@ -1,12 +1,9 @@
-﻿// Colors
-$primary: var(--primaryColor); /* Navy Blue from Logo */
-$secondary: var(--secondaryColor); /* Gold from Logo */
+﻿$primary: var(--primaryColor); 
+$secondary: var(--secondaryColor); 
 $dark: var(--accentColor);
 $white: #ffffff;
 $gray-light: var(--creamBg);
 $gray: var(--paragraphColor);
-
-// Investment opportunities list styles will inherit from global styles
 .team-area {
     padding: 80px 0;
     background-color: var(--creamBg);
@@ -28,9 +25,6 @@ $gray: var(--paragraphColor);
         background-position: -200% 0;
     }
 }
-
-
-// Page Banner (Same as other pages)
 .page-banner {
     background: linear-gradient(135deg, $primary 0%, $dark 100%);
     padding: 140px 0 100px;
@@ -93,8 +87,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Policy Content Section
 .policy-content-section {
     padding: 100px 0;
     background: $gray-light;
@@ -106,8 +98,6 @@ $gray: var(--paragraphColor);
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         overflow-wrap: anywhere;
         word-break: break-word;
-
-        // Content may come from the backend via [innerHTML].
         ::ng-deep table {
             display: block;
             width: 100%;
@@ -263,8 +253,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Responsive Design
 @media (max-width: 768px) {
     .page-banner {
         padding: 100px 0 60px;
@@ -311,8 +299,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Section Padding
 .section-padding {
     padding: 80px 0;
 }
@@ -322,4 +308,5 @@ $gray: var(--paragraphColor);
         padding: 60px 0;
     }
 }
+
 

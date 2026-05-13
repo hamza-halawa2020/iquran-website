@@ -1,4 +1,4 @@
-import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
+﻿import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
 import { RouterOutlet, Router, Event, NavigationEnd } from '@angular/router';
 import { NavbarComponent } from './common/navbar/navbar.component';
@@ -28,7 +28,6 @@ export class AppComponent implements OnInit, OnDestroy {
     ) {
         this.router.events.subscribe((event: Event) => {
             if (event instanceof NavigationEnd) {
-                // Scroll to the top after each navigation end
                 this.viewportScroller.scrollToPosition([0, 0]);
             }
         });
@@ -113,3 +112,4 @@ export class AppComponent implements OnInit, OnDestroy {
         });
     }
 }
+

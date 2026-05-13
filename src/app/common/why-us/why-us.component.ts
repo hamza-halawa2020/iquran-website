@@ -1,4 +1,4 @@
-import { NgClass, NgIf } from '@angular/common';
+﻿import { NgClass, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -12,8 +12,6 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class WhyUsComponent {
     constructor(public router: Router) {}
-
-    // Video Popup
     isOpen = false;
     openPopup(): void {
         this.isOpen = true;
@@ -22,3 +20,4 @@ export class WhyUsComponent {
         this.isOpen = false;
     }
 }
+

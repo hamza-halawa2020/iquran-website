@@ -1,10 +1,8 @@
-.how-it-works-section {
+﻿.how-it-works-section {
     padding: 80px 0;
-    background-color: #0f5a3a; /* Deep green from logo */
+    background-color: #0f5a3a;
     position: relative;
     overflow: hidden;
-
-    // Optional: Add a subtle Islamic pattern overlay if available, or just a texture
     &::before {
         content: "";
         position: absolute;
@@ -22,7 +20,7 @@
         z-index: 2;
 
         .subtitle {
-            color: #c9a961; /* Gold from Logo */
+            color: #c9a961; 
             font-size: 14px;
             font-weight: 600;
             text-transform: uppercase;
@@ -50,7 +48,7 @@
         padding: 20px;
         background: rgba(255, 255, 255, 0.05); // Slight glass effect
         border-radius: 15px;
-        border: 1px solid rgba(201, 169, 97, 0.2); /* Gold border */
+        border: 1px solid rgba(201, 169, 97, 0.2); 
         height: 100%;
         transition: transform 0.3s ease;
 
@@ -75,17 +73,14 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
 
             &.purple {
-                // Gold Gradient from Logo
                 background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%);
             }
 
             &.blue {
-                // Navy Blue Gradient
                 background: linear-gradient(135deg, #1a7a52 0%, #0f5a3a 100%);
             }
 
             &.green {
-                // Light Gold Gradient
                 background: linear-gradient(135deg, #d4b574 0%, #c9a961 100%);
             }
         }
@@ -93,7 +88,7 @@
         h3 {
             font-size: 20px;
             font-weight: 600;
-            color: #c9a961; /* Gold from Logo */
+            color: #c9a961; 
             margin-bottom: 15px;
         }
 
@@ -135,7 +130,7 @@
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%); /* Gold Gradient from Logo */
+            background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%); 
             display: flex;
             align-items: center;
             justify-content: center;
@@ -151,8 +146,8 @@
 
         .download-btn {
             display: inline-block;
-            background: #c9a961; /* Gold from Logo */
-            color: #0f5a3a; /* Deep green text for contrast */
+            background: #c9a961; 
+            color: #0f5a3a;
             padding: 12px 30px;
             border-radius: 5px;
             text-decoration: none;
@@ -166,7 +161,7 @@
             }
 
             &:hover {
-                background: #d4b574; /* Light Gold */
+                background: #d4b574; 
                 transform: translateY(-2px);
                 box-shadow: 0 5px 15px rgba(201, 169, 97, 0.4);
                 color: #0f5a3a;
@@ -191,3 +186,4 @@
         }
     }
 }
+

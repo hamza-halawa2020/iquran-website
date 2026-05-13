@@ -1,4 +1,4 @@
-<!-- Success Message as a Toast -->
+﻿
 <div *ngIf="successMessage" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999;">
     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-success text-white">
@@ -12,7 +12,6 @@
     </div>
 </div>
 
-<!-- Error Message as a Toast -->
 <div *ngIf="errorMessage" class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999;">
     <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="toast-header bg-danger text-white">
@@ -26,7 +25,6 @@
     </div>
 </div>
 
-<!-- Contact Form -->
 <div class="contact-area">
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
         <div class="row">
@@ -170,3 +168,4 @@
         </div>
     </form>
 </div>
+

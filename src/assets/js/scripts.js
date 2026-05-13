@@ -1,17 +1,17 @@
-(function($) {
+﻿(function($) {
 	'use strict';
 	
 	jQuery(document).on('ready', function(){
 	
-		/*PRELOADER JS*/
+		
 		jQuery(window).on('load',function() {
 		  setTimeout(function() {
 				$('body').addClass('loaded');
 			}, 500);
 		});
-		/*END PRELOADER JS*/	
+			
 		
-		/*START VIDEO JS*/
+		
 		if ($.fn.magnificPopup) {
 			$('.video-play').magnificPopup({
 				type: 'iframe'
@@ -29,8 +29,9 @@
 				disableOn: 300
 			});	
 		}
-		/*END VIDEO JS*/	
+			
 			
 	}); 		
 	
 })(jQuery);
+

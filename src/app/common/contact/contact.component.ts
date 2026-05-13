@@ -1,4 +1,4 @@
-import { CommonModule, NgClass, NgIf } from '@angular/common';
+﻿import { CommonModule, NgClass, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { ContactService } from './contact.service';
@@ -74,7 +74,6 @@ export class ContactComponent implements OnInit {
             error: (error) => {
                 this.isSubmitting = false;
                 if (error.error?.errors) {
-                    // Handle validation errors
                     const errors = error.error.errors;
                     const errorMessages = Object.keys(errors).map(key => 
                         errors[key].join(', ')
@@ -120,3 +119,4 @@ export class ContactComponent implements OnInit {
         return '';
     }
 }
+

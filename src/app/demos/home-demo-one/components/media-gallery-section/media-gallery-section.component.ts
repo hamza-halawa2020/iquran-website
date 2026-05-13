@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+﻿import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
@@ -12,7 +12,6 @@ interface MediaItem {
   type: 'image' | 'video';
   file: string | null;
   video_url: string | null;
-  // Backwards/forwards compatibility with API variants.
   media_url?: string | null;
   thumbnail_url?: string | null;
   created_at: string;
@@ -27,8 +26,6 @@ interface MediaItem {
 })
 export class MediaGallerySectionComponent implements OnInit, OnChanges {
   @Input() items: MediaItem[] = [];
-  // When true (e.g. on home page), clicking a media item
-  // will navigate to the full media gallery page instead of opening a modal.
   @Input() openInPage: boolean = false;
 
   allMedia: MediaItem[] = [];
@@ -99,8 +96,6 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
   }
 
   navigateToMediaPage(item: MediaItem): void {
-    // Navigate to media page and pass the clicked item's id
-    // so it can be auto-opened there.
     this.router.navigate(
       ['/media'],
       { queryParams: { mediaId: item.id } }
@@ -128,9 +123,6 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
     this.lightboxOpen = false;
     this.selectedMedia = null;
   }
-
-  // Scroll locking removed to avoid any interference with video playback,
-  // especially inside deferred/animated sections on mobile browsers.
 
   getVideoEmbedUrl(url: string | null | undefined): SafeResourceUrl {
     if (!url) return this.sanitizer.bypassSecurityTrustResourceUrl('');
@@ -172,8 +164,6 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
   private extractYouTubeId(url: string): string | null {
     const trimmedUrl = (url || '').trim();
     if (!trimmedUrl) return null;
-
-    // Raw video id (11 chars).
     if (/^[a-zA-Z0-9_-]{11}$/.test(trimmedUrl)) {
       return trimmedUrl;
     }
@@ -181,19 +171,13 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
     try {
       const parsedUrl = new URL(trimmedUrl);
       const hostname = parsedUrl.hostname.replace(/^www\./, '').replace(/^m\./, '');
-
-      // https://youtu.be/<id>
       if (hostname === 'youtu.be') {
         return this.cleanYouTubeId(parsedUrl.pathname.split('/').filter(Boolean)[0] || null);
       }
-
-      // https://youtube.com/watch?v=<id>
       if (hostname === 'youtube.com' || hostname === 'youtube-nocookie.com') {
         if (parsedUrl.pathname === '/watch') {
           return this.cleanYouTubeId(parsedUrl.searchParams.get('v'));
         }
-
-        // https://youtube.com/embed/<id>, /shorts/<id>, /live/<id>, /v/<id>
         const pathParts = parsedUrl.pathname.split('/').filter(Boolean);
         const prefix = pathParts[0];
         const candidateId = pathParts[1] || null;
@@ -202,10 +186,7 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
         }
       }
     } catch {
-      // Ignore invalid URLs and fall back to regex.
     }
-
-    // Regex fallback: supports watch/embed/shorts/live/v and youtu.be.
     const patterns = [
       /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|shorts\/|live\/|v\/)|youtube\.com\/watch\?v=)([a-zA-Z0-9_-]{11})(?:[?&#/]|$)/,
       /youtube\.com\/watch\?.*v=([a-zA-Z0-9_-]{11})(?:[?&#]|$)/,
@@ -223,8 +204,6 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
 
   private cleanYouTubeId(candidate: string | null | undefined): string | null {
     if (!candidate) return null;
-
-    // Remove any trailing slashes or query/hash fragments.
     const cleaned = candidate.split('?')[0].split('&')[0].split('#')[0].replace(/\/+$/, '');
     return /^[a-zA-Z0-9_-]{11}$/.test(cleaned) ? cleaned : null;
   }
@@ -242,3 +221,4 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
       : this.allMedia.filter((item) => item.type === this.activeFilter);
   }
 }
+

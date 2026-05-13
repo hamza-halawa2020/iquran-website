@@ -1,16 +1,11 @@
-﻿// Colors
-$primary: var(--primaryColor); /* Navy Blue from Logo */
-$secondary: var(--secondaryColor); /* Gold from Logo */
+﻿$primary: var(--primaryColor); 
+$secondary: var(--secondaryColor); 
 $dark: var(--accentColor);
 $white: #ffffff;
 $gray-light: var(--creamBg);
 $gray: var(--paragraphColor);
-
-
-// Investment opportunities list styles will inherit from global styles
 .about-area {
     padding: 80px 0;
-    // background-color: var(--creamBg);
 }
 
 .skeleton-loader {
@@ -29,8 +24,6 @@ $gray: var(--paragraphColor);
         background-position: -200% 0;
     }
 }
-
-// Page Banner
 .page-banner {
     background: linear-gradient(135deg, $primary 0%, $dark 100%);
     padding: 140px 0 100px;
@@ -93,8 +86,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// About Section
 .about-section {
     padding: 100px 0;
 
@@ -219,8 +210,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Features Grid
 .features-grid {
     margin-top: 100px;
     padding: 80px 0;
@@ -308,8 +297,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// CTA Section
 .cta-section {
     background: linear-gradient(135deg, $primary 0%, $dark 100%);
     padding: 100px 0;
@@ -393,8 +380,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Responsive Design
 @media (max-width: 768px) {
     .page-banner {
         padding: 100px 0 60px;
@@ -454,8 +439,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Section Padding
 .section-padding {
     padding: 80px 0;
 }
@@ -465,3 +448,4 @@ $gray: var(--paragraphColor);
         padding: 60px 0;
     }
 }
+

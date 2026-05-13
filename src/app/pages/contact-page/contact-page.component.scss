@@ -1,16 +1,11 @@
-﻿// Colors
-$primary: var(--primaryColor); /* Navy Blue from Logo */
-$secondary: var(--secondaryColor); /* Gold from Logo */
+﻿$primary: var(--primaryColor); 
+$secondary: var(--secondaryColor); 
 $dark: var(--accentColor);
 $white: #ffffff;
 $gray-light: var(--creamBg);
 $gray: var(--paragraphColor);
-
-
-// Investment opportunities list styles will inherit from global styles
 .contact-area {
     padding: 80px 0;
-    // background-color: var(--creamBg);
 }
 
 .skeleton-loader {
@@ -29,10 +24,7 @@ $gray: var(--paragraphColor);
         background-position: -200% 0;
     }
 }
-
-// Page Banner (Same as About)
 .page-banner {
-    // background: linear-gradient(135deg, $primary 0%, $dark 100%);
     padding: 140px 0 100px;
     position: relative;
     overflow: hidden;
@@ -44,7 +36,6 @@ $gray: var(--paragraphColor);
         left: 0;
         right: 0;
         bottom: 0;
-        // background-image: var(--islamicPattern);
         opacity: 0.15;
     }
 
@@ -93,11 +84,8 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Contact Info Section
 .contact-info-section {
     padding: 100px 0;
-    // background: $gray-light;
 
     .section-title {
         .subtitle {
@@ -119,7 +107,6 @@ $gray: var(--paragraphColor);
     }
 
     .contact-info-card {
-        // background: $white;
         padding: 50px 35px;
         border-radius: 30px;
         text-align: center;
@@ -147,7 +134,6 @@ $gray: var(--paragraphColor);
         .contact-icon {
             width: 80px;
             height: 80px;
-            // background: var(--creamBg);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -192,11 +178,8 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Contact Form Section
 .contact-form-section {
     padding: 100px 0;
-    // background: $white;
 
     .contact-form-wrapper {
         background: $gray-light;
@@ -282,8 +265,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Map Section
 .map-section {
     .map-wrapper {
         position: relative;
@@ -302,8 +283,6 @@ $gray: var(--paragraphColor);
         }
     }
 }
-
-// Responsive Design
 @media (max-width: 768px) {
     .page-banner {
         padding: 100px 0 60px;
@@ -342,8 +321,6 @@ $gray: var(--paragraphColor);
         height: 300px;
     }
 }
-
-// Section Padding
 .section-padding {
     padding: 80px 0;
 }
@@ -353,4 +330,5 @@ $gray: var(--paragraphColor);
         padding: 60px 0;
     }
 }
+
 

@@ -4,7 +4,6 @@
 }
 
 .media-gallery-section {
-    // background: linear-gradient(135deg, #fdfbf7 0%, #f9f7f3 100%);
     position: relative;
     overflow: hidden;
     
@@ -444,7 +443,6 @@
     }
 }
 
-/* Video modal needs an explicit width; otherwise the responsive iframe can collapse. */
 .lightbox.video-modal {
     .lightbox-content {
         width: 100%;
@@ -541,4 +539,5 @@
         }
     }
 }
+
 

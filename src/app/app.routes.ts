@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+﻿import { Routes } from '@angular/router';
 import { HomeDemoOneComponent } from './demos/home-demo-one/home-demo-one.component';
 
 export const routes: Routes = [
@@ -19,7 +19,6 @@ export const routes: Routes = [
         path: 'contacts',
         loadComponent: () => import('./pages/contact-page/contact-page.component').then(m => m.ContactPageComponent)
     },
-
 
     {
         path: 'posts',
@@ -64,3 +63,4 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/error-page/error-page.component').then(m => m.ErrorPageComponent)
     },
 ];
+

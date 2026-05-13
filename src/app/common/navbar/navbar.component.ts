@@ -1,4 +1,4 @@
-import { NgClass, NgIf, CommonModule } from '@angular/common';
+﻿import { NgClass, NgIf, CommonModule } from '@angular/common';
 import { Component, NgZone, OnDestroy, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { fromEvent, Subscription } from 'rxjs';
@@ -24,8 +24,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     isSticky: boolean = false;
     currentLanguage: string = 'en';
     private subscriptions = new Subscription();
-
-    // Navigation menu items
     menuItems = [
         {
             label: 'HOME',
@@ -63,18 +61,16 @@ export class NavbarComponent implements OnInit, OnDestroy {
         },
 
     ];
-
-    // Languages available
     languages = [
         {
             code: 'en',
             name: 'English',
-            flag: '🇺🇸'
+            flag: 'ðŸ‡ºðŸ‡¸'
         },
         {
             code: 'ar',
-            name: 'العربية',
-            flag: '🇸🇦'
+            name: 'Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©',
+            flag: 'ðŸ‡¸ðŸ‡¦'
         }
     ];
 
@@ -83,11 +79,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
         private translate: TranslateService,
         private ngZone: NgZone
     ) {
-        // Initialize languages
         this.translate.addLangs(['en', 'ar']);
         this.translate.setDefaultLang('en');
-
-        // Load saved language from localStorage or use browser language
         const savedLang = localStorage.getItem('language');
         const browserLang = this.translate.getBrowserLang();
         const initialLang = savedLang || (browserLang?.match(/en|ar/) ? browserLang : 'en');
@@ -98,7 +91,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        // Keep high-frequency scroll work outside Angular and only re-enter when state changes.
         this.ngZone.runOutsideAngular(() => {
             this.subscriptions.add(
                 fromEvent(window, 'scroll', { passive: true })
@@ -114,8 +106,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
                     })
             );
         });
-
-        // Update currentLanguage when language changes
         this.subscriptions.add(
             this.translate.onLangChange.subscribe((event) => {
                 this.currentLanguage = event.lang;
@@ -137,8 +127,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
         this.currentLanguage = lang;
         this.applyLanguageDirection(lang);
         localStorage.setItem('language', lang);
-
-        // Close mobile menu after language switch
         this.isCollapsed = true;
     }
 
@@ -149,8 +137,6 @@ export class NavbarComponent implements OnInit, OnDestroy {
     getCurrentLanguageData() {
         return this.languages.find(lang => lang.code === this.currentLanguage) || this.languages[0];
     }
-
-    // Helper method to apply language direction
     private applyLanguageDirection(lang: string) {
         const htmlElement = document.documentElement;
         const bodyElement = document.body;
@@ -167,14 +153,11 @@ export class NavbarComponent implements OnInit, OnDestroy {
             bodyElement.classList.remove('rtl');
         }
     }
-
-    // Close mobile menu when clicking on a link
     closeMobileMenu() {
         this.isCollapsed = true;
     }
-
-    // Toggle mobile menu
     toggleMobileMenu() {
         this.isCollapsed = !this.isCollapsed;
     }
 }
+

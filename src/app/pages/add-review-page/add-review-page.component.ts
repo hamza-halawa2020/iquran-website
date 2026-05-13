@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -48,8 +48,6 @@ export class AddReviewPageComponent {
         this.submitSuccess = true;
         this.isSubmitting = false;
         this.reviewForm.reset();
-        
-        // Redirect after 2 seconds
         setTimeout(() => {
           this.router.navigate(['/testimonials']);
         }, 2000);
@@ -74,3 +72,4 @@ export class AddReviewPageComponent {
     return this.reviewForm.get('review');
   }
 }
+

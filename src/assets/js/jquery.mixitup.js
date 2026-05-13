@@ -1,25 +1,9 @@
-/**!
- * MixItUp v2.1.11
- *
- * @copyright Copyright 2015 KunkaLabs Limited.
- * @author    KunkaLabs Limited.
- * @link      https://mixitup.kunkalabs.com
- *
- * @license   Commercial use requires a commercial license.
- *            https://mixitup.kunkalabs.com/licenses/
- *
- *            Non-commercial use permitted under terms of CC-BY-NC license.
- *            http://creativecommons.org/licenses/by-nc/3.0/
- */
+﻿
 
 (function($, undf){
 	'use strict';
 
-	/**
-	 * MixItUp Constructor Function
-	 * @constructor
-	 * @extends jQuery
-	 */
+	
 
 	$.MixItUp = function(){
 		var self = this;
@@ -28,8 +12,7 @@
 
 		$.extend(self, {
 
-			/* Public Properties
-			---------------------------------------------------------------------- */
+			
 
 			selectors: {
 				target: '.mix',
@@ -81,8 +64,7 @@
 				sort: false
 			},
 
-			/* Private Properties
-			---------------------------------------------------------------------- */
+			
 
 			_$body: null,
 			_$container: null,
@@ -124,16 +106,12 @@
 		self._execAction('_constructor', 1);
 	};
 
-	/**
-	 * MixItUp Prototype
-	 * @override
-	 */
+	
 
 	$.MixItUp.prototype = {
 		constructor: $.MixItUp,
 
-		/* Static Properties
-		---------------------------------------------------------------------- */
+		
 
 		_instances: {},
 		_handled: {
@@ -147,15 +125,9 @@
 		_actions: {},
 		_filters: {},
 
-		/* Static Methods
-		---------------------------------------------------------------------- */
+		
 
-		/**
-		 * Extend
-		 * @since 2.1.0
-		 * @param {object} new properties/methods
-		 * @extends {object} prototype
-		 */
+		
 
 		extend: function(extension){
 			for(var key in extension){
@@ -163,43 +135,19 @@
 			}
 		},
 
-		/**
-		 * Add Action
-		 * @since 2.1.0
-		 * @param {string} hook name
-		 * @param {string} namespace
-		 * @param {function} function to execute
-		 * @param {number} priority
-		 * @extends {object} $.MixItUp.prototype._actions
-		 */
+		
 
 		addAction: function(hook, name, func, priority){
 			$.MixItUp.prototype._addHook('_actions', hook, name, func, priority);
 		},
 
-		/**
-		 * Add Filter
-		 * @since 2.1.0
-		 * @param {string} hook name
-		 * @param {string} namespace
-		 * @param {function} function to execute
-		 * @param {number} priority
-		 * @extends {object} $.MixItUp.prototype._filters
-		 */
+		
 
 		addFilter: function(hook, name, func, priority){
 			$.MixItUp.prototype._addHook('_filters', hook, name, func, priority);
 		},
 
-		/**
-		 * Add Hook
-		 * @since 2.1.0
-		 * @param {string} type of hook
-		 * @param {string} hook name
-		 * @param {function} function to execute
-		 * @param {number} priority
-		 * @extends {object} $.MixItUp.prototype._filters
-		 */
+		
 
 		_addHook: function(type, hook, name, func, priority){
 			var collection = $.MixItUp.prototype[type],
@@ -214,16 +162,9 @@
 			$.extend(true, collection, obj);
 		},
 
+		
 
-		/* Private Methods
-		---------------------------------------------------------------------- */
-
-		/**
-		 * Initialise
-		 * @since 2.0.0
-		 * @param {object} domNode
-		 * @param {object} config
-		 */
+		
 
 		_init: function(domNode, config){
 			var self = this;
@@ -287,10 +228,7 @@
 			self._goMix(self.animation.enable);
 		},
 
-		/**
-		 * Platform Detect
-		 * @since 2.0.0
-		 */
+		
 
 		_platformDetect: function(){
 			var self = this,
@@ -322,20 +260,15 @@
 			self._suckMode && (self.animation.enable = false);
 			(self._ff && self._ff <= 4) && (self.animation.enable = false);
 
-			/* Polyfills
-			---------------------------------------------------------------------- */
+			
 
-			/**
-			 * window.requestAnimationFrame
-			 */
+			
 
 			for(var x = 0; x < vendorsRAF.length && !window.requestAnimationFrame; x++){
 				window.requestAnimationFrame = window[vendorsRAF[x]+'RequestAnimationFrame'];
 			}
 
-			/**
-			 * Object.getPrototypeOf
-			 */
+			
 
 			if(typeof Object.getPrototypeOf !== 'function'){
 				if(typeof 'test'.__proto__ === 'object'){
@@ -349,9 +282,7 @@
 				}
 			}
 
-			/**
-			 * Element.nextElementSibling
-			 */
+			
 
 			if(self._domNode.nextElementSibling === undf){
 				Object.defineProperty(Element.prototype, 'nextElementSibling',{
@@ -372,12 +303,7 @@
 			self._execAction('_platformDetect', 1);
 		},
 
-		/**
-		 * Refresh
-		 * @since 2.0.0
-		 * @param {boolean} init
-		 * @param {boolean} force
-		 */
+		
 
 		_refresh: function(init, force){
 			var self = this;
@@ -427,10 +353,7 @@
 			self._execAction('_refresh', 1, arguments);
 		},
 
-		/**
-		 * Bind Handlers
-		 * @since 2.0.0
-		 */
+		
 
 		_bindHandlers: function(){
 			var self = this,
@@ -466,12 +389,7 @@
 			self._execAction('_bindHandlers', 1);
 		},
 
-		/**
-		 * Process Click
-		 * @since 2.0.0
-		 * @param {object} $button
-		 * @param {string} type
-		 */
+		
 
 		_processClick: function($button, type){
 			var self = this,
@@ -544,10 +462,7 @@
 			}
 		},
 
-		/**
-		 * Build Toggle Array
-		 * @since 2.0.0
-		 */
+		
 
 		_buildToggleArray: function(){
 			var self = this,
@@ -570,12 +485,7 @@
 			self._execAction('_buildToggleArray', 1, arguments);
 		},
 
-		/**
-		 * Update Controls
-		 * @since 2.0.0
-		 * @param {object} command
-		 * @param {boolean} multi
-		 */
+		
 
 		_updateControls: function(command, multi){
 			var self = this,
@@ -608,10 +518,7 @@
 			self._execAction('_updateControls', 1, arguments);
 		},
 
-		/**
-		 * Filter (private)
-		 * @since 2.0.0
-		 */
+		
 
 		_filter: function(){
 			var self = this;
@@ -631,10 +538,7 @@
 			self._execAction('_filter', 1);
 		},
 
-		/**
-		 * Sort (private)
-		 * @since 2.0.0
-		 */
+		
 
 		_sort: function(){
 			var self = this,
@@ -681,14 +585,7 @@
 			self._execAction('_sort', 1);
 		},
 
-		/**
-		 * Compare Algorithm
-		 * @since 2.0.0
-		 * @param {string|number} a
-		 * @param {string|number} b
-		 * @param {number} depth (recursion)
-		 * @return {number}
-		 */
+		
 
 		_compare: function(a, b, depth){
 			depth = depth ? depth : 0;
@@ -711,11 +608,7 @@
 			return 0;
 		},
 
-		/**
-		 * Print Sort
-		 * @since 2.0.0
-		 * @param {boolean} reset
-		 */
+		
 
 		_printSort: function(reset){
 			var self = this,
@@ -759,12 +652,7 @@
 			self._execAction('_printSort', 1, arguments);
 		},
 
-		/**
-		 * Parse Sort
-		 * @since 2.0.0
-		 * @param {string} sortString
-		 * @return {array} newSort
-		 */
+		
 
 		_parseSort: function(sortString){
 			var self = this,
@@ -786,11 +674,7 @@
 			return self._execFilter('_parseSort', newSort, arguments);
 		},
 
-		/**
-		 * Parse Effects
-		 * @since 2.0.0
-		 * @return {object} effects
-		 */
+		
 
 		_parseEffects: function(){
 			var self = this,
@@ -860,12 +744,7 @@
 			return self._execFilter('_parseEffects', effects);
 		},
 
-		/**
-		 * Build State
-		 * @since 2.0.0
-		 * @param {boolean} future
-		 * @return {object} futureState
-		 */
+		
 
 		_buildState: function(future){
 			var self = this,
@@ -895,11 +774,7 @@
 			}
 		},
 
-		/**
-		 * Go Mix
-		 * @since 2.0.0
-		 * @param {boolean} animate
-		 */
+		
 
 		_goMix: function(animate){
 			var self = this,
@@ -982,10 +857,7 @@
 			self._execAction('_goMix', 1, arguments);
 		},
 
-		/**
-		 * Get Target Data
-		 * @since 2.0.0
-		 */
+		
 
 		_getTargetData: function(el, stage){
 			var self = this,
@@ -1009,10 +881,7 @@
 			}
 		},
 
-		/**
-		 * Get Original Mix Data
-		 * @since 2.0.0
-		 */
+		
 
 		_getOrigMixData: function(){
 			var self = this,
@@ -1042,10 +911,7 @@
 			self._execAction('_getOrigMixData', 1);
 		},
 
-		/**
-		 * Set Intermediate Positions
-		 * @since 2.0.0
-		 */
+		
 
 		_setInter: function(){
 			var self = this;
@@ -1067,10 +933,7 @@
 			self._execAction('_setInter', 1);
 		},
 
-		/**
-		 * Get Intermediate Mix Data
-		 * @since 2.0.0
-		 */
+		
 
 		_getInterMixData: function(){
 			var self = this;
@@ -1092,10 +955,7 @@
 			self._execAction('_getInterMixData', 1);
 		},
 
-		/**
-		 * Set Final Positions
-		 * @since 2.0.0
-		 */
+		
 
 		_setFinal: function(){
 			var self = this;
@@ -1113,10 +973,7 @@
 			self._execAction('_setFinal', 1);
 		},
 
-		/**
-		 * Get Final Mix Data
-		 * @since 2.0.0
-		 */
+		
 
 		_getFinalMixData: function(){
 			var self = this;
@@ -1154,10 +1011,7 @@
 			self._execAction('_getFinalMixData', 1);
 		},
 
-		/**
-		 * Prepare Targets
-		 * @since 2.0.0
-		 */
+		
 
 		_prepTargets: function(){
 			var self = this,
@@ -1219,10 +1073,7 @@
 			self._execAction('_prepTargets', 1);
 		},
 
-		/**
-		 * Animate Targets
-		 * @since 2.0.0
-		 */
+		
 
 		_animateTargets: function(){
 			var self = this;
@@ -1339,11 +1190,7 @@
 
 		},
 
-		/**
-		 * Bind Targets TransitionEnd
-		 * @since 2.0.0
-		 * @param {object} $el
-		 */
+		
 
 		_bindTargetDone: function($el){
 			var self = this,
@@ -1372,10 +1219,7 @@
 			self._execAction('_bindTargetDone', 1, arguments);
 		},
 
-		/**
-		 * Target Done
-		 * @since 2.0.0
-		 */
+		
 
 		_targetDone: function(){
 			var self = this;
@@ -1389,10 +1233,7 @@
 			self._execAction('_targetDone', 1);
 		},
 
-		/**
-		 * Clean Up
-		 * @since 2.0.0
-		 */
+		
 
 		_cleanUp: function(){
 			var self = this,
@@ -1489,14 +1330,7 @@
 			self._loading = false;
 		},
 
-		/**
-		 * Get Prefixed CSS
-		 * @since 2.0.0
-		 * @param {string} property
-		 * @param {string} value
-		 * @param {boolean} prefixValue
-		 * @return {object} styles
-		 */
+		
 
 		_getPrefixedCSS: function(property, value, prefixValue){
 			var self = this,
@@ -1512,12 +1346,7 @@
 			return self._execFilter('_getPrefixedCSS', styles, arguments);
 		},
 
-		/**
-		 * Get Delay
-		 * @since 2.0.0
-		 * @param {number} i
-		 * @return {number} delay
-		 */
+		
 
 		_getDelay: function(i){
 			var self = this,
@@ -1527,12 +1356,7 @@
 			return self._execFilter('_getDelay', delay, arguments);
 		},
 
-		/**
-		 * Parse MultiMix Arguments
-		 * @since 2.0.0
-		 * @param {array} args
-		 * @return {object} output
-		 */
+		
 
 		_parseMultiMixArgs: function(args){
 			var self = this,
@@ -1559,12 +1383,7 @@
 			return self._execFilter('_parseMultiMixArgs', output, arguments);
 		},
 
-		/**
-		 * Parse Insert Arguments
-		 * @since 2.0.0
-		 * @param {array} args
-		 * @return {object} output
-		 */
+		
 
 		_parseInsertArgs: function(args){
 			var self = this,
@@ -1596,13 +1415,7 @@
 			return self._execFilter('_parseInsertArgs', output, arguments);
 		},
 
-		/**
-		 * Execute Action
-		 * @since 2.0.0
-		 * @param {string} methodName
-		 * @param {boolean} isPost
-		 * @param {array} args
-		 */
+		
 
 		_execAction: function(methodName, isPost, args){
 			var self = this,
@@ -1615,13 +1428,7 @@
 			}
 		},
 
-		/**
-		 * Execute Filter
-		 * @since 2.0.0
-		 * @param {string} methodName
-		 * @param {mixed} value
-		 * @return {mixed} value
-		 */
+		
 
 		_execFilter: function(methodName, value, args){
 			var self = this;
@@ -1635,17 +1442,11 @@
 			}
 		},
 
-		/* Helpers
-		---------------------------------------------------------------------- */
+		
 
 		_helpers: {
 
-			/**
-			 * CamelCase
-			 * @since 2.0.0
-			 * @param {string}
-			 * @return {string}
-			 */
+			
 
 			_camelCase: function(string){
 				return string.replace(/-([a-z])/g, function(g){
@@ -1653,12 +1454,7 @@
 				});
 			},
 
-			/**
-			 * Is Element
-			 * @since 2.1.3
-			 * @param {object} element to test
-			 * @return {boolean}
-			 */
+			
 
 			_isElement: function(el){
 				if(window.HTMLElement){
@@ -1673,14 +1469,9 @@
 			}
 		},
 
-		/* Public Methods
-		---------------------------------------------------------------------- */
+		
 
-		/**
-		 * Is Mixing
-		 * @since 2.0.0
-		 * @return {boolean}
-		 */
+		
 
 		isMixing: function(){
 			var self = this;
@@ -1688,11 +1479,7 @@
 			return self._execFilter('isMixing', self._mixing);
 		},
 
-		/**
-		 * Filter (public)
-		 * @since 2.0.0
-		 * @param {array} arguments
-		 */
+		
 
 		filter: function(){
 			var self = this,
@@ -1703,11 +1490,7 @@
 			self.multiMix({filter: args.command}, args.animate, args.callback);
 		},
 
-		/**
-		 * Sort (public)
-		 * @since 2.0.0
-		 * @param {array} arguments
-		 */
+		
 
 		sort: function(){
 			var self = this,
@@ -1716,11 +1499,7 @@
 			self.multiMix({sort: args.command}, args.animate, args.callback);
 		},
 
-		/**
-		 * Change Layout (public)
-		 * @since 2.0.0
-		 * @param {array} arguments
-		 */
+		
 
 		changeLayout: function(){
 			var self = this,
@@ -1729,11 +1508,7 @@
 			self.multiMix({changeLayout: args.command}, args.animate, args.callback);
 		},
 
-		/**
-		 * MultiMix
-		 * @since 2.0.0
-		 * @param {array} arguments
-		 */
+		
 
 		multiMix: function(){
 			var self = this,
@@ -1814,11 +1589,7 @@
 			}
 		},
 
-		/**
-		 * Insert
-		 * @since 2.0.0
-		 * @param {array} arguments
-		 */
+		
 
 		insert: function(){
 			var self = this,
@@ -1857,11 +1628,7 @@
 			}
 		},
 
-		/**
-		 * Prepend
-		 * @since 2.0.0
-		 * @param {array} arguments
-		 */
+		
 
 		prepend: function(){
 			var self = this,
@@ -1870,11 +1637,7 @@
 			self.insert(0, args.$object, args.multiMix, args.callback);
 		},
 
-		/**
-		 * Append
-		 * @since 2.0.0
-		 * @param {array} arguments
-		 */
+		
 
 		append: function(){
 			var self = this,
@@ -1883,12 +1646,7 @@
 			self.insert(self._state.totalTargets, args.$object, args.multiMix, args.callback);
 		},
 
-		/**
-		 * Get Option
-		 * @since 2.0.0
-		 * @param {string} string
-		 * @return {mixed} value
-		 */
+		
 
 		getOption: function(string){
 			var self = this,
@@ -1912,11 +1670,7 @@
 			return string ? self._execFilter('getOption', getProperty(self, string), arguments) : self;
 		},
 
-		/**
-		 * Set Options
-		 * @since 2.0.0
-		 * @param {object} config
-		 */
+		
 
 		setOptions: function(config){
 			var self = this;
@@ -1928,11 +1682,7 @@
 			self._execAction('setOptions', 1, arguments);
 		},
 
-		/**
-		 * Get State
-		 * @since 2.0.0
-		 * @return {object} state
-		 */
+		
 
 		getState: function(){
 			var self = this;
@@ -1940,10 +1690,7 @@
 			return self._execFilter('getState', self._state, self);
 		},
 
-		/**
-		 * Force Refresh
-		 * @since 2.1.2
-		 */
+		
 
 		forceRefresh: function(){
 			var self = this;
@@ -1951,11 +1698,7 @@
 			self._refresh(false, true);
 		},
 
-		/**
-		 * Destroy
-		 * @since 2.0.0
-		 * @param {boolean} hideAll
-		 */
+		
 
 		destroy: function(hideAll){
 			var self = this,
@@ -1996,14 +1739,9 @@
 
 	};
 
-	/* jQuery Methods
-	---------------------------------------------------------------------- */
+	
 
-	/**
-	 * jQuery .mixItUp() method
-	 * @since 2.0.0
-	 * @extends $.fn
-	 */
+	
 
 	$.fn.mixItUp = function(){
 		var args = arguments,
@@ -2048,11 +1786,7 @@
 		}
 	};
 
-	/**
-	 * jQuery .removeStyle() method
-	 * @since 2.0.0
-	 * @extends $.fn
-	 */
+	
 
 	$.fn.removeStyle = function(style, prefix){
 		prefix = prefix ? prefix : '';
