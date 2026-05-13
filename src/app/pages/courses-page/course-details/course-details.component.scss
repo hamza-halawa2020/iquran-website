@@ -3,10 +3,11 @@ $secondary-color: var(--secondaryColor);
 $text-color: var(--paragraphColor);
 
 .course-details-area {
+    position: relative;
+    isolation: isolate;
     padding: 80px 0;
-    background-color: var(--creamBg);
+    // background-color: var(--creamBg);
 }
-
 .details-header {
     margin-bottom: 40px;
     

@@ -1,6 +1,8 @@
 ﻿.certificates-area {
+    position: relative;
+    isolation: isolate;
     padding: 60px 0;
-    background-color: #f8f9fa;
+    // background-color: #f8f9fa;
 }
 
 .section-title {
@@ -172,4 +174,5 @@
         height: 180px;
     }
 }
+
 

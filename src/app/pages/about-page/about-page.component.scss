@@ -7,15 +7,10 @@ $gray-light: var(--creamBg);
 $gray: var(--paragraphColor);
 
 
-
-
-
-
-
 // Investment opportunities list styles will inherit from global styles
 .about-area {
     padding: 80px 0;
-    background-color: var(--creamBg);
+    // background-color: var(--creamBg);
 }
 
 .skeleton-loader {

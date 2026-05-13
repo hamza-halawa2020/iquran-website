@@ -3,8 +3,10 @@ $secondary-color: var(--secondaryColor);
 $light-bg: var(--creamBg);
 
 .courses-area {
+    position: relative;
+    isolation: isolate;
     padding: 80px 0;
-    background-color: $light-bg;
+    // background-color: $light-bg;
 }
 
 .section-title {

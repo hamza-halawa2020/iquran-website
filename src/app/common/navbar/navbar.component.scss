@@ -14,7 +14,7 @@ $gray: #9ca3af;
     right: 0;
     z-index: 1000;
     background: rgba(7, 12, 9, 0.9);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(200, 155, 60, 0.28);
     transition: all 0.3s ease;
     padding: 0;
 
@@ -44,7 +44,7 @@ $gray: #9ca3af;
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: $dark;
+        color: #f6efdd;
         font-weight: 700;
         font-size: 24px;
         transition: all 0.3s ease;
@@ -154,7 +154,7 @@ $gray: #9ca3af;
         align-items: center;
         gap: 8px;
         padding: 10px 16px;
-        background: $gray-light;
+        background: rgba(255, 255, 255, 0.08);
         border: 1px solid rgba(200, 155, 60, 0.4);
         border-radius: 30px;
         color: #f6efdd;
@@ -164,7 +164,7 @@ $gray: #9ca3af;
         transition: all 0.3s ease;
 
         &:hover {
-            background: rgba(26, 122, 82, 0.25);
+            background: rgba(26, 122, 82, 0.3);
             border-color: $primary;
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(201, 169, 97, 0.2);
@@ -201,7 +201,7 @@ $gray: #9ca3af;
         min-width: 160px;
         margin-top: 8px;
         backdrop-filter: blur(10px);
-        background: rgba(10, 20, 14, 0.96);
+        background: rgba(10, 20, 14, 0.97);
 
         .dropdown-item {
             display: flex;
@@ -351,7 +351,7 @@ $gray: #9ca3af;
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(255, 255, 255, 0.98);
+        background: rgba(10, 20, 14, 0.98);
         flex-direction: column;
         gap: 0;
         padding: 30px 20px;
@@ -376,7 +376,7 @@ $gray: #9ca3af;
 
             li {
                 width: 100%;
-                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                border-bottom: 1px solid rgba(200, 155, 60, 0.22);
 
                 &:last-child {
                     border-bottom: none;

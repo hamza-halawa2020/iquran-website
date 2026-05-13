@@ -10,7 +10,7 @@ $gray: var(--paragraphColor);
 // Investment opportunities list styles will inherit from global styles
 .contact-area {
     padding: 80px 0;
-    background-color: var(--creamBg);
+    // background-color: var(--creamBg);
 }
 
 .skeleton-loader {
@@ -32,7 +32,7 @@ $gray: var(--paragraphColor);
 
 // Page Banner (Same as About)
 .page-banner {
-    background: linear-gradient(135deg, $primary 0%, $dark 100%);
+    // background: linear-gradient(135deg, $primary 0%, $dark 100%);
     padding: 140px 0 100px;
     position: relative;
     overflow: hidden;
@@ -44,7 +44,7 @@ $gray: var(--paragraphColor);
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: var(--islamicPattern);
+        // background-image: var(--islamicPattern);
         opacity: 0.15;
     }
 
@@ -97,7 +97,7 @@ $gray: var(--paragraphColor);
 // Contact Info Section
 .contact-info-section {
     padding: 100px 0;
-    background: $gray-light;
+    // background: $gray-light;
 
     .section-title {
         .subtitle {
@@ -119,7 +119,7 @@ $gray: var(--paragraphColor);
     }
 
     .contact-info-card {
-        background: $white;
+        // background: $white;
         padding: 50px 35px;
         border-radius: 30px;
         text-align: center;
@@ -147,7 +147,7 @@ $gray: var(--paragraphColor);
         .contact-icon {
             width: 80px;
             height: 80px;
-            background: var(--creamBg);
+            // background: var(--creamBg);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -196,7 +196,7 @@ $gray: var(--paragraphColor);
 // Contact Form Section
 .contact-form-section {
     padding: 100px 0;
-    background: $white;
+    // background: $white;
 
     .contact-form-wrapper {
         background: $gray-light;
