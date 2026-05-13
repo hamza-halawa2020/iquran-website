@@ -1,0 +1,38 @@
+<section class="team-section section-padding" *ngIf="teamMembers.length > 0">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="">{{ 'OUR_INSTRUCTOR' | translate }}</span>
+            <h2 class="section-title">{{ 'OUR_EXPERT_TEAM' | translate }}</h2>
+            <p class="section-description">{{ 'EXPERT_TEAM_DESC' | translate }}</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let member of teamMembers">
+                <div class="team-card text-center">
+                    <div class="team-image">
+                        <img [src]="getImageUrl(member.image_url, 'assets/images/team-placeholder.jpg')"
+                            [alt]="member.name" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="team-content">
+                        <h4>{{ member.name }}</h4>
+                        <p class="team-position">{{ member.position }}</p>
+                        <div class="team-social" *ngIf="member.social_links">
+                            <a [href]="member.social_links.linkedin" class="social-link"
+                                *ngIf="member.social_links.linkedin" target="_blank">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                            <a [href]="member.social_links.twitter" class="social-link"
+                                *ngIf="member.social_links.twitter" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-4">
+            <a routerLink="/team" class="btn btn-outline-primary">
+                {{ 'VIEW_ALL_TEAM' | translate }}
+            </a>
+        </div>
+    </div>
+</section>

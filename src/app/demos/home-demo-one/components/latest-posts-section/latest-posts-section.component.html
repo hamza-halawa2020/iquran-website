@@ -1,0 +1,48 @@
+<section class="posts-section section-padding" *ngIf="posts.length > 0">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="">{{ 'POSTS' | translate }}</span>
+            <h2 class="section-title">{{ 'OUR_POSTS' | translate }}</h2>
+            <p class="section-description">{{ 'POSTS_DESC' | translate }}</p>
+        </div>
+
+        <div class="posts-carousel-shell" [class.is-rtl]="isRtl">
+            <div #postsTrack class="posts-track" [class.is-rtl]="isRtl">
+                <div #postSlide class="post-slide" *ngFor="let post of posts; let i = index">
+                    <app-content-card
+                        [item]="post"
+                        [routePath]="'/posts'"
+                        [animationDelay]="i * 0.08">
+                    </app-content-card>
+                </div>
+            </div>
+
+            <div class="carousel-controls" *ngIf="hasMultiplePosts">
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollPrev"
+                    (click)="scrollPosts('prev')"
+                    [attr.aria-label]="isRtl ? 'Scroll right' : 'Scroll left'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollNext"
+                    (click)="scrollPosts('next')"
+                    [attr.aria-label]="isRtl ? 'Scroll left' : 'Scroll right'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+                </button>
+            </div>
+
+            <div class="text-center mt-4">
+                <a routerLink="/posts" class="btn btn-outline-primary">
+                    {{ 'VIEW_ALL_ARTICLES' | translate }}
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-arrow-left' : 'fa-arrow-right'"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

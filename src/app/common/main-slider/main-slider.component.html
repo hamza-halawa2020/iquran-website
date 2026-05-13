@@ -1,0 +1,72 @@
+<div class="main-slider-wrapper position-relative">
+    <div
+        class="main-slider mx-auto"
+        *ngIf="sliderData.length > 0"
+        (mouseenter)="pauseAutoplay()"
+        (mouseleave)="resumeAutoplay()"
+    >
+        <div class="slides-viewport" role="region" [attr.aria-label]="'MAIN_SLIDER' | translate">
+            <article
+                *ngFor="let slide of sliderData; let i = index; trackBy: trackBySlide"
+                class="slide-item"
+                [class.is-active]="isSlideActive(i)"
+                [attr.aria-hidden]="!isSlideActive(i)"
+            >
+                <a [href]="slide.link || '#'" class="slide-link" [attr.tabindex]="isSlideActive(i) ? 0 : -1">
+                    <div class="image-container">
+                        <img
+                            [ngSrc]="slide.image_url"
+                            class="carousel-image"
+                            [alt]="slide.isFallback ? ('HERO_FALLBACK_TITLE' | translate) : (slide.title || 'Slider Image')"
+                            [priority]="i === 0"
+                            fill
+                            sizes="100vw"
+                        />
+
+                        <div class="overlay-content">
+                            <div class="content-wrapper" [class.animate-fade-in]="isSlideActive(i)">
+                                <h2 class="slide-title" *ngIf="slide.isFallback || slide.title">
+                                    {{ slide.isFallback ? ('HERO_FALLBACK_TITLE' | translate) : slide.title }}
+                                </h2>
+                                <p class="slide-description" *ngIf="slide.isFallback || slide.description">
+                                    {{ slide.isFallback ? ('HERO_FALLBACK_DESCRIPTION' | translate) : slide.description }}
+                                </p>
+                                <div class="slide-cta" *ngIf="slide.link">
+                                    <span class="cta-button">
+                                        {{ slide.isFallback ? ('HERO_FALLBACK_CTA' | translate) : ('READ_MORE' | translate) }}
+                                        <i
+                                            class="fa-solid ms-2"
+                                            [ngClass]="{'fa-arrow-right': translate.currentLang === 'en', 'fa-arrow-left': translate.currentLang === 'ar'}"
+                                        ></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div>
+
+        <!-- Custom Navigation Buttons -->
+        <div class="custom-nav" *ngIf="sliderData.length > 1">
+            <button class="nav-btn prev-btn" (click)="prevSlide()" [attr.aria-label]="'PREVIOUS' | translate">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="nav-btn next-btn" (click)="nextSlide()" [attr.aria-label]="'NEXT' | translate">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div class="slider-dots" *ngIf="sliderData.length > 1">
+            <button
+                *ngFor="let slide of sliderData; let i = index; trackBy: trackBySlide"
+                type="button"
+                class="slider-dot"
+                [class.is-active]="isSlideActive(i)"
+                [attr.aria-label]="'Go to slide ' + (i + 1)"
+                [attr.aria-current]="isSlideActive(i)"
+                (click)="goToSlide(i)"
+            ></button>
+        </div>
+    </div>
+</div>

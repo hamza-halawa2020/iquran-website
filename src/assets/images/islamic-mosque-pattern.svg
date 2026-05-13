@@ -1,0 +1,71 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'>
+  <defs>
+    <pattern id='islamic-pattern' x='0' y='0' width='200' height='200' patternUnits='userSpaceOnUse'>
+      <!-- Background -->
+      <rect width='200' height='200' fill='%23064e3b'/>
+      
+      <!-- Main star pattern -->
+      <g opacity='0.15'>
+        <!-- Center star -->
+        <path d='M100 40 L110 70 L140 70 L115 90 L125 120 L100 100 L75 120 L85 90 L60 70 L90 70 Z' 
+              fill='none' stroke='%23f59e0b' stroke-width='2'/>
+        
+        <!-- Corner stars -->
+        <path d='M0 0 L10 30 L40 30 L15 50 L25 80 L0 60 L-25 80 L-15 50 L-40 30 L-10 30 Z' 
+              fill='none' stroke='%23f59e0b' stroke-width='1.5'/>
+        <path d='M200 0 L210 30 L240 30 L215 50 L225 80 L200 60 L175 80 L185 50 L160 30 L190 30 Z' 
+              fill='none' stroke='%23f59e0b' stroke-width='1.5'/>
+        <path d='M0 200 L10 230 L40 230 L15 250 L25 280 L0 260 L-25 280 L-15 250 L-40 230 L-10 230 Z' 
+              fill='none' stroke='%23f59e0b' stroke-width='1.5'/>
+        <path d='M200 200 L210 230 L240 230 L215 250 L225 280 L200 260 L175 280 L185 250 L160 230 L190 230 Z' 
+              fill='none' stroke='%23f59e0b' stroke-width='1.5'/>
+      </g>
+      
+      <!-- Geometric grid -->
+      <g opacity='0.08' stroke='%23b45309' stroke-width='1' fill='none'>
+        <!-- Vertical lines -->
+        <line x1='50' y1='0' x2='50' y2='200'/>
+        <line x1='100' y1='0' x2='100' y2='200'/>
+        <line x1='150' y1='0' x2='150' y2='200'/>
+        
+        <!-- Horizontal lines -->
+        <line x1='0' y1='50' x2='200' y2='50'/>
+        <line x1='0' y1='100' x2='200' y2='100'/>
+        <line x1='0' y1='150' x2='200' y2='150'/>
+        
+        <!-- Diagonal lines -->
+        <line x1='0' y1='0' x2='200' y2='200'/>
+        <line x1='200' y1='0' x2='0' y2='200'/>
+      </g>
+      
+      <!-- Islamic geometric shapes -->
+      <g opacity='0.12' fill='none' stroke='%23f59e0b' stroke-width='1.5'>
+        <!-- Octagon in center -->
+        <path d='M100 60 L120 60 L135 75 L135 95 L120 110 L100 110 L85 95 L85 75 Z'/>
+        
+        <!-- Small circles at intersections -->
+        <circle cx='50' cy='50' r='8'/>
+        <circle cx='150' cy='50' r='8'/>
+        <circle cx='50' cy='150' r='8'/>
+        <circle cx='150' cy='150' r='8'/>
+        <circle cx='100' cy='100' r='12'/>
+        
+        <!-- Decorative arcs -->
+        <path d='M 50 50 Q 75 25, 100 50' stroke-width='1'/>
+        <path d='M 100 50 Q 125 25, 150 50' stroke-width='1'/>
+        <path d='M 50 150 Q 75 175, 100 150' stroke-width='1'/>
+        <path d='M 100 150 Q 125 175, 150 150' stroke-width='1'/>
+      </g>
+      
+      <!-- Corner ornaments -->
+      <g opacity='0.1' fill='%23b45309'>
+        <circle cx='0' cy='0' r='5'/>
+        <circle cx='200' cy='0' r='5'/>
+        <circle cx='0' cy='200' r='5'/>
+        <circle cx='200' cy='200' r='5'/>
+      </g>
+    </pattern>
+  </defs>
+  
+  <rect width='200' height='200' fill='url(%23islamic-pattern)'/>
+</svg>

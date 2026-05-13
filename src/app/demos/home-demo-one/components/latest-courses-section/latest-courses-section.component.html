@@ -1,0 +1,41 @@
+<section class="courses-section section-padding" *ngIf="courses.length > 0">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="">{{ 'COURSES' | translate }}</span>
+            <h2 class="section-title">{{ 'OUR_COURSES' | translate }}</h2>
+            <p class="section-description">{{ 'COURSES_DESC' | translate }}</p>
+        </div>
+
+        <div class="courses-carousel-shell" [class.is-rtl]="isRtl">
+            <div #coursesTrack class="courses-track" [class.is-rtl]="isRtl">
+                <div #courseSlide class="course-slide" *ngFor="let course of courses; let i = index">
+                    <app-content-card
+                        [item]="course"
+                        [routePath]="'/courses'"
+                        [animationDelay]="i * 0.08">
+                    </app-content-card>
+                </div>
+            </div>
+
+            <div class="carousel-controls" *ngIf="hasMultipleCourses">
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollPrev"
+                    (click)="scrollCourses('prev')"
+                    [attr.aria-label]="isRtl ? 'Scroll right' : 'Scroll left'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollNext"
+                    (click)="scrollCourses('next')"
+                    [attr.aria-label]="isRtl ? 'Scroll left' : 'Scroll right'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

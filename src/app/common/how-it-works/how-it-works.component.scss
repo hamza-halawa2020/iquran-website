@@ -1,0 +1,193 @@
+.how-it-works-section {
+    padding: 80px 0;
+    background-color: #1e3a5f; /* Navy Blue from Logo */
+    position: relative;
+    overflow: hidden;
+
+    // Optional: Add a subtle Islamic pattern overlay if available, or just a texture
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        pointer-events: none;
+    }
+
+    .section-title {
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 2;
+
+        .subtitle {
+            color: #c9a961; /* Gold from Logo */
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff; // White for contrast
+            margin: 0;
+        }
+    }
+
+    .steps-row {
+        margin-bottom: 60px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .step-card {
+        text-align: center;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05); // Slight glass effect
+        border-radius: 15px;
+        border: 1px solid rgba(201, 169, 97, 0.2); /* Gold border */
+        height: 100%;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(201, 169, 97, 0.5);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #fff;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+
+            &.purple {
+                // Gold Gradient from Logo
+                background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%);
+            }
+
+            &.blue {
+                // Navy Blue Gradient
+                background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+            }
+
+            &.green {
+                // Light Gold Gradient
+                background: linear-gradient(135deg, #d4b574 0%, #c9a961 100%);
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #c9a961; /* Gold from Logo */
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #e2e8f0; // Light gray
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+
+    .download-section {
+        padding: 60px 0;
+        position: relative;
+        z-index: 2;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1); // Slight darken
+            border-radius: 20px;
+        }
+
+        .row {
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .download-card {
+        text-align: center;
+        padding: 20px;
+
+        .zoom-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a961 0%, #b8935a 100%); /* Gold Gradient from Logo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+
+            i {
+                font-size: 32px;
+                color: white;
+            }
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: #c9a961; /* Gold from Logo */
+            color: #1e3a5f; /* Navy Blue text for contrast */
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+            i {
+                margin-left: 8px;
+            }
+
+            &:hover {
+                background: #d4b574; /* Light Gold */
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(201, 169, 97, 0.4);
+                color: #1e3a5f;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works-section {
+        padding: 50px 0;
+
+        .section-title {
+            h2 {
+                font-size: 28px;
+            }
+        }
+
+        .step-card,
+        .download-card {
+            margin-bottom: 30px;
+        }
+    }
+}

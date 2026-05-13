@@ -1,0 +1,26 @@
+<section class="partners-section section-padding" *ngIf="partners.length > 0">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="">{{ 'PARTNERS' | translate }}</span>
+            <h2 class="section-title">{{ 'SUCCESS_PARTNERS' | translate }}</h2>
+            <p class="section-description">{{ 'PROUD_PARTNERSHIP' | translate }}</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4" *ngFor="let partner of partners | slice:0:3">
+                <div class="partner-item text-center">
+                    <img [src]="getImageUrl(partner.logo_url, 'assets/images/partner-placeholder.png')"
+                        [alt]="partner.name" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a routerLink="/partners" class="btn btn-primary">
+                {{ 'VIEW_ALL_PARTNERS' | translate }}
+                <i class="fa-solid ms-2"
+                    [ngClass]="{'fa-arrow-right': translate.currentLang === 'en', 'fa-arrow-left': translate.currentLang === 'ar'}"></i>
+            </a>
+        </div>
+    </div>
+</section>

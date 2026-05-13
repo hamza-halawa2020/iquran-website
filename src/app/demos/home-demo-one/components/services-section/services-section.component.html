@@ -1,0 +1,37 @@
+<section class="services-section section-padding">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title text-center ">{{ 'SERVICES_PAGE_DESC' | translate }}</h2>
+        </div>
+        <div class="section-title text-center ">{{ 'SERVICES_PAGE_DESC2' | translate }}</div>
+        <div class="section-title text-center ">{{ 'SERVICES_PAGE_DESC3' | translate }}</div>
+        <div class="section-title text-center ">{{ 'SERVICES_PAGE_DESC4' | translate }}</div>
+
+        @defer (on viewport) {
+            <div scrollReveal [revealDelay]="60">
+                <app-latest-courses-section [courses]="courses"></app-latest-courses-section>
+            </div>
+        } @placeholder {
+            <div class="services-defer-placeholder" style="--services-defer-min-h: 520px"></div>
+        }
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let service of defaultServices">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid" [ngClass]="service.icon"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                        <a [routerLink]="service.link" class="service-link">
+                            {{ 'READ_MORE' | translate }}: {{ service.title }}
+                            <i class="fa-solid ms-2"
+                                [ngClass]="{'fa-arrow-right': translate.currentLang === 'en', 'fa-arrow-left': translate.currentLang === 'ar'}"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

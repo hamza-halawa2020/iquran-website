@@ -1,0 +1,67 @@
+<section class="testimonials-section section-padding bg-light" *ngIf="testimonials.length > 0">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="">{{ 'TESTIMONIALS' | translate }}</span>
+            <h2 class="section-title">{{ 'FEEDBACK_TITLE' | translate }}</h2>
+            <p class="section-description">{{ 'CLIENT_TESTIMONIALS_DESC' | translate }}</p>
+        </div>
+
+        <div class="testimonials-carousel-shell" [class.is-rtl]="isRtl">
+            <div #testimonialsTrack class="testimonials-track" [class.is-rtl]="isRtl">
+                <div #testimonialSlide class="testimonial-slide" *ngFor="let testimonial of testimonials">
+                    <article class="testimonial-card">
+                        <div class="quote-icon">
+                            <i class="fa-solid fa-quote-left"></i>
+                        </div>
+
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">{{ testimonial.comment }}</p>
+                        </div>
+
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <span>{{ getInitials(testimonial.client_name) }}</span>
+                            </div>
+                            <div class="author-info">
+                                <h5>
+                                    {{ testimonial.client_name }}
+                                    <span class="author-country" *ngIf="testimonial.country">
+                                        <i class="fa-solid fa-location-dot"></i> {{ testimonial.country }}
+                                    </span>
+                                </h5>
+                                <p *ngIf="testimonial.created_at">{{ formatDate(testimonial.created_at) }}</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="carousel-controls" *ngIf="hasMultipleTestimonials">
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollPrev"
+                    (click)="scrollTestimonials('prev')"
+                    [attr.aria-label]="isRtl ? 'Scroll right' : 'Scroll left'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollNext"
+                    (click)="scrollTestimonials('next')"
+                    [attr.aria-label]="isRtl ? 'Scroll left' : 'Scroll right'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+                </button>
+            </div>
+
+            <div class="text-center mt-4">
+                <a routerLink="/testimonials" class="btn btn-outline-primary">
+                    {{ 'VIEW_ALL_TESTIMONIALS' | translate }}
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-arrow-left' : 'fa-arrow-right'"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

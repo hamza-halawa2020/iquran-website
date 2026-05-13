@@ -1,0 +1,175 @@
+.section-padding {
+    position: relative;
+}
+
+.section-header {
+    position: relative;
+    
+    &::before {
+        content: ''; /* Islamic Star motif placeholder or icon */
+        display: block;
+        font-size: 24px;
+        color: var(--secondaryColor);
+        margin-bottom: 15px;
+    }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--primaryColor);
+        margin-bottom: 20px;
+        line-height: 1.2;
+    }
+}
+
+// Services Section
+.services-section {
+    background-color: #fdfbf7; // Cream background
+    background-image: var(--islamicPattern);
+    
+    .service-card {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 20px;
+        text-align: center;
+        height: 100%;
+        transition: all 0.4s ease;
+        border: 1px solid rgba(6, 78, 59, 0.1);
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+
+        // Islamic Arch Shape effect on top
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--secondaryColor), var(--goldLight));
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(6, 78, 59, 0.15);
+            border-color: var(--goldLight);
+
+            &::before {
+                opacity: 1;
+            }
+
+            .service-icon {
+                background: var(--primaryColor);
+                transform: rotate(0deg);
+                border-color: var(--goldLight);
+                
+                i {
+                    color: var(--goldLight);
+                    transform: rotate(0deg);
+                }
+            }
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #f0fdf4;
+            border: 1px solid var(--secondaryColor);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transform: rotate(45deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            
+            i {
+                color: var(--primaryColor);
+                font-size: 32px;
+                transform: rotate(-45deg);
+                transition: all 0.5s ease;
+            }
+        }
+        
+        .service-content {
+            h4 {
+                font-size: 1.4rem;
+                font-weight: 700;
+                color: var(--primaryColor);
+                margin-bottom: 15px;
+            }
+            
+            p {
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 25px;
+                font-size: 0.95rem;
+            }
+            
+            .service-link {
+                display: inline-flex;
+                align-items: center;
+                color: var(--secondaryColor);
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 0.9rem;
+                transition: all 0.3s ease;
+                
+                i {
+                    transition: transform 0.3s ease;
+                }
+
+                &:hover {
+                    color: var(--primaryColor);
+                    
+                    i {
+                        margin-left: 10px !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.services-defer-placeholder {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: var(--services-defer-min-h, 320px);
+    border-radius: 26px;
+    margin: 30px 0;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(30, 58, 95, 0.04), rgba(201, 169, 97, 0.08));
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.55) 45%,
+            rgba(255, 255, 255, 0.1) 55%,
+            transparent 100%
+        );
+        transform: translateX(-100%);
+        will-change: transform;
+        animation: servicesDeferShimmer 1.4s linear infinite;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-defer-placeholder {
+        margin: 20px 0;
+        border-radius: 18px;
+    }
+}
+
+@keyframes servicesDeferShimmer {
+    to {
+        transform: translateX(100%);
+    }
+}

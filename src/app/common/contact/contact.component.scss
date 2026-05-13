@@ -1,0 +1,230 @@
+$primary-color: var(--primaryColor); /* Navy Blue from Logo */
+$secondary-color: var(--secondaryColor); /* Gold from Logo */
+$text-color: var(--paragraphColor);
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.contact-area {
+    padding: 60px 0;
+    background-color: transparent;
+    
+    .section-title {
+        margin-bottom: 40px;
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: $primary-color;
+            margin-bottom: 15px;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+    }
+}
+
+/* The contact form is embedded inside a padded card on Contact Us page. */
+:host(.embedded-contact) {
+    .contact-area {
+        padding: 0;
+    }
+
+    .contact-form {
+        padding: 0;
+        max-width: 760px;
+    }
+}
+
+.contact-form {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    
+    .form-group {
+        margin-bottom: 25px;
+        
+        label {
+            font-weight: 600;
+            color: $text-color;
+            margin-bottom: 10px;
+            display: block;
+            font-size: 0.95rem;
+        }
+        
+        .form-control {
+            min-height: 62px;
+            width: 100%;
+            max-width: 100%;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            padding: 16px 22px;
+            font-size: 1.02rem;
+            color: $text-color;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+            line-height: 1.5;
+            
+            &:focus {
+                border-color: $secondary-color;
+                box-shadow: 0 10px 25px rgba(180, 83, 9, 0.1);
+                background-color: #ffffff;
+                outline: none;
+            }
+            
+            &::placeholder {
+                color: #9ca3af;
+            }
+            
+            &.is-invalid {
+                border-color: #ef4444;
+                
+                &:focus {
+                    border-color: #ef4444;
+                    box-shadow: 0 0 0 0.2rem rgba(239, 68, 68, 0.1);
+                }
+            }
+        }
+        
+        textarea.form-control {
+            min-height: 180px;
+            resize: none;
+            padding-top: 20px;
+        }
+        
+        .invalid-feedback {
+            display: block;
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 8px;
+            font-weight: 500;
+        }
+    }
+    
+        .submit-btn {
+            background: $primary-color;
+            color: #fff;
+        border: none;
+        padding: 18px 45px;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 700;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(6, 78, 59, 0.2);
+        
+        i {
+            margin-right: 10px;
+        }
+        
+        &:hover:not(:disabled) {
+            background: $secondary-color;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(180, 83, 9, 0.3);
+        }
+        
+        &:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .fa-spin {
+            animation: spin 1s linear infinite;
+        }
+    }
+}
+
+// Toast Styling
+.toast-container {
+    .toast {
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        
+        .toast-header {
+            border-bottom: none;
+            border-radius: 10px 10px 0 0;
+            
+            &.bg-success {
+                background-color: #28a745 !important;
+            }
+            
+            &.bg-danger {
+                background-color: #dc3545 !important;
+            }
+            
+            .btn-close-white {
+                filter: invert(1) grayscale(100%) brightness(200%);
+            }
+        }
+        
+        .toast-body {
+            padding: 15px 20px;
+            font-weight: 500;
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+    .contact-area {
+        padding: 60px 0;
+        
+        .section-title {
+            margin-bottom: 40px;
+            
+            h2 {
+                font-size: 28px;
+            }
+        }
+    }
+    
+    .contact-form {
+        padding: 30px 25px;
+        max-width: 100%;
+        
+        .form-group {
+            margin-bottom: 25px;
+            
+            .form-control {
+                min-height: 58px;
+                padding: 15px 18px;
+                font-size: 16px;
+            }
+            
+            textarea.form-control {
+                min-height: 140px;
+            }
+        }
+        
+        .submit-btn {
+            padding: 12px 30px;
+            font-size: 15px;
+        }
+    }
+
+    :host(.embedded-contact) .contact-form {
+        padding: 0;
+    }
+}
+
+// RTL Support
+:host-context([dir="rtl"]) {
+    .submit-btn i {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,114 @@
+<section class="add-review-section section-padding">
+    <div class="islamic-overlay"></div>
+    <div class="decorative-border top"></div>
+
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header text-center">
+            <div class="section-icon">
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <h2 class="section-title">{{ 'ADD_REVIEW_TITLE' | translate }}</h2>
+            <p class="section-description">{{ 'ADD_REVIEW_SUBTITLE' | translate }}</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10">
+                <!-- Success Message -->
+                <div class="alert alert-success animate__animated animate__fadeIn" *ngIf="submitSuccess">
+                    <i class="fa-solid fa-check-circle"></i>
+                    {{ 'ADD_REVIEW_SUCCESS_MESSAGE' | translate }}
+                </div>
+
+                <!-- Error Message -->
+                <div class="alert alert-danger animate__animated animate__fadeIn" *ngIf="submitError">
+                    <i class="fa-solid fa-exclamation-circle"></i>
+                    {{ errorMessage }}
+                </div>
+
+                <!-- Review Form -->
+                <div class="review-form-card" *ngIf="!submitSuccess">
+                    <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fa-solid fa-user"></i>
+                                {{ 'ADD_REVIEW_NAME' | translate }}
+                                <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                class="form-control" 
+                                formControlName="name"
+                                [class.is-invalid]="name?.invalid && name?.touched"
+                                [placeholder]="'ADD_REVIEW_NAME_PLACEHOLDER' | translate">
+                            <div class="invalid-feedback" *ngIf="name?.invalid && name?.touched">
+                                <span *ngIf="name?.errors?.['required']">{{ 'ADD_REVIEW_NAME_REQUIRED' | translate }}</span>
+                                <span *ngIf="name?.errors?.['maxlength']">{{ 'ADD_REVIEW_NAME_MAX_LENGTH' | translate }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Country Field -->
+                        <div class="form-group">
+                            <label for="country">
+                                <i class="fa-solid fa-globe"></i>
+                                {{ 'ADD_REVIEW_COUNTRY' | translate }}
+                                <span class="required">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                id="country" 
+                                class="form-control" 
+                                formControlName="country"
+                                [class.is-invalid]="country?.invalid && country?.touched"
+                                [placeholder]="'ADD_REVIEW_COUNTRY_PLACEHOLDER' | translate">
+                            <div class="invalid-feedback" *ngIf="country?.invalid && country?.touched">
+                                <span *ngIf="country?.errors?.['required']">{{ 'ADD_REVIEW_COUNTRY_REQUIRED' | translate }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Review Field -->
+                        <div class="form-group">
+                            <label for="review">
+                                <i class="fa-solid fa-comment"></i>
+                                {{ 'ADD_REVIEW_REVIEW' | translate }}
+                                <span class="required">*</span>
+                            </label>
+                            <textarea 
+                                id="review" 
+                                class="form-control" 
+                                formControlName="review"
+                                rows="6"
+                                [class.is-invalid]="review?.invalid && review?.touched"
+                                [placeholder]="'ADD_REVIEW_REVIEW_PLACEHOLDER' | translate"></textarea>
+                            <div class="invalid-feedback" *ngIf="review?.invalid && review?.touched">
+                                <span *ngIf="review?.errors?.['required']">{{ 'ADD_REVIEW_REVIEW_REQUIRED' | translate }}</span>
+                                <span *ngIf="review?.errors?.['minlength']">{{ 'ADD_REVIEW_REVIEW_MIN_LENGTH' | translate }}</span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-actions">
+                            <button 
+                                type="submit" 
+                                class="btn-submit" 
+                                [disabled]="isSubmitting">
+                                <span *ngIf="!isSubmitting">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    {{ 'ADD_REVIEW_SUBMIT' | translate }}
+                                </span>
+                                <span *ngIf="isSubmitting">
+                                    <i class="fa-solid fa-spinner fa-spin"></i>
+                                    {{ 'ADD_REVIEW_SUBMITTING' | translate }}
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="decorative-border bottom"></div>
+</section>

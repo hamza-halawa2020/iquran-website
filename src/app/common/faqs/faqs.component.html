@@ -1,0 +1,63 @@
+<div [dir]="translateService.currentLang === 'ar' ? 'rtl' : 'ltr'">
+    <!-- START FAQS -->
+    <section class="faqs-area section-padding mt-5">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>{{ 'FREQUENTLY_ASKED_QUESTIONS' | translate }}</h2>
+                <p class="mt-5">{{ 'FAQ_DESC' | translate }}</p>
+            </div>
+
+            <!-- Loading State -->
+            <div class="text-center py-5" *ngIf="isLoading">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+
+            <!-- Error Message -->
+            <div class="alert alert-danger" *ngIf="errorMessage">
+                {{ errorMessage }}
+            </div>
+
+            <!-- FAQs Content -->
+            <div class="row justify-content-center" *ngIf="!isLoading">
+                <div class="col-lg-10 col-sm-12 col-xs-12">
+                    <div
+                        ngbAccordion
+                        #acc="ngbAccordion"
+                        [closeOthers]="true"
+                        id="accordionExample"
+                        class="faqs-accordion"
+                    >
+                        <div ngbAccordionItem *ngFor="let faq of faqs; let i = index" 
+                             class="faq-item animate__animated animate__fadeInUp"
+                             [style.animation-delay]="i * 0.1 + 's'">
+                            <h2 ngbAccordionHeader>
+                                <button ngbAccordionButton class="faq-question">
+                                    <i class="fa-solid fa-question-circle"></i>
+                                    {{ faq.question }}
+                                </button>
+                            </h2>
+                            <div ngbAccordionCollapse>
+                                <div class="accordion-body faq-answer" [innerHTML]="faq.answer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No FAQs Message -->
+                    <div class="text-center py-5" *ngIf="faqs.length === 0">
+                        <div class="alert alert-info">
+                            <i class="fa-solid fa-info-circle"></i>
+                            {{ 'NO_FAQS_FOUND' | translate }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <app-pagination [meta]="meta" (pageChange)="onPageChange($event)" *ngIf="!isLoading && meta"></app-pagination>
+        </div>
+    </section>
+    <!-- END FAQS -->
+</div>

@@ -1,0 +1,19 @@
+<div class="content-card animate__animated animate__fadeInUp" [style.animation-delay]="animationDelay + 's'">
+    <div class="card-img">
+        <img [src]="getImageUrl()" [alt]="item.title">
+        <div class="overlay"></div>
+    </div>
+    <div class="card-content">
+        <h3>
+            <a [routerLink]="[routePath, item.id]">{{ item.title }}</a>
+        </h3>
+        <div class="description-preview" [innerHTML]="item.description"></div>
+
+        <div class="card-footer">
+            <a [routerLink]="[routePath, item.id]" class="read-more-btn">
+                {{ 'READ_MORE' | translate }}: {{ item.title }}
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</div>

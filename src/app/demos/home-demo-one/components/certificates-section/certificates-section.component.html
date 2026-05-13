@@ -1,0 +1,70 @@
+<section class="certificates-section section-padding" *ngIf="certificates.length > 0">
+    <div class="container">
+        <div class="section-header text-center">
+            <span>{{ 'CERTIFICATIONS' | translate }}</span>
+            <h2 class="section-title">{{ 'OUR_CERTIFICATES' | translate }}</h2>
+            <p class="section-description">{{ 'CERTIFICATES_DESC' | translate }}</p>
+        </div>
+
+        <div class="certificates-carousel-shell" [class.is-rtl]="isRtl">
+            <div #certificatesTrack class="certificates-track" [class.is-rtl]="isRtl">
+                <div #certificateSlide class="certificate-slide" *ngFor="let cert of certificates; let i = index">
+                    <div class="certificate-card animate__animated animate__fadeInUp"
+                        [style.animation-delay]="i * 0.08 + 's'">
+                        <div class="certificate-image">
+                            <img [src]="cert.file_url"
+                                [alt]="cert.title"
+                                class="img-fluid"
+                                (error)="onImageError($event)">
+                            <div class="certificate-overlay">
+                                <a [href]="cert.file_url" target="_blank" class="btn btn-light">
+                                    <i class="fa-solid fa-eye"></i> {{ 'VIEW' | translate }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-content">
+                            <h4 class="certificate-title">{{ cert.title }}</h4>
+                            <p class="certificate-date">{{ cert.created_at | date:'longDate' }}</p>
+                            <div class="certificate-status">
+                                <span *ngIf="cert.status === 1" class="badge bg-success">
+                                    {{ 'APPROVED' | translate }}
+                                </span>
+                                <span *ngIf="cert.status === 0" class="badge bg-warning">
+                                    {{ 'PENDING' | translate }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-controls" *ngIf="hasMultipleCertificates">
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollPrev"
+                    (click)="scrollCertificates('prev')"
+                    [attr.aria-label]="isRtl ? 'Scroll right' : 'Scroll left'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    [disabled]="!canScrollNext"
+                    (click)="scrollCertificates('next')"
+                    [attr.aria-label]="isRtl ? 'Scroll left' : 'Scroll right'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+                </button>
+            </div>
+
+            <div class="text-center mt-4">
+                <a routerLink="/certificates" class="btn btn-outline-primary">
+                    {{ 'EXPLORE_ALL_CERTIFICATES' | translate }}
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-arrow-left' : 'fa-arrow-right'"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>

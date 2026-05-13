@@ -1,0 +1,103 @@
+<footer class="modern-footer">
+    <!-- Main Footer Content -->
+    <div class="footer-main">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Company Info Section -->
+                <div class="footer-section company-info">
+                    <div class="company-brand">
+                        <img src="/assets/images/logo.svg" alt="onlineislamicschool"
+                            class="footer-logo" width="584" height="621" loading="lazy" decoding="async">
+                        <!-- <h3 class="company-name">{{ 'onlineislamicschool' | translate }}</h3> -->
+                    </div>
+                    <p class="company-description" *ngIf="settings.about_us_footer">
+                        {{ settings.about_us_footer }}
+                    </p>
+                    <p class="company-description" *ngIf="!settings.about_us_footer">
+                        {{ settings.about_us }}
+                    </p>
+
+
+
+                    <!-- Social Media -->
+                    <div class="social-media">
+                        <h4>{{ 'FOLLOW_US' | translate }}</h4>
+                        <div class="social-links">
+                            <a *ngIf="settings.facebook" [href]="settings.facebook" target="_blank"
+                                class="social-link facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a *ngIf="settings.instagram" [href]="settings.instagram" target="_blank"
+                                class="social-link instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a *ngIf="settings.twitter" [href]="settings.twitter" target="_blank"
+                                class="social-link twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a *ngIf="settings.linkedin" [href]="settings.linkedin" target="_blank"
+                                class="social-link linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Services -->
+                <div class="footer-section">
+                    <h3 class="section-title">{{ 'LOCATION' | translate }}</h3>
+                    <ul class="footer-links">
+
+                        <li *ngIf="settings.address">{{ settings.address }}</li>
+                        <li *ngIf="!settings.address">{{ "NEW_CAIRO" | translate }}</li>
+                        <li *ngIf="settings.email"><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></li>
+                        <li *ngIf="settings.phone"><a href="tel:{{ settings.phone }}">{{ settings.phone }}</a></li>
+                        <li *ngIf="settings.whatsapp"><a href="tel:{{ settings.whatsapp }}">{{ settings.whatsapp }}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="section-title">{{ 'MENU' | translate }}</h3>
+                    <ul class="footer-links">
+                        <li><a routerLink="/">{{ 'HOME' | translate }}</a></li>
+                        <li><a routerLink="/testimonials">{{ 'TESTIMONIALS' | translate }}</a></li>
+                        <li><a routerLink="/contacts">{{ 'CONTACT_US' | translate }}</a></li>
+                        <li><a routerLink="/about">{{ 'ABOUT_US' | translate }}</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal & Support -->
+                <div class="footer-section">
+                    <h3 class="section-title">{{ 'POLICIES_SUPPORT' | translate }}</h3>
+                    <ul class="footer-links">
+                        <li><a routerLink="/privacy-policy">{{ 'PRIVACY_POLICY' | translate }}</a></li>
+                        <li><a routerLink="/terms-conditions">{{ 'TERMS_OF_SERVICE' | translate }}</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <p>
+                        {{ 'ALL_RIGHTS_RESERVED' | translate }}
+                        © {{ currentYear }}
+                    </p>
+                </div>
+                <div class="footer-bottom-links">
+                    <a routerLink="/privacy-policy">{{ 'PRIVACY' | translate }}</a>
+                    <a routerLink="/terms-conditions">{{ 'TERMS' | translate }}</a>
+                    <a routerLink="/contacts">{{ 'SUPPORT' | translate }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

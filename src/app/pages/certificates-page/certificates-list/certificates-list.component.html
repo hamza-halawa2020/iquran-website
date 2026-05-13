@@ -1,0 +1,54 @@
+<section class="certificates-area">
+    <div class="container mt-5">
+        <div class="section-title text-center">
+            <h2>{{ 'OUR_CERTIFICATES' | translate }}</h2>
+            <p>{{ 'CERTIFICATES_DESC' | translate }}</p>
+        </div>
+
+        <div class="row" *ngIf="isLoading">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of [1,2,3,4,5,6]">
+                <div class="skeleton-loader"></div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!isLoading">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let certificate of certificates; let i = index">
+                <div class="certificate-card animate__animated animate__fadeInUp"
+                    [style.animation-delay]="i * 0.1 + 's'">
+                    <div class="certificate-image">
+                        <img [src]="certificate.file_url" 
+                             [alt]="certificate.title" 
+                             class="img-fluid"
+                             (error)="onImageError($event)">
+                        <div class="certificate-overlay">
+                            <a [href]="certificate.file_url" target="_blank" class="btn btn-primary">
+                                <i class="fa-solid fa-eye"></i> {{ 'VIEW' | translate }}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="certificate-content">
+                        <h4 class="certificate-title">{{ certificate.title }}</h4>
+                        <p class="certificate-date">{{ certificate.created_at | date:'longDate' }}</p>
+                        <div class="certificate-status" [ngClass]="'status-' + certificate.status">
+                            <span *ngIf="certificate.status === 1" class="badge bg-success">
+                                {{ 'APPROVED' | translate }}
+                            </span>
+                            <span *ngIf="certificate.status === 0" class="badge bg-warning">
+                                {{ 'PENDING' | translate }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 text-center py-5" *ngIf="certificates.length === 0">
+                <div class="alert alert-info">
+                    {{ 'NO_CERTIFICATES_FOUND' | translate }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <app-pagination [meta]="meta" (pageChange)="onPageChange($event)"></app-pagination>
+    </div>
+</section>

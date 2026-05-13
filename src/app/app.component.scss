@@ -1,0 +1,16 @@
+// Global styles for the app component
+:host {
+    display: block;
+    min-height: 100vh;
+}
+
+.app-footer-placeholder {
+    min-height: 340px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .app-footer-placeholder {
+        min-height: 260px;
+    }
+}

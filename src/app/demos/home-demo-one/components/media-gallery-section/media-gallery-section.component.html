@@ -1,0 +1,129 @@
+<section class="media-gallery-section section-padding">
+  <div class="islamic-overlay"></div>
+  <div class="decorative-border top"></div>
+
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header text-center">
+      <div class="section-icon">
+        <i class="fa-solid fa-images"></i>
+      </div>
+      <h2 class="section-title">{{ 'MEDIA_GALLERY.TITLE' | translate }}</h2>
+      <p class="section-description">{{ 'MEDIA_GALLERY.SUBTITLE' | translate }}</p>
+    </div>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons text-center mb-5">
+      <button type="button" class="filter-btn" [class.active]="activeFilter === 'all'" (click)="filterMedia('all')">
+        <i class="fa-solid fa-th"></i>
+        {{ 'MEDIA_GALLERY.ALL' | translate }}
+      </button>
+      <button type="button" class="filter-btn" [class.active]="activeFilter === 'image'" (click)="filterMedia('image')">
+        <i class="fa-solid fa-image"></i>
+        {{ 'MEDIA_GALLERY.IMAGES' | translate }}
+      </button>
+      <button type="button" class="filter-btn" [class.active]="activeFilter === 'video'" (click)="filterMedia('video')">
+        <i class="fa-solid fa-video"></i>
+        {{ 'MEDIA_GALLERY.VIDEOS' | translate }}
+      </button>
+    </div>
+
+    <!-- Loading State -->
+    <div class="row" *ngIf="isLoading">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of [1,2,3,4,5,6]">
+        <div class="skeleton-loader"></div>
+      </div>
+    </div>
+
+    <!-- Media Grid -->
+    <div class="media-grid" *ngIf="!isLoading && filteredMedia.length > 0">
+      <div class="media-item" *ngFor="let item of filteredMedia"
+        (click)="openInPage ? navigateToMediaPage(item) : (item.type === 'image' ? openLightbox(item) : playVideo(item))">
+        <div class="media-card">
+          <div class="media-thumbnail">
+            <!-- Image -->
+            <img *ngIf="item.type === 'image' && item.file" [src]="item.file" [alt]="item.title" loading="lazy">
+
+            <!-- Video Thumbnail -->
+            <div *ngIf="item.type === 'video'" class="video-thumbnail">
+              <img [src]="getVideoThumbnail(item)" [alt]="item.title" loading="lazy">
+              <div class="play-button">
+                <i class="fa-solid fa-play"></i>
+              </div>
+            </div>
+
+            <div class="media-overlay">
+              <div class="overlay-content">
+                <i class="fa-solid" [ngClass]="item.type === 'image' ? 'fa-search-plus' : 'fa-play-circle'"></i>
+                <h4>{{ item.title }}</h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="media-info">
+            <div class="media-type-badge" [class.video-badge]="item.type === 'video'">
+              <i class="fa-solid" [ngClass]="item.type === 'image' ? 'fa-image' : 'fa-video'"></i>
+            </div>
+            <h5>{{ item.title }}</h5>
+          </div>
+
+          <div class="islamic-corner top-right"></div>
+          <div class="islamic-corner bottom-left"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div class="empty-state text-center" *ngIf="!isLoading && filteredMedia.length === 0">
+      <i class="fa-solid fa-folder-open"></i>
+      <p>{{ 'MEDIA_GALLERY.NO_MEDIA' | translate }}</p>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination-wrapper" *ngIf="!isLoading && meta">
+      <app-pagination [meta]="meta" (pageChange)="onPageChange($event)"></app-pagination>
+    </div>
+  </div>
+
+  <div class="decorative-border bottom"></div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" *ngIf="lightboxOpen" (click)="closeLightbox()">
+    <div class="lightbox-content" (click)="$event.stopPropagation()">
+      <button class="close-btn" (click)="closeLightbox()">
+        <i class="fa-solid fa-times"></i>
+      </button>
+
+      <div class="lightbox-media" *ngIf="selectedMedia">
+        <img *ngIf="selectedMedia.type === 'image' && selectedMedia.file" [src]="selectedMedia.file"
+          [alt]="selectedMedia.title">
+
+        <div class="lightbox-title">
+          <h3>{{ selectedMedia.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video Modal -->
+  <div class="lightbox video-modal" *ngIf="videoModalOpen">
+    <div class="lightbox-content">
+      <button class="close-btn" (click)="closeVideoModal()">
+        <i class="fa-solid fa-times"></i>
+      </button>
+
+      <div class="lightbox-media" *ngIf="selectedMedia">
+        <div class="video-container">
+          <iframe *ngIf="selectedVideoUrl" [src]="getVideoEmbedUrl(selectedVideoUrl)" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="lightbox-title">
+          <h3>{{ selectedMedia.title }}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

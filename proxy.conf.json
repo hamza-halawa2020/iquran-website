@@ -1,0 +1,8 @@
+{
+    "/public/i18n": {
+        "target": "https://dashboard.onlineislamicschool.com/",
+        "secure": true,
+        "changeOrigin": true,
+        "logLevel": "debug"
+    }
+}

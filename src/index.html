@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Online Islamic School for Quran memorization, Tajweed, Arabic language, and Islamic studies with qualified teachers." />
+
+    <!-- Title -->
+    <title>Online Islamic School | Quran And Arabic Learning</title>
+
+    <!-- Source Connectivity -->
+    <link rel="preconnect" href="https://dashboard.onlineislamicschool.com" crossorigin />
+    <link rel="dns-prefetch" href="//dashboard.onlineislamicschool.com" />
+    <link rel="preload" href="/assets/images/i-2-1024x683.webp" as="image" fetchpriority="high" />
+    <link rel="preload" href="/assets/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/fa-brands-subset.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
+</head>
+
+<body>
+    <div id="loading-screen" aria-hidden="true">
+        <div class="loading-shell">
+            <span class="loading-mark">OM</span>
+            <span class="loading-text">Online Islamic School</span>
+        </div>
+    </div>
+    <app-root></app-root>
+    <script>
+        window.addEventListener('load', function () {
+            window.setTimeout(function () {
+                document.body.classList.add('loaded');
+            }, 250);
+        }, { once: true });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+.section-padding {
+    padding: 100px 0;
+    position: relative;
+}
+
+.add-review-section {
+    background: linear-gradient(135deg, #fdfbf7 0%, #f9f7f3 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    
+    .islamic-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/images/islamic-mosque-pattern.svg');
+        background-size: 200px 200px;
+        background-repeat: repeat;
+        opacity: 0.03;
+        z-index: 0;
+        pointer-events: none;
+    }
+    
+    .decorative-border {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 6px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            var(--secondaryColor) 20%, 
+            var(--goldLight) 50%, 
+            var(--secondaryColor) 80%, 
+            transparent 100%);
+        z-index: 1;
+        
+        &.top {
+            top: 0;
+            box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+        }
+        
+        &.bottom {
+            bottom: 0;
+            box-shadow: 0 -2px 8px rgba(245, 158, 11, 0.2);
+        }
+    }
+    
+    .container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .section-header {
+        margin-bottom: 60px;
+        
+        .section-icon {
+            font-size: 3rem;
+            color: var(--secondaryColor);
+            margin-bottom: 20px;
+            
+            i {
+                filter: drop-shadow(0 4px 8px rgba(180, 83, 9, 0.3));
+            }
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--primaryColor);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 80px;
+                height: 4px;
+                background: var(--secondaryColor);
+                border-radius: 2px;
+            }
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: #6b7280;
+            max-width: 600px;
+            margin: 25px auto 0;
+            line-height: 1.8;
+        }
+    }
+
+    .alert {
+        padding: 20px 30px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 16px;
+        
+        i {
+            font-size: 24px;
+        }
+        
+        &.alert-success {
+            background: #d1fae5;
+            border: 1px solid #6ee7b7;
+            color: #065f46;
+        }
+        
+        &.alert-danger {
+            background: #fee2e2;
+            border: 1px solid #fca5a5;
+            color: #991b1b;
+        }
+    }
+    
+    .review-form-card {
+        background: white;
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 20px 60px rgba(6, 78, 59, 0.1);
+        border: 2px solid rgba(180, 83, 9, 0.1);
+        
+        .form-group {
+            margin-bottom: 30px;
+            
+            label {
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--primaryColor);
+                margin-bottom: 10px;
+                
+                i {
+                    margin-left: 8px;
+                    color: var(--secondaryColor);
+                }
+                
+                .required {
+                    color: #dc2626;
+                    margin-right: 5px;
+                }
+            }
+            
+            .form-control {
+                width: 100%;
+                padding: 15px 20px;
+                border: 2px solid #e5e7eb;
+                border-radius: 12px;
+                font-size: 16px;
+                transition: all 0.3s ease;
+                font-family: var(--fontFamily);
+                
+                &:focus {
+                    outline: none;
+                    border-color: var(--secondaryColor);
+                    box-shadow: 0 0 0 4px rgba(180, 83, 9, 0.1);
+                }
+                
+                &.is-invalid {
+                    border-color: #dc2626;
+                    
+                    &:focus {
+                        box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.1);
+                    }
+                }
+            }
+            
+            textarea.form-control {
+                resize: vertical;
+                min-height: 150px;
+            }
+            
+            .invalid-feedback {
+                display: block;
+                color: #dc2626;
+                font-size: 14px;
+                margin-top: 8px;
+                
+                i {
+                    margin-left: 5px;
+                }
+            }
+        }
+        
+        .form-actions {
+            text-align: center;
+            margin-top: 40px;
+            
+            .btn-submit {
+                background: linear-gradient(135deg, var(--primaryColor) 0%, var(--accentColor) 100%);
+                color: white;
+                border: none;
+                padding: 18px 50px;
+                border-radius: 50px;
+                font-size: 18px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                box-shadow: 0 8px 25px rgba(6, 78, 59, 0.3);
+                
+                i {
+                    margin-left: 10px;
+                }
+                
+                &:hover:not(:disabled) {
+                    transform: translateY(-3px);
+                    box-shadow: 0 12px 35px rgba(6, 78, 59, 0.4);
+                }
+                
+                &:disabled {
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .add-review-section {
+        padding: 60px 0;
+        
+        .section-header {
+            margin-bottom: 40px;
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-description {
+                font-size: 1rem;
+            }
+        }
+        
+        .review-form-card {
+            padding: 30px 20px;
+            
+            .form-actions {
+                .btn-submit {
+                    padding: 15px 40px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}

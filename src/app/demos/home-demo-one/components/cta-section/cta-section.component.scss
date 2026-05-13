@@ -1,0 +1,115 @@
+.section-padding {
+    padding: 100px 0;
+    position: relative;
+}
+
+// CTA Section
+// CTA Section
+.cta-section {
+    position: relative;
+    background: linear-gradient(135deg, var(--primaryColor) 0%, var(--accentColor) 100%);
+    color: white;
+    overflow: hidden;
+
+    .cta-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/assets/images/islamic-mosque-pattern.svg');
+        background-size: 200px 200px;
+        background-repeat: repeat;
+        opacity: 0.3;
+        z-index: 0;
+        pointer-events: none;
+        animation: patternMove 60s linear infinite;
+    }
+    
+    @keyframes patternMove {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 200px 200px;
+        }
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+    
+    .cta-content {
+        text-align: center;
+        
+        @media(min-width: 992px) {
+            text-align: start;
+        }
+
+        .cta-icon {
+            font-size: 3rem;
+            color: var(--secondaryColor);
+            margin-bottom: 20px;
+            
+            i {
+                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            }
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            
+            &::after {
+                content: '';
+                display: block;
+                width: 60px;
+                height: 3px;
+                background: var(--secondaryColor);
+                margin: 15px auto;
+                
+                @media(min-width: 992px) {
+                    margin: 15px 0;
+                }
+            }
+        }
+    
+        .cta-description {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+    }
+    
+    .cta-buttons {
+        margin-top: 30px;
+        
+        @media(min-width: 992px) {
+            margin-top: 0;
+        }
+
+        .btn-islamic {
+            background-color: var(--secondaryColor);
+            color: white;
+            border: 2px solid var(--secondaryColor);
+            font-weight: 700;
+            padding: 15px 40px;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            
+            &:hover {
+                background-color: transparent;
+                color: var(--secondaryColor);
+                border-color: var(--secondaryColor);
+                transform: translateY(-3px);
+                box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            }
+        }
+    }
+}

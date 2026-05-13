@@ -1,0 +1,179 @@
+.payment-methods-section {
+    padding: 100px 0;
+    background-color: #fdfbf7; // Cream background
+    background-image: var(--islamicPattern);
+    position: relative;
+    overflow: hidden;
+
+    .section-title {
+        margin-bottom: 60px;
+        position: relative;
+
+        h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e3a5f;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            position: relative;
+            display: inline-block;
+
+            &::after {
+                content: ''; /* Islamic Star motif placeholder or icon */
+                display: block;
+                font-size: 24px;
+                color: #c9a961;
+                margin: 10px auto 0;
+                width: 60px;
+                height: 3px;
+                background: #c9a961;
+            }
+        }
+    }
+
+    .payment-methods-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 30px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .payment-method-item {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 20px;
+        text-align: center;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 30px rgba(30, 58, 95, 0.05);
+        border: 1px solid rgba(30, 58, 95, 0.1);
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #c9a961, #d4b574);
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(30, 58, 95, 0.15);
+            border-color: #d4b574;
+
+            &::before {
+                opacity: 1;
+            }
+
+            .payment-icon {
+                background: #1e3a5f;
+                transform: rotate(0deg);
+                border-color: #d4b574;
+                
+                i {
+                    color: #d4b574;
+                    transform: rotate(0deg);
+                }
+            }
+        }
+
+        .payment-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: #f0fdf4;
+            border: 1px solid #c9a961;
+            border-radius: 15px; /* Squarish */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: rotate(45deg); /* Diamond shape */
+
+            i {
+                font-size: 28px;
+                color: #1e3a5f;
+                transition: all 0.5s ease;
+                transform: rotate(-45deg);
+            }
+        }
+
+        p {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e3a5f;
+            margin: 0;
+            line-height: 1.4;
+        }
+    }
+
+    .payment-note {
+        margin-top: 60px;
+        padding: 30px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        border-left: 5px solid #c9a961;
+
+        .islamic-note {
+            font-size: 1.05rem;
+            color: #4b5563;
+            margin: 0;
+            line-height: 1.8;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            i {
+                color: #c9a961;
+                margin: 0 10px;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .payment-methods-section {
+        padding: 60px 0;
+
+        .section-title h3 {
+            font-size: 2rem;
+        }
+
+        .payment-methods-wrapper {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            padding: 0;
+        }
+
+        .payment-method-item {
+            padding: 24px 16px;
+
+            .payment-icon {
+                width: 60px;
+                height: 60px;
+                margin-bottom: 16px;
+
+                i {
+                    font-size: 24px;
+                }
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    }
+}

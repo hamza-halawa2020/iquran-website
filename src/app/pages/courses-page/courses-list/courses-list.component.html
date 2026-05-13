@@ -1,0 +1,30 @@
+<section class="courses-area">
+    <div class="container mt-5">
+        <div class="section-title text-center">
+            <h2>{{ 'OUR_COURSES' | translate }}</h2>
+            <p>{{ 'COURSES_DESC' | translate }}</p>
+        </div>
+
+        <div class="row" *ngIf="isLoading">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of [1,2,3,4,5,6]">
+                <div class="skeleton-loader"></div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!isLoading">
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let course of courses; let i = index">
+                <app-content-card [item]="course" [routePath]="'/courses'" [animationDelay]="i * 0.1">
+                </app-content-card>
+            </div>
+
+            <div class="col-12 text-center py-5" *ngIf="courses.length === 0">
+                <div class="alert alert-info">
+                    {{ 'NO_COURSES_FOUND' | translate }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Pagination -->
+        <app-pagination [meta]="meta" (pageChange)="onPageChange($event)"></app-pagination>
+    </div>
+</section>
