@@ -17,8 +17,8 @@ export class LatestPostsSectionComponent implements AfterViewInit, OnDestroy {
     @ViewChild('postsTrack') private postsTrack?: ElementRef<HTMLDivElement>;
     @ViewChildren('postSlide') private postSlides?: QueryList<ElementRef<HTMLDivElement>>;
 
-    canScrollPrev = false;
-    canScrollNext = false;
+    canScrollPrev = true;
+    canScrollNext = true;
     private edgeObserver?: IntersectionObserver;
     private slidesChangesSubscription?: Subscription;
 
@@ -47,9 +47,9 @@ export class LatestPostsSectionComponent implements AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit(): void {
-        this.updateScrollButtons();
+        setTimeout(() => this.updateScrollButtons());
         this.slidesChangesSubscription = this.postSlides?.changes.subscribe(() => {
-            this.updateScrollButtons();
+            setTimeout(() => this.updateScrollButtons());
         });
     }
 

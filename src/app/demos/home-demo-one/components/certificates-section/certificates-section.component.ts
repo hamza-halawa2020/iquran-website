@@ -17,8 +17,8 @@ export class CertificatesSectionComponent implements AfterViewInit, OnDestroy {
     @ViewChildren('certificateSlide') private certificateSlides?: QueryList<ElementRef<HTMLDivElement>>;
 
     fallbackImage = '/assets/images/logo.svg';
-    canScrollPrev = false;
-    canScrollNext = false;
+    canScrollPrev = true;
+    canScrollNext = true;
     private edgeObserver?: IntersectionObserver;
     private slidesChangesSubscription?: Subscription;
 
@@ -51,9 +51,9 @@ export class CertificatesSectionComponent implements AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit(): void {
-        this.updateScrollButtons();
+        setTimeout(() => this.updateScrollButtons());
         this.slidesChangesSubscription = this.certificateSlides?.changes.subscribe(() => {
-            this.updateScrollButtons();
+            setTimeout(() => this.updateScrollButtons());
         });
     }
 

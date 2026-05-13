@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnDestroy, QueryList, ViewChild, ViewChildren } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Input, OnDestroy, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -16,12 +16,15 @@ export class TestimonialsSectionComponent implements AfterViewInit, OnDestroy {
     @ViewChild('testimonialsTrack') private testimonialsTrack?: ElementRef<HTMLDivElement>;
     @ViewChildren('testimonialSlide') private testimonialSlides?: QueryList<ElementRef<HTMLDivElement>>;
 
-    canScrollPrev = false;
-    canScrollNext = false;
+    canScrollPrev = true;
+    canScrollNext = true;
     private edgeObserver?: IntersectionObserver;
     private slidesChangesSubscription?: Subscription;
 
-    constructor(public translate: TranslateService) { }
+    constructor(
+        public translate: TranslateService,
+        private cdr: ChangeDetectorRef
+    ) { }
 
     get hasMultipleTestimonials(): boolean {
         return this.testimonials.length > 1;
@@ -48,9 +51,15 @@ export class TestimonialsSectionComponent implements AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit(): void {
-        this.updateScrollButtons();
-        this.slidesChangesSubscription = this.testimonialSlides?.changes.subscribe(() => {
+        setTimeout(() => {
             this.updateScrollButtons();
+            this.cdr.detectChanges();
+        });
+        this.slidesChangesSubscription = this.testimonialSlides?.changes.subscribe(() => {
+            setTimeout(() => {
+                this.updateScrollButtons();
+                this.cdr.detectChanges();
+            });
         });
     }
 

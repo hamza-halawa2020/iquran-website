@@ -7,11 +7,9 @@ import { HowItWorksComponent } from '../../common/how-it-works/how-it-works.comp
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { ServicesSectionComponent } from './components/services-section/services-section.component';
 import { StatsSectionComponent } from './components/stats-section/stats-section.component';
-import { TeamSectionComponent } from './components/team-section/team-section.component';
 import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
 import { LatestPostsSectionComponent } from './components/latest-posts-section/latest-posts-section.component';
 import { CertificatesSectionComponent } from './components/certificates-section/certificates-section.component';
-import { PartnersSectionComponent } from './components/partners-section/partners-section.component';
 import { MediaGallerySectionComponent } from './components/media-gallery-section/media-gallery-section.component';
 import { PaymentMethodsComponent } from '../../common/payment-methods/payment-methods.component';
 import { ContactComponent } from '../../common/contact/contact.component';
@@ -34,12 +32,10 @@ type IdleWindow = Window & {
         AboutSectionComponent,
         ServicesSectionComponent,
         StatsSectionComponent,
-        TeamSectionComponent,
         TestimonialsSectionComponent,
         LatestPostsSectionComponent,
         CertificatesSectionComponent,
         MediaGallerySectionComponent,
-        PartnersSectionComponent,
         PaymentMethodsComponent,
         ContactComponent,
         ScrollRevealDirective,

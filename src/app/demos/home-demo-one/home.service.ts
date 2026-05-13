@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of } from 'rxjs';
-import { map, catchError, switchMap } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { environment } from '../../../environments/environment';
 
 export interface HomeStats {
@@ -89,26 +89,7 @@ export class HomeService {
   getTestimonials(): Observable<any[]> {
     return this.http.get<any>(`${this.apiUrl}/reviews?page=1`)
       .pipe(
-        switchMap((response) => {
-          const firstPageTestimonials = this.mapTestimonials(response.data || []);
-          const lastPage = response.meta?.last_page || 1;
-
-          if (lastPage <= 1) {
-            return of(firstPageTestimonials);
-          }
-
-          const remainingPageRequests: Observable<any>[] = [];
-          for (let page = 2; page <= lastPage; page++) {
-            remainingPageRequests.push(this.http.get<any>(`${this.apiUrl}/reviews?page=${page}`));
-          }
-
-          return forkJoin(remainingPageRequests).pipe(
-            map((remainingPages) => [
-              ...firstPageTestimonials,
-              ...remainingPages.flatMap((pageResponse) => this.mapTestimonials(pageResponse.data || []))
-            ])
-          );
-        }),
+        map((response) => this.mapTestimonials(response.data || [])),
         catchError(() => {
           return of([]);
         })
@@ -118,26 +99,7 @@ export class HomeService {
   getLatestPosts(): Observable<any[]> {
     return this.http.get<any>(`${this.apiUrl}/posts?page=1`)
       .pipe(
-        switchMap((response) => {
-          const firstPagePosts = response.data || [];
-          const lastPage = response.meta?.last_page || 1;
-
-          if (lastPage <= 1) {
-            return of(firstPagePosts);
-          }
-
-          const remainingPageRequests: Observable<any>[] = [];
-          for (let page = 2; page <= lastPage; page++) {
-            remainingPageRequests.push(this.http.get<any>(`${this.apiUrl}/posts?page=${page}`));
-          }
-
-          return forkJoin(remainingPageRequests).pipe(
-            map((remainingPages) => [
-              ...firstPagePosts,
-              ...remainingPages.flatMap((pageResponse) => pageResponse.data || [])
-            ])
-          );
-        }),
+        map((response) => response.data || []),
         catchError(() => of([]))
       );
   }
@@ -145,25 +107,7 @@ export class HomeService {
   getLatestCourses(): Observable<any[]> {
     return this.http.get<any>(`${this.apiUrl}/courses?page=1`)
       .pipe(
-        switchMap((response) => {
-          const firstPageCourses = response.data || [];
-          const lastPage = response.meta?.last_page || 1;
-
-          if (lastPage <= 1) {
-            return of(firstPageCourses);
-          }
-          const remainingPageRequests: Observable<any>[] = [];
-          for (let page = 2; page <= lastPage; page++) {
-            remainingPageRequests.push(this.http.get<any>(`${this.apiUrl}/courses?page=${page}`));
-          }
-
-          return forkJoin(remainingPageRequests).pipe(
-            map((remainingPages) => [
-              ...firstPageCourses,
-              ...remainingPages.flatMap((pageResponse) => pageResponse.data || [])
-            ])
-          );
-        }),
+        map((response) => response.data || []),
         catchError(() => of([]))
       );
   }
@@ -199,26 +143,7 @@ export class HomeService {
   getMediaItems(): Observable<any[]> {
     return this.http.get<any>(`${this.apiUrl}/media-center?page=1`)
       .pipe(
-        switchMap((response) => {
-          const firstPageMediaItems = response.data || [];
-          const lastPage = response.meta?.last_page || 1;
-
-          if (lastPage <= 1) {
-            return of(firstPageMediaItems);
-          }
-
-          const remainingPageRequests: Observable<any>[] = [];
-          for (let page = 2; page <= lastPage; page++) {
-            remainingPageRequests.push(this.http.get<any>(`${this.apiUrl}/media-center?page=${page}`));
-          }
-
-          return forkJoin(remainingPageRequests).pipe(
-            map((remainingPages) => [
-              ...firstPageMediaItems,
-              ...remainingPages.flatMap((pageResponse) => pageResponse.data || [])
-            ])
-          );
-        }),
+        map((response) => response.data || []),
         catchError(() => {
           return of([]);
         })
@@ -239,26 +164,7 @@ export class HomeService {
   getCertificates(): Observable<any[]> {
     return this.http.get<any>(`${this.apiUrl}/certificates?page=1`)
       .pipe(
-        switchMap((response) => {
-          const firstPageCertificates = response.data || [];
-          const lastPage = response.meta?.last_page || 1;
-
-          if (lastPage <= 1) {
-            return of(firstPageCertificates);
-          }
-
-          const remainingPageRequests: Observable<any>[] = [];
-          for (let page = 2; page <= lastPage; page++) {
-            remainingPageRequests.push(this.http.get<any>(`${this.apiUrl}/certificates?page=${page}`));
-          }
-
-          return forkJoin(remainingPageRequests).pipe(
-            map((remainingPages) => [
-              ...firstPageCertificates,
-              ...remainingPages.flatMap((pageResponse) => pageResponse.data || [])
-            ])
-          );
-        }),
+        map((response) => response.data || []),
         catchError(() => of([]))
       );
   }

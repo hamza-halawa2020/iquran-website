@@ -57,16 +57,6 @@
     }
 
     @defer (on viewport) {
-    <section class="home-block home-block-surface" scrollReveal [revealDelay]="60">
-        <div class="container">
-            <app-team-section [teamMembers]="homeData?.teamMembers || []"></app-team-section>
-        </div>
-    </section>
-    } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 520px"></div>
-    }
-
-    @defer (on viewport) {
     <section class="home-block home-block-soft" scrollReveal [revealDelay]="60">
         <div class="container">
             <app-latest-posts-section [posts]="homeData?.latestPosts || []"></app-latest-posts-section>
@@ -84,16 +74,6 @@
     </section>
     } @placeholder {
     <div class="home-defer-placeholder" style="--home-defer-min-h: 320px"></div>
-    }
-
-    @defer (on viewport) {
-    <section class="home-block home-block-soft" scrollReveal [revealDelay]="60">
-        <div class="container">
-            <app-partners-section [partners]="homeData?.partners || []"></app-partners-section>
-        </div>
-    </section>
-    } @placeholder {
-    <div class="home-defer-placeholder" style="--home-defer-min-h: 360px"></div>
     }
 
     @defer (on viewport) {
