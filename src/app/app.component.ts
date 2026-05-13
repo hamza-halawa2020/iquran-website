@@ -15,7 +15,7 @@ import { BackToTopComponent } from './common/back-to-top/back-to-top.component';
     styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit, OnDestroy {
-    title = 'onlineislamicschool';
+    title = 'iquran';
     showCustomCursor = false;
     showFloatingUi = false;
     private removeCursorBootstrapListener?: () => void;

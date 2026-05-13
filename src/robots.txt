@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://onlineislamicschool.com/sitemap.xml
+Sitemap: https://iquran.com/sitemap.xml

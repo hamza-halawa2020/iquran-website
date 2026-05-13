@@ -1,6 +1,6 @@
 {
     "/public/i18n": {
-        "target": "https://dashboard.onlineislamicschool.com/",
+        "target": "https://dashboard.iquran.com/",
         "secure": true,
         "changeOrigin": true,
         "logLevel": "debug"
