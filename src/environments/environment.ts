@@ -1,7 +1,7 @@
 ﻿export const environment = {
-    backEndUrl: 'http://iquran-dashboard.test/api',
-    imgUrl: 'http://iquran-dashboard.test/',
-      features: {
+    backEndUrl: 'https://dashboard.onlineislamicmadrasah.com/api',
+    imgUrl: 'https://dashboard.onlineislamicmadrasah.com/',
+    features: {
         workSamples: false,
         staff: false,
         successPartners: false,
