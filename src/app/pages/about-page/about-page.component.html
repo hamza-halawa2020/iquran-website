@@ -1,72 +1,51 @@
-﻿<section class="">
+<section class="about-page">
     <div class="container">
-        <section class="">
+        <div class="about-hero">
+            <h1>{{ 'ABOUT_US' | translate }}</h1>
+            <p>{{ 'WHY_CHOOSE_PENN' | translate }}</p>
+        </div>
+
+        <div class="about-intro" *ngIf="settings.about_us">
+            <p>{{ settings.about_us }}</p>
+        </div>
+
+        <section class="features-section">
             <div class="features-grid">
-                <div class="section-title text-center mb-5">
-                    <span class="subtitle">{{ 'WHY_CHOOSE_PENN' | translate }}</span>
-                </div>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-book-quran"></i></div>
+                    <h3>{{ 'LEARN_ANYWHERE' | translate }}</h3>
+                    <p>{{ 'LEARN_ANYWHERE_DESC' | translate }}</p>
+                </article>
 
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-book-quran"></i>
-                            </div>
-                            <h4>{{ 'LEARN_ANYWHERE' | translate }}</h4>
-                            <p>{{ 'LEARN_ANYWHERE_DESC' | translate }}</p>
-                        </div>
-                    </div>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <h3>{{ 'EXPERT_INSTRUCTOR' | translate }}</h3>
+                    <p>{{ 'EXPERT_INSTRUCTOR_DESC' | translate }}</p>
+                </article>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-chalkboard-user"></i>
-                            </div>
-                            <h4>{{ 'EXPERT_INSTRUCTOR' | translate }}</h4>
-                            <p>{{ 'EXPERT_INSTRUCTOR_DESC' | translate }}</p>
-                        </div>
-                    </div>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <h3>{{ 'TEAM_MANAGEMENT' | translate }}</h3>
+                    <p>{{ 'TEAM_MANAGEMENT_DESC' | translate }}</p>
+                </article>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-scroll"></i>
-                            </div>
-                            <h4>{{ 'TEAM_MANAGEMENT' | translate }}</h4>
-                            <p>{{ 'TEAM_MANAGEMENT_DESC' | translate }}</p>
-                        </div>
-                    </div>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                    <h3>{{ 'COURSE_PLANNING' | translate }}</h3>
+                    <p>{{ 'COURSE_PLANNING_DESC' | translate }}</p>
+                </article>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-clipboard-list"></i>
-                            </div>
-                            <h4>{{ 'COURSE_PLANNING' | translate }}</h4>
-                            <p>{{ 'COURSE_PLANNING_DESC' | translate }}</p>
-                        </div>
-                    </div>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>{{ 'TEACHER_MONITORING' | translate }}</h3>
+                    <p>{{ 'TEACHER_MONITORING_DESC' | translate }}</p>
+                </article>
 
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-chart-line"></i>
-                            </div>
-                            <h4>{{ 'TEACHER_MONITORING' | translate }}</h4>
-                            <p>{{ 'TEACHER_MONITORING_DESC' | translate }}</p>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-hand-holding-heart"></i>
-                            </div>
-                            <h4>{{ 'STRONG_SUPPORT' | translate }}</h4>
-                            <p>{{ 'STRONG_SUPPORT_DESC' | translate }}</p>
-                        </div>
-                    </div>
-                </div>
+                <article class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <h3>{{ 'STRONG_SUPPORT' | translate }}</h3>
+                    <p>{{ 'STRONG_SUPPORT_DESC' | translate }}</p>
+                </article>
             </div>
         </section>
     </div>

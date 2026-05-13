@@ -1,9 +1,79 @@
-﻿<section class="review-area">
+<section class="reviews-page">
     <div class="container">
-        <div class="section-title text-center">
-            <h2>{{ 'CLIENT_TESTIMONIALS' | translate }}</h2>
-            
+        <div class="reviews-hero">
+            <h1>{{ 'CLIENT_TESTIMONIALS' | translate }}</h1>
+            <p>{{ 'TESTIMONIALS_DESC' | translate }}</p>
         </div>
+
+        <section class="review-form-section">
+            <div class="review-form-card">
+                <h2>{{ 'ADD_REVIEW_TITLE' | translate }}</h2>
+
+                <div class="alert alert-success" *ngIf="submitSuccess">
+                    {{ 'ADD_REVIEW_SUCCESS_MESSAGE' | translate }}
+                </div>
+
+                <div class="alert alert-danger" *ngIf="submitError">
+                    {{ errorMessage }}
+                </div>
+
+                <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="name">{{ 'ADD_REVIEW_NAME' | translate }}</label>
+                            <input
+                                id="name"
+                                type="text"
+                                class="form-control"
+                                formControlName="name"
+                                [placeholder]="'ADD_REVIEW_NAME_PLACEHOLDER' | translate"
+                                [class.is-invalid]="name?.invalid && name?.touched"
+                            />
+                            <small class="field-error" *ngIf="name?.invalid && name?.touched">
+                                <span *ngIf="name?.errors?.['required']">{{ 'ADD_REVIEW_NAME_REQUIRED' | translate }}</span>
+                                <span *ngIf="name?.errors?.['maxlength']">{{ 'ADD_REVIEW_NAME_MAX_LENGTH' | translate }}</span>
+                            </small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">{{ 'ADD_REVIEW_COUNTRY' | translate }}</label>
+                            <input
+                                id="country"
+                                type="text"
+                                class="form-control"
+                                formControlName="country"
+                                [placeholder]="'ADD_REVIEW_COUNTRY_PLACEHOLDER' | translate"
+                                [class.is-invalid]="country?.invalid && country?.touched"
+                            />
+                            <small class="field-error" *ngIf="country?.invalid && country?.touched">
+                                <span *ngIf="country?.errors?.['required']">{{ 'ADD_REVIEW_COUNTRY_REQUIRED' | translate }}</span>
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="review">{{ 'ADD_REVIEW_REVIEW' | translate }}</label>
+                        <textarea
+                            id="review"
+                            rows="5"
+                            class="form-control"
+                            formControlName="review"
+                            [placeholder]="'ADD_REVIEW_REVIEW_PLACEHOLDER' | translate"
+                            [class.is-invalid]="review?.invalid && review?.touched"
+                        ></textarea>
+                        <small class="field-error" *ngIf="review?.invalid && review?.touched">
+                            <span *ngIf="review?.errors?.['required']">{{ 'ADD_REVIEW_REVIEW_REQUIRED' | translate }}</span>
+                            <span *ngIf="review?.errors?.['minlength']">{{ 'ADD_REVIEW_REVIEW_MIN_LENGTH' | translate }}</span>
+                        </small>
+                    </div>
+
+                    <button type="submit" class="submit-btn" [disabled]="isSubmitting">
+                        <span *ngIf="!isSubmitting">{{ 'ADD_REVIEW_SUBMIT' | translate }}</span>
+                        <span *ngIf="isSubmitting">{{ 'ADD_REVIEW_SUBMITTING' | translate }}</span>
+                    </button>
+                </form>
+            </div>
+        </section>
 
         <div class="row" *ngIf="isLoading">
             <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of [1,2,3,4,5,6]">
@@ -11,54 +81,30 @@
             </div>
         </div>
 
-        
-        <section class="reviews-area">
-            <div class="container">
+        <section class="reviews-list" *ngIf="!isLoading">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 mb-4" *ngFor="let review of reviews; let i = index">
+                    <article class="review-card animate__animated animate__fadeInUp" [style.animation-delay]="i * 0.1 + 's'">
+                        <p class="review-text">{{ review.review }}</p>
 
-                
-                <div class="row" *ngIf="!isLoading">
-                    <div class="col-lg-6 col-md-12 mb-4" *ngFor="let review of reviews; let i = index">
-                        <div class="review-card animate__animated animate__fadeInUp"
-                            [style.animation-delay]="i * 0.1 + 's'">
-                            <div class="quote-icon">
-                                <i class="fa-solid fa-quote-left"></i>
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                <span>{{ getInitials(review.name) }}</span>
                             </div>
-
-                            <div class="review-content">
-                                <p class="review-text">{{ review.review }}</p>
+                            <div class="reviewer-details">
+                                <h4 class="reviewer-name">{{ review.name }}</h4>
+                                <p class="review-date">{{ formatDate(review.created_at) }}</p>
                             </div>
-
-                            <div class="reviewer-info">
-                                <div class="reviewer-avatar">
-                                    <span>{{ getInitials(review.name) }}</span>
-                                </div>
-                                <div class="reviewer-details">
-                                    <h4 class="reviewer-name">
-                                        {{ review.name }}
-                                        <span class="reviewer-country" *ngIf="review.country">
-                                            <i class="fa-solid fa-location-dot"></i> {{ review.country }}
-                                        </span>
-                                    </h4>
-                                    <p class="review-date">{{ formatDate(review.created_at) }}</p>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
-
-                    
-                    <div class="col-12 text-center py-5" *ngIf="reviews.length === 0">
-                        <div class="alert alert-info">
-                            <i class="fa-solid fa-info-circle"></i>
-                            {{ 'NO_REVIEWS_FOUND' | translate }}
-                        </div>
-                    </div>
+                    </article>
                 </div>
 
-                
-                <app-pagination [meta]="meta" (pageChange)="onPageChange($event)"
-                    *ngIf="!isLoading && meta"></app-pagination>
+                <div class="col-12 text-center py-4" *ngIf="reviews.length === 0">
+                    <div class="alert alert-info">{{ 'NO_REVIEWS_FOUND' | translate }}</div>
+                </div>
             </div>
+
+            <app-pagination [meta]="meta" (pageChange)="onPageChange($event)" *ngIf="meta"></app-pagination>
         </section>
     </div>
 </section>

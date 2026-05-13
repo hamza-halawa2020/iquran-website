@@ -44,11 +44,6 @@ export const routes: Routes = [
     },
 
     {
-        path: 'add-testimonials',
-        loadComponent: () => import('./pages/add-review-page/add-review-page.component').then(m => m.AddReviewPageComponent)
-    },
-
-    {
         path: 'media',
         loadComponent: () => import('./pages/media-gallery-page/media-gallery-page.component').then(m => m.MediaGalleryPageComponent)
     },
