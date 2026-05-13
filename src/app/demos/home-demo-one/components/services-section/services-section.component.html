@@ -1,12 +1,5 @@
 <section class="services-section section-padding">
     <div class="container">
-        <div class="section-header text-center">
-            <h2 class="section-title text-center ">{{ 'SERVICES_PAGE_DESC' | translate }}</h2>
-        </div>
-        <div class="section-title text-center ">{{ 'SERVICES_PAGE_DESC2' | translate }}</div>
-        <div class="section-title text-center ">{{ 'SERVICES_PAGE_DESC3' | translate }}</div>
-        <div class="section-title text-center ">{{ 'SERVICES_PAGE_DESC4' | translate }}</div>
-
         @defer (on viewport) {
             <div scrollReveal [revealDelay]="60">
                 <app-latest-courses-section [courses]="courses"></app-latest-courses-section>
