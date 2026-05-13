@@ -28,7 +28,7 @@ interface SliderItem {
 export class MainSlider implements OnInit, OnDestroy {
     readonly fallbackSlide: SliderItem = {
         id: 'home-fallback-slide',
-        image_url: '/assets/images/i-2-1024x683.webp',
+        image_url: '/assets/images/logo.svg',
         link: '/courses',
         isFallback: true,
     };

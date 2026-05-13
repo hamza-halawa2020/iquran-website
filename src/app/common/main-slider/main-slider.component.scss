@@ -65,6 +65,11 @@
     will-change: transform;
 }
 
+.logo-slide-image {
+    object-fit: contain;
+    padding: clamp(12px, 3vw, 34px);
+}
+
 .overlay-content {
     position: absolute;
     inset: 0;

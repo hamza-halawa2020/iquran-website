@@ -17,6 +17,7 @@
                         <img
                             [ngSrc]="slide.image_url"
                             class="carousel-image"
+                            [class.logo-slide-image]="slide.isFallback"
                             [alt]="slide.isFallback ? ('HERO_FALLBACK_TITLE' | translate) : (slide.title || 'Slider Image')"
                             [priority]="i === 0"
                             fill

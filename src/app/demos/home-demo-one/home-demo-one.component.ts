@@ -5,7 +5,6 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { MainSlider } from '../../common/main-slider/main-slider.component';
 import { HowItWorksComponent } from '../../common/how-it-works/how-it-works.component';
-import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { ServicesSectionComponent } from './components/services-section/services-section.component';
 import { StatsSectionComponent } from './components/stats-section/stats-section.component';
 import { TestimonialsSectionComponent } from './components/testimonials-section/testimonials-section.component';
@@ -31,7 +30,6 @@ type IdleWindow = Window & {
         TranslateModule,
         MainSlider,
         HowItWorksComponent,
-        AboutSectionComponent,
         ServicesSectionComponent,
         StatsSectionComponent,
         TestimonialsSectionComponent,
