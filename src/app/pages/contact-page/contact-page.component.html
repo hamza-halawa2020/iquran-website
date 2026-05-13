@@ -7,7 +7,7 @@
                     <div class="contact-form-wrapper">
                         <div class="section-title text-center mb-4">
                             <h2>{{ 'BOOK_TRIAL' | translate }}</h2>
-                            <p>{{ 'EMAIL_DISCLAIMER' | translate }}</p>
+                            <!-- <p>{{ 'EMAIL_DISCLAIMER' | translate }}</p> -->
                         </div>
 
                         <app-contact class="embedded-contact" />
@@ -15,38 +15,26 @@
                 </div>
             </div>
         </div>
-    </section> 
+    </section>
 
     <!-- Contact Info Cards -->
     <section class="contact-info-section section-padding">
         <div class="container">
-            <div class="section-title text-center mb-4">
-                <p>{{ 'CONTACT_INFO_TITLE' | translate }}</p>
-            </div>
             <div class="row" *ngIf="!isLoading">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="contact-info-card">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h4>{{ 'OUR_LOCATION' | translate }}</h4>
-                        <p>{{ settings.address || ('LOCATION_ADDRESS' | translate) }}</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-6 col-md-6">
                     <div class="contact-info-card">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
                         <h4>{{ 'TELEPHONE' | translate }}</h4>
                         <p *ngIf="settings.phone"><a href="tel:{{ settings.phone }}">{{ settings.phone }}</a></p>
-                        <p *ngIf="settings.whatsapp"><a href="tel:{{ settings.whatsapp }}">{{ settings.whatsapp }}</a></p>
+                        <p *ngIf="settings.whatsapp"><a href="tel:{{ settings.whatsapp }}">{{ settings.whatsapp }}</a>
+                        </p>
                         <p *ngIf="!settings.phone && !settings.whatsapp"></p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
+                <div class="col-lg-6 col-md-6">
                     <div class="contact-info-card">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
