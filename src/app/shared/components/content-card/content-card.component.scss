@@ -1,8 +1,8 @@
-$primary-color: var(--primaryColor);
-$secondary-color: var(--secondaryColor);
-$surface-color: #fffef9;
-$line-color: rgba(15, 90, 58, 0.14);
-$text-color: #4b5563;
+$primary: var(--primaryColor);
+$secondary: var(--secondaryColor);
+$text: #4b5563;
+$surface: #fffef9;
+$line: rgba(15, 90, 58, 0.14);
 
 :host {
     display: block;
@@ -13,96 +13,66 @@ $text-color: #4b5563;
     height: 100%;
     display: flex;
     flex-direction: column;
-    background: $surface-color;
-    border: 1px solid $line-color;
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
-    box-shadow: 0 8px 26px rgba(7, 12, 9, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    background: $surface;
+    border: 1px solid $line;
+    box-shadow: 0 8px 22px rgba(7, 12, 9, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 
     &:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 14px 34px rgba(7, 12, 9, 0.15);
-        border-color: rgba(200, 155, 60, 0.45);
-
-        .card-img img {
-            transform: scale(1.04);
-        }
-
-        .img-badge {
-            background: $secondary-color;
-            color: #1a2a22;
-        }
+        transform: translateY(-4px);
+        box-shadow: 0 12px 28px rgba(7, 12, 9, 0.12);
     }
 }
 
-.card-img-link {
-    text-decoration: none;
-}
-
-.card-img {
-    position: relative;
+.card-image {
+    display: block;
     aspect-ratio: 16 / 10;
     overflow: hidden;
-    background: #e6ece8;
+    background: #e8eee9;
 
     img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.45s ease;
     }
 }
 
-.img-badge {
-    position: absolute;
-    inset-inline-start: 12px;
-    inset-block-end: 12px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: #fff;
-    background: rgba(15, 90, 58, 0.92);
-    transition: 0.25s ease;
-}
-
-.card-content {
-    padding: 18px 18px 16px;
+.card-body {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+    padding: 16px;
     flex: 1;
 }
 
 .card-title {
-    margin: 0 0 10px;
-    font-size: 20px;
+    margin: 0;
+    font-size: 19px;
     line-height: 1.45;
     font-weight: 700;
 
     a {
-        color: $primary-color;
+        color: $primary;
         text-decoration: none;
-        transition: color 0.2s ease;
 
         &:hover {
-            color: $secondary-color;
+            color: $secondary;
         }
     }
 }
 
-.description-preview {
-    color: $text-color;
+.card-description {
+    color: $text;
     font-size: 15px;
     line-height: 1.75;
-    margin-bottom: 16px;
     flex: 1;
     overflow-wrap: anywhere;
     word-break: break-word;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
-    line-clamp: 4;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 
@@ -111,20 +81,15 @@ $text-color: #4b5563;
     }
 }
 
-.card-footer {
-    padding-top: 14px;
-    border-top: 1px solid rgba(15, 90, 58, 0.1);
-}
-
-.read-more-btn {
+.card-action {
+    margin-top: 2px;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    color: $primary;
     text-decoration: none;
     font-size: 14px;
     font-weight: 700;
-    color: $primary-color;
-    transition: color 0.2s ease;
 
     i {
         font-size: 12px;
@@ -132,30 +97,30 @@ $text-color: #4b5563;
     }
 
     &:hover {
-        color: $secondary-color;
+        color: $secondary;
 
         i {
-            transform: translateX(4px);
+            transform: translateX(3px);
         }
     }
 }
 
 :host-context([dir="rtl"]) {
-    .read-more-btn:hover i {
-        transform: translateX(-4px) rotate(180deg);
+    .card-action:hover i {
+        transform: translateX(-3px) rotate(180deg);
     }
 }
 
 @media (max-width: 767px) {
-    .card-content {
-        padding: 16px 14px 14px;
+    .card-body {
+        padding: 14px;
     }
 
     .card-title {
-        font-size: 18px;
+        font-size: 17px;
     }
 
-    .description-preview {
+    .card-description {
         font-size: 14px;
         line-height: 1.65;
     }

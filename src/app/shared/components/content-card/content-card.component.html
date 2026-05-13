@@ -1,22 +1,18 @@
 <article class="content-card animate__animated animate__fadeInUp" [style.animation-delay]="animationDelay + 's'">
-    <a class="card-img-link" [routerLink]="[routePath, item.id]" [attr.aria-label]="item?.title">
-        <div class="card-img">
-            <img [src]="getImageUrl()" [alt]="item.title">
-        </div>
+    <a class="card-image" [routerLink]="[routePath, item.id]" [attr.aria-label]="item?.title">
+        <img [src]="getImageUrl()" [alt]="item.title">
     </a>
 
-    <div class="card-content">
+    <div class="card-body">
         <h3 class="card-title">
             <a [routerLink]="[routePath, item.id]">{{ item.title }}</a>
         </h3>
 
-        <div class="description-preview" [innerHTML]="item.description"></div>
+        <div class="card-description" [innerHTML]="item.description"></div>
 
-        <div class="card-footer">
-            <a [routerLink]="[routePath, item.id]" class="read-more-btn">
-                <span>{{ 'READ_MORE' | translate }}</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
-        </div>
+        <a [routerLink]="[routePath, item.id]" class="card-action">
+            {{ 'READ_MORE' | translate }}
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
     </div>
 </article>

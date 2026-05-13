@@ -1,6 +1,5 @@
 <section class="course-details-area">
     <div class="container">
-        <!-- Loading State -->
         <div class="text-center py-5" *ngIf="isLoading">
             <div class="spinner-border text-primary" role="status">
                 <span class="visually-hidden">Loading...</span>
@@ -8,22 +7,23 @@
         </div>
 
         <div *ngIf="!isLoading && course">
-            <div class="details-header animate__animated animate__fadeIn">
-                <img [src]="course.image_url" [alt]="course.title" class="main-img">
-                <h1 class="animate__animated animate__fadeInUp">{{ course.title }}</h1>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="content-wrapper animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
-                        <div class="content-section" *ngIf="course.description">
-                            <div [innerHTML]="course.description"></div>
-                        </div>
+            <div class="details-hero animate__animated animate__fadeIn">
+                <div class="details-header">
+                    <img [src]="course.image_url" [alt]="course.title" class="main-img">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1 class="animate__animated animate__fadeInUp">{{ course.title }}</h1>
                     </div>
                 </div>
             </div>
 
-            <div class="back-btn-container animate__animated animate__fadeIn" style="animation-delay: 0.4s;">
+            <div class="content-wrapper animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                <div class="content-section" *ngIf="course.description">
+                    <div class="content-body" [innerHTML]="course.description"></div>
+                </div>
+            </div>
+
+            <div class="back-btn-container animate__animated animate__fadeInUp" style="animation-delay: 0.35s;">
                 <a routerLink="/courses" class="back-btn">
                     <i class="fa-solid fa-arrow-left"></i>
                     {{ 'BACK_TO_COURSES' | translate }}
