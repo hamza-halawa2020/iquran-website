@@ -25,24 +25,12 @@
 
                         <div class="overlay-content">
                             <div class="content-wrapper" [class.animate-fade-in]="isSlideActive(i)">
-                                <span class="slide-kicker">
-                                    {{ slide.isFallback ? ('OUR_COURSES' | translate) : ('READ_MORE' | translate) }}
-                                </span>
                                 <h2 class="slide-title" *ngIf="slide.isFallback || slide.title">
                                     {{ slide.isFallback ? ('HERO_FALLBACK_TITLE' | translate) : slide.title }}
                                 </h2>
                                 <p class="slide-description" *ngIf="slide.isFallback || slide.description">
                                     {{ slide.isFallback ? ('HERO_FALLBACK_DESCRIPTION' | translate) : slide.description }}
                                 </p>
-                                <div class="slide-cta" *ngIf="slide.link">
-                                    <span class="cta-button">
-                                        {{ slide.isFallback ? ('HERO_FALLBACK_CTA' | translate) : ('READ_MORE' | translate) }}
-                                        <i
-                                            class="fa-solid ms-2"
-                                            [ngClass]="{'fa-arrow-right': translate.currentLang === 'en', 'fa-arrow-left': translate.currentLang === 'ar'}"
-                                        ></i>
-                                    </span>
-                                </div>
                             </div>
                         </div>
                     </div>

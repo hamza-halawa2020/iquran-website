@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, NgZone, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { MainSlider } from '../../common/main-slider/main-slider.component';
@@ -26,6 +27,7 @@ type IdleWindow = Window & {
     standalone: true,
     imports: [
         CommonModule,
+        RouterLink,
         TranslateModule,
         MainSlider,
         HowItWorksComponent,
