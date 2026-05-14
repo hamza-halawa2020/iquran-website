@@ -1,0 +1,14 @@
+<div
+    class="ornament-corners"
+    [class.is-down]="direction === 'down'"
+    [class.no-mirror]="!mirror"
+    [style.--ornament-size]="size"
+    [style.--ornament-opacity]="opacity"
+    [style.--ornament-saturation]="saturation"
+    [style.--ornament-brightness]="brightness"
+    [style.--ornament-image]="'url(' + imageUrl + ')'"
+    aria-hidden="true"
+>
+    <span *ngIf="side === 'left' || side === 'both'" class="corner left" [class.mirror-left]="shouldMirrorLeft" [class.flip-y]="flipY"></span>
+    <span *ngIf="side === 'right' || side === 'both'" class="corner right" [class.mirror-right]="shouldMirrorRight" [class.flip-y]="flipY"></span>
+</div>

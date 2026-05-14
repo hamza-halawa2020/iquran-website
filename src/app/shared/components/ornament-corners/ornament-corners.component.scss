@@ -1,0 +1,61 @@
+.ornament-corners {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.corner {
+    --ornament-scale-x: 1;
+    --ornament-scale-y: 1;
+    --ornament-edge-offset: -6px;
+    position: absolute;
+    width: var(--ornament-size, clamp(160px, 18vw, 320px));
+    height: var(--ornament-size, clamp(160px, 18vw, 320px));
+    background-image: var(--ornament-image, var(--cornerOrnament));
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    opacity: var(--ornament-opacity, 1);
+    filter: saturate(var(--ornament-saturation, 1)) brightness(var(--ornament-brightness, 1));
+    transform: scale(var(--ornament-scale-x), var(--ornament-scale-y));
+    transform-origin: center;
+}
+
+.left {
+    left: 0;
+    top: var(--ornament-edge-offset);
+}
+
+.right {
+    right: 0;
+    top: var(--ornament-edge-offset);
+}
+
+.mirror-left {
+    --ornament-scale-x: -1;
+}
+
+.mirror-right {
+    --ornament-scale-x: -1;
+}
+
+.ornament-corners.is-down {
+    top: auto;
+    bottom: 0;
+
+    .left {
+        top: auto;
+        bottom: var(--ornament-edge-offset);
+    }
+
+    .right {
+        top: auto;
+        bottom: var(--ornament-edge-offset);
+    }
+}
+
+.flip-y {
+    --ornament-scale-y: -1;
+}

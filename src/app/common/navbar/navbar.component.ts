@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { fromEvent, Subscription } from 'rxjs';
 import { auditTime } from 'rxjs/operators';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { OrnamentCornersComponent } from '../../shared/components/ornament-corners/ornament-corners.component';
 
 @Component({
     selector: 'app-navbar',
@@ -15,6 +16,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
         NgIf,
         NgClass,
         TranslateModule,
+        OrnamentCornersComponent,
     ],
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],

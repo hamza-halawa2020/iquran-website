@@ -1,21 +1,26 @@
-﻿$bg: #070c09;
-$panel: #1f3327;
-$text: #e9efe9;
-$muted: #b9c8bf;
+$bg: #ffffff;
+$panel: #f8faf8;
+$text: #0f5a3a;
+$muted: #4b5563;
 $accent: #1a7a52;
-$line: rgba(26, 122, 82, 0.28);
+$line: rgba(15, 90, 58, 0.16);
 
 .site-footer {
     margin-top: 56px;
+    position: relative;
+    overflow: hidden;
     background: $bg;
     color: $text;
-    border-top: 2px solid $accent;
+    border-top: 1px solid $line;
+
 }
 
 .footer-shell {
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-top {
@@ -36,7 +41,7 @@ $line: rgba(26, 122, 82, 0.28);
     width: auto;
     height: 54px;
     margin-bottom: 12px;
-    filter: brightness(0) saturate(100%) invert(95%) sepia(5%) saturate(430%) hue-rotate(64deg) brightness(106%) contrast(93%);
+    filter: none;
 }
 
 .brand-text {
@@ -60,11 +65,11 @@ $line: rgba(26, 122, 82, 0.28);
     justify-content: center;
     color: $text;
     border: 1px solid $line;
-    background: transparent;
+    background: #ffffff;
     transition: 0.2s ease;
 
     &:hover {
-        color: #111;
+        color: #ffffff;
         background: $accent;
         border-color: $accent;
     }
@@ -168,4 +173,3 @@ $line: rgba(26, 122, 82, 0.28);
         padding: 12px 0 16px;
     }
 }
-

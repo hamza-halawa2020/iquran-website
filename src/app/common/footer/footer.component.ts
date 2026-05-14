@@ -4,11 +4,12 @@ import { RouterLink, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { SettingService, Settings } from '../../shared/services/setting.service';
 import { Subscription } from 'rxjs';
+import { OrnamentCornersComponent } from '../../shared/components/ornament-corners/ornament-corners.component';
 
 @Component({
     selector: 'app-footer',
     standalone: true,
-    imports: [RouterLink, NgIf, NgClass, TranslateModule],
+    imports: [RouterLink, NgIf, NgClass, TranslateModule, OrnamentCornersComponent],
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.scss'],
 })
