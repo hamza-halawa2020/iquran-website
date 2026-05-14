@@ -16,6 +16,7 @@ import { PaymentMethodsComponent } from '../../common/payment-methods/payment-me
 import { ContactComponent } from '../../common/contact/contact.component';
 import { HomeService, HomeData } from './home.service';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
+import { LearningBenefitsSectionComponent } from './components/learning-benefits-section/learning-benefits-section.component';
 
 type IdleWindow = Window & {
     requestIdleCallback?: (callback: (_deadline: unknown) => void, options?: { timeout: number }) => number;
@@ -41,6 +42,7 @@ type IdleWindow = Window & {
         PaymentMethodsComponent,
         ContactComponent,
         ScrollRevealDirective,
+        LearningBenefitsSectionComponent,
     ],
     templateUrl: './home-demo-one.component.html',
     styleUrl: './home-demo-one.component.scss',

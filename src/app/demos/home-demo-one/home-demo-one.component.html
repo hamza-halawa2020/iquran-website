@@ -15,6 +15,16 @@
     <div class="home-defer-placeholder" style="--home-defer-min-h: 420px"></div>
     }
 
+    @defer (on viewport) {
+    <section class="home-block home-block-soft" scrollReveal [revealDelay]="60">
+        <div class="container">
+            <app-learning-benefits-section></app-learning-benefits-section>
+        </div>
+    </section>
+    } @placeholder {
+    <div class="home-defer-placeholder" style="--home-defer-min-h: 420px"></div>
+    }
+
     <!-- @defer (on viewport) {
     <section class="home-block home-block-soft" scrollReveal [revealDelay]="60">
         <div class="container">
