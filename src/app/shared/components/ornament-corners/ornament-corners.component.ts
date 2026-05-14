@@ -15,6 +15,7 @@ export class OrnamentCornersComponent {
     @Input() opacity: number = 1;
     @Input() saturation: number = 1;
     @Input() brightness: number = 1;
+    @Input() edgeOffset: string = '-6px';
     @Input() mirror: boolean = true;
     @Input() mirrorLeft?: boolean;
     @Input() mirrorRight?: boolean;
