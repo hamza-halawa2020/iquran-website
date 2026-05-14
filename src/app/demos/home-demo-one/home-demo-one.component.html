@@ -1,18 +1,7 @@
 <div class="home-shell">
     <!-- <app-main-slider /> -->
 
-    <section class="home-intro">
-        <div class="container">
-            <div class="intro-card">
-                <h4>{{ 'UNLOCK_LANGUAGE_POTENTIAL' | translate }}</h4>
-                <p>{{ 'CTA_DESCRIPTION' | translate }}</p>
-                <div class="intro-actions">
-                    <a routerLink="/courses" class="intro-btn intro-btn-primary">{{ 'OUR_COURSES' | translate }}</a>
-                    <a routerLink="/contacts" class="intro-btn intro-btn-outline">{{ 'BOOK_TRIAL' | translate }}</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <app-hero-banner-section></app-hero-banner-section>
 
     <div #homeDataTrigger class="home-data-trigger" aria-hidden="true"></div>
 

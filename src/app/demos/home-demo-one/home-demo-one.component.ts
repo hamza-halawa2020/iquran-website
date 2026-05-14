@@ -11,6 +11,7 @@ import { TestimonialsSectionComponent } from './components/testimonials-section/
 import { LatestPostsSectionComponent } from './components/latest-posts-section/latest-posts-section.component';
 import { CertificatesSectionComponent } from './components/certificates-section/certificates-section.component';
 import { MediaGallerySectionComponent } from './components/media-gallery-section/media-gallery-section.component';
+import { HeroBannerSectionComponent } from './components/hero-banner-section/hero-banner-section.component';
 import { PaymentMethodsComponent } from '../../common/payment-methods/payment-methods.component';
 import { ContactComponent } from '../../common/contact/contact.component';
 import { HomeService, HomeData } from './home.service';
@@ -36,6 +37,7 @@ type IdleWindow = Window & {
         LatestPostsSectionComponent,
         CertificatesSectionComponent,
         MediaGallerySectionComponent,
+        HeroBannerSectionComponent,
         PaymentMethodsComponent,
         ContactComponent,
         ScrollRevealDirective,
