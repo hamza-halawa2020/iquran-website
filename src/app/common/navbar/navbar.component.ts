@@ -40,15 +40,15 @@ export class NavbarComponent implements OnInit, OnDestroy {
             label: 'Certificates',
             route: '/certificates'
         },
-        {
+        // {
 
-            label: 'Articles',
-            route: '/posts'
-        },
-        {
-            label: 'MEDIA_GALLERY.TITLE',
-            route: '/media'
-        },
+        //     label: 'Articles',
+        //     route: '/posts'
+        // },
+        // {
+        //     label: 'MEDIA_GALLERY.TITLE',
+        //     route: '/media'
+        // },
         {
             label: 'TESTIMONIALS',
             route: '/testimonials'
