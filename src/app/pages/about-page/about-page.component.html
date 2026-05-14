@@ -1,8 +1,17 @@
 <section class="about-page">
     <div class="container">
-        <div class="about-hero">
-            <h1>{{ 'ABOUT_US' | translate }}</h1>
-            <p>{{ 'WHY_CHOOSE_PENN' | translate }}</p>
+        <div class="about-hero-wrap">
+            <div class="about-hero">
+                <span class="about-kicker">IQuran Academy</span>
+                <h1>{{ 'ABOUT_US' | translate }}</h1>
+                <p>{{ 'WHY_CHOOSE_PENN' | translate }}</p>
+                <div class="hero-divider" aria-hidden="true"></div>
+            </div>
+            <div class="about-quick-points">
+                <p><i class="fa-solid fa-check"></i> Live one-to-one and group sessions</p>
+                <p><i class="fa-solid fa-check"></i> Structured paths for all levels</p>
+                <p><i class="fa-solid fa-check"></i> Friendly support with steady follow-up</p>
+            </div>
         </div>
 
         <div class="about-intro" *ngIf="settings.about_us">
@@ -10,39 +19,43 @@
         </div>
 
         <section class="features-section">
+            <div class="features-heading">
+                <h2>Why Families Choose Us</h2>
+                <p>Simple systems, caring teachers, and consistent progress.</p>
+            </div>
             <div class="features-grid">
                 <article class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-book-quran"></i></div>
+                    <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-book-quran"></i></span></div>
                     <h3>{{ 'LEARN_ANYWHERE' | translate }}</h3>
                     <p>{{ 'LEARN_ANYWHERE_DESC' | translate }}</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                    <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-chalkboard-user"></i></span></div>
                     <h3>{{ 'EXPERT_INSTRUCTOR' | translate }}</h3>
                     <p>{{ 'EXPERT_INSTRUCTOR_DESC' | translate }}</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-scroll"></i></div>
+                    <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-scroll"></i></span></div>
                     <h3>{{ 'TEAM_MANAGEMENT' | translate }}</h3>
                     <p>{{ 'TEAM_MANAGEMENT_DESC' | translate }}</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                    <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-clipboard-list"></i></span></div>
                     <h3>{{ 'COURSE_PLANNING' | translate }}</h3>
                     <p>{{ 'COURSE_PLANNING_DESC' | translate }}</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-chart-line"></i></span></div>
                     <h3>{{ 'TEACHER_MONITORING' | translate }}</h3>
                     <p>{{ 'TEACHER_MONITORING_DESC' | translate }}</p>
                 </article>
 
                 <article class="feature-card">
-                    <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                    <div class="feature-top"><span class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></span></div>
                     <h3>{{ 'STRONG_SUPPORT' | translate }}</h3>
                     <p>{{ 'STRONG_SUPPORT_DESC' | translate }}</p>
                 </article>
