@@ -25,18 +25,12 @@
                         {{ item.label | translate }}
                     </a>
                 </li>
+                <li>
+                    <a routerLink="/contacts" routerLinkActive="active" (click)="closeMobileMenu()">
+                        {{ 'BOOK_TRIAL' | translate }}
+                    </a>
+                </li>
             </ul>
-
-            
-            <div class="navbar-actions">
-                
-                
-
-                
-                <a routerLink="/contacts" class="btn btn-outline" (click)="closeMobileMenu()">
-                    {{ 'BOOK_TRIAL' | translate }}
-                </a>
-            </div>
         </div>
 
         <div class="navbar-mobile-controls">
