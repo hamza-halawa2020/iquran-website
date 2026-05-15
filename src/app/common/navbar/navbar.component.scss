@@ -5,6 +5,7 @@ $dark: #0f5a3a;
 $gray-light: #fdfbf7;
 $gray: #9ca3af;
 .main-navbar {
+    --navbar-corner-size: clamp(78px, 6.2vw, 118px);
     position: fixed;
     top: 0;
     left: 0;
@@ -325,6 +326,10 @@ $gray: #9ca3af;
     box-shadow: 0 8px 20px rgba(30, 58, 95, 0.08);
 }
 @media (max-width: 1655px) {
+    .main-navbar {
+        --navbar-corner-size: clamp(68px, 7vw, 98px);
+    }
+
     .navbar-container {
         padding: 0 20px;
         justify-content: center;
@@ -430,6 +435,10 @@ $gray: #9ca3af;
 }
 
 @media (max-width: 767px) {
+    .main-navbar {
+        --navbar-corner-size: clamp(54px, 10vw, 78px);
+    }
+
     .navbar-container {
         height: 60px;
         padding: 0 15px;

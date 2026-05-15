@@ -3,6 +3,7 @@
     left: 0;
     right: 0;
     top: 0;
+    height: 100%;
     pointer-events: none;
     z-index: 0;
 }
@@ -12,8 +13,9 @@
     --ornament-scale-y: 1;
     --ornament-edge-offset: -6px;
     position: absolute;
-    width: var(--ornament-size, clamp(160px, 18vw, 320px));
     height: var(--ornament-size, clamp(160px, 18vw, 320px));
+    width: auto;
+    aspect-ratio: 1 / 1;
     background-image: var(--ornament-image, var(--cornerOrnament));
     background-repeat: no-repeat;
     background-size: 100% 100%;

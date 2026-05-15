@@ -6,6 +6,7 @@ $accent: #1a7a52;
 $line: rgba(15, 90, 58, 0.16);
 
 .site-footer {
+    --footer-corner-size: clamp(110px, 9vw, 170px);
     margin-top: 56px;
     position: relative;
     overflow: hidden;
@@ -138,6 +139,10 @@ $line: rgba(15, 90, 58, 0.16);
 }
 
 @media (max-width: 992px) {
+    .site-footer {
+        --footer-corner-size: clamp(96px, 12vw, 145px);
+    }
+
     .footer-top {
         grid-template-columns: 1fr 1fr;
     }
@@ -148,6 +153,10 @@ $line: rgba(15, 90, 58, 0.16);
 }
 
 @media (max-width: 767px) {
+    .site-footer {
+        --footer-corner-size: clamp(84px, 20vw, 120px);
+    }
+
     .footer-shell {
         padding: 0 16px;
     }
