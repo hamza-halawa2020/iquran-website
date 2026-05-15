@@ -1,7 +1,23 @@
 <section class="contact-page">
     <div class="container">
         <div class="contact-layout">
-            <aside class="contact-panel" *ngIf="!isLoading">
+            <aside class="contact-panel">
+                <ng-container *ngIf="isLoading">
+                    <div class="info-card skeleton-card">
+                        <div class="skeleton skeleton-icon"></div>
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-line"></div>
+                        <div class="skeleton skeleton-line short"></div>
+                    </div>
+                    <div class="info-card skeleton-card">
+                        <div class="skeleton skeleton-icon"></div>
+                        <div class="skeleton skeleton-title"></div>
+                        <div class="skeleton skeleton-line"></div>
+                        <div class="skeleton skeleton-line short"></div>
+                    </div>
+                </ng-container>
+
+                <ng-container *ngIf="!isLoading">
                 <div class="info-card">
                     <div class="icon-wrap">
                         <i class="fas fa-phone"></i>
@@ -19,7 +35,7 @@
                     <p *ngIf="settings.email"><a href="mailto:{{ settings.email }}">{{ settings.email }}</a></p>
                     <p *ngIf="!settings.email">info&#64;iquran.com</p>
                 </div>
-
+                </ng-container>
             </aside>
 
             <section class="form-panel">
