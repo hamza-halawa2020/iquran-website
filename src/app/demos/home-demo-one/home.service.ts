@@ -18,6 +18,7 @@ export interface HomeData {
   testimonials: any[];
   latestPosts: any[];
   latestCourses: any[];
+  courseCategories: any[];
   certificates: any[];
   partners: any[];
   mediaItems: any[];
@@ -36,7 +37,7 @@ export class HomeService {
   getHomeData(): Observable<HomeData> {
     const features = environment.features || {
       workSamples: false,
-      staff: false,
+      staff: true,
       successPartners: false,
     };
 
@@ -46,6 +47,7 @@ export class HomeService {
       testimonials: this.getTestimonials(),
       posts: this.getLatestPosts(),
       courses: this.getLatestCourses(),
+      courseCategories: this.getCourseCategories(),
       certificates: this.getCertificates(),
       partners: features.successPartners ? this.getPartners() : of([]),
       stats: this.getStats(),
@@ -58,6 +60,7 @@ export class HomeService {
         testimonials: data.testimonials,
         latestPosts: data.posts,
         latestCourses: data.courses,
+        courseCategories: data.courseCategories,
         certificates: data.certificates,
         partners: data.partners,
         mediaItems: data.mediaItems
@@ -77,7 +80,7 @@ export class HomeService {
   }
 
   getTeamMembers(): Observable<any[]> {
-    return this.http.get<any>(`${this.apiUrl}/staff?limit=4`)
+    return this.http.get<any>(`${this.apiUrl}/staff?limit=8`)
       .pipe(
         map(response => response.data || []),
         catchError(error => {
@@ -105,7 +108,15 @@ export class HomeService {
   }
 
   getLatestCourses(): Observable<any[]> {
-    return this.http.get<any>(`${this.apiUrl}/courses?page=1`)
+    return this.http.get<any>(`${this.apiUrl}/courses?page=1&limit=100`)
+      .pipe(
+        map((response) => response.data || []),
+        catchError(() => of([]))
+      );
+  }
+
+  getCourseCategories(): Observable<any[]> {
+    return this.http.get<any>(`${this.apiUrl}/course-categories`)
       .pipe(
         map((response) => response.data || []),
         catchError(() => of([]))

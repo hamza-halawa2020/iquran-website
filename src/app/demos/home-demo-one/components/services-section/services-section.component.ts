@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { LatestCoursesSectionComponent } from '../latest-courses-section/latest-courses-section.component';
+import { LatestCoursesSectionComponent } from '../latest-courses-section';
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 @Component({
@@ -13,7 +13,7 @@ import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reve
     styleUrls: ['./services-section.component.scss']
 })
 export class ServicesSectionComponent implements OnInit {
-    @Input() courses: any[] = [];
+    @Input() categories: any[] = [];
     defaultServices: any[] = [];
 
     constructor(public translate: TranslateService) { }

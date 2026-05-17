@@ -8,7 +8,7 @@
     @defer (on viewport) {
     <section class="home-block home-block-surface" scrollReveal>
         <div class="container">
-            <app-services-section [courses]="homeData?.latestCourses || []"></app-services-section>
+            <app-services-section [categories]="homeData?.courseCategories || []"></app-services-section>
         </div>
     </section>
     } @placeholder {
@@ -19,6 +19,16 @@
     <section class="home-block home-block-soft" scrollReveal [revealDelay]="60">
         <div class="container">
             <app-learning-benefits-section></app-learning-benefits-section>
+        </div>
+    </section>
+    } @placeholder {
+    <div class="home-defer-placeholder" style="--home-defer-min-h: 420px"></div>
+    }
+
+    @defer (on viewport) {
+    <section class="home-block home-block-surface" scrollReveal [revealDelay]="60">
+        <div class="container">
+            <app-teachers-section [teachers]="homeData?.teamMembers || []"></app-teachers-section>
         </div>
     </section>
     } @placeholder {

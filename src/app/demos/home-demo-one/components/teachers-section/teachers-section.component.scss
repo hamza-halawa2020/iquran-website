@@ -1,0 +1,117 @@
+.teachers-section {
+    overflow: hidden;
+}
+
+.section-padding {
+    padding: 90px 0;
+}
+
+.section-title {
+    color: var(--primaryColor);
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 26px;
+}
+
+.teachers-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - 40px) / 3);
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    &.is-rtl {
+        direction: rtl;
+    }
+}
+
+.teacher-card {
+    border: 1px solid rgba(6, 78, 59, 0.12);
+    border-radius: 16px;
+    background: #fff;
+    padding: 18px;
+    text-align: center;
+}
+
+.teacher-avatar img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 12px;
+}
+
+.teacher-name {
+    margin: 0 0 6px;
+    color: var(--primaryColor);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.teacher-role {
+    margin: 0;
+    color: var(--paragraphColor);
+}
+
+.view-all-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #fff;
+    background: var(--primaryColor);
+}
+
+.carousel-controls {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.carousel-btn {
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba(30, 58, 95, 0.1);
+    border-radius: 50%;
+    color: var(--primaryColor);
+    box-shadow: 0 12px 24px rgba(30, 58, 95, 0.12);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+
+    &:hover {
+        color: var(--whiteColor);
+        box-shadow: 0 16px 28px rgba(201, 169, 97, 0.24);
+        transform: translateY(-2px);
+    }
+}
+
+@media (max-width: 991px) {
+    .teachers-track {
+        grid-auto-columns: calc((100% - 16px) / 2);
+    }
+}
+
+@media (max-width: 767px) {
+    .teachers-track {
+        grid-auto-columns: 100%;
+    }
+
+    .carousel-btn {
+        width: 42px;
+        height: 42px;
+    }
+}

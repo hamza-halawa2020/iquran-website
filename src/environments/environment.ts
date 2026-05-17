@@ -3,7 +3,7 @@
     imgUrl: 'https://dashboard.iquran.co.uk/',
     features: {
         workSamples: false,
-        staff: false,
+        staff: true,
         successPartners: false,
     },
 };

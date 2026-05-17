@@ -3,7 +3,7 @@
     imgUrl: 'http://iquran-dashboard.test',
     features: {
         workSamples: false,
-        staff: false,
+        staff: true,
         successPartners: false,
     },
 };

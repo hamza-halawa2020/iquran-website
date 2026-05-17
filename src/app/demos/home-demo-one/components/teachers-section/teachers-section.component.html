@@ -1,0 +1,45 @@
+<section class="teachers-section section-padding" *ngIf="teachers.length > 0">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title">{{ 'OUR_TEACHERS' | translate }}</h2>
+        </div>
+
+        <div class="teachers-carousel-shell">
+            <div #teachersTrack class="teachers-track" [class.is-rtl]="isRtl">
+                <article class="teacher-card" *ngFor="let teacher of teachers">
+                    <div class="teacher-avatar">
+                        <img
+                            [src]="teacher.image_url || 'assets/images/user.png'"
+                            [alt]="teacher.name"
+                            loading="lazy"
+                        />
+                    </div>
+                    <h3 class="teacher-name">{{ teacher.name }}</h3>
+                    <p class="teacher-role">{{ teacher.description || ('TEACHER' | translate) }}</p>
+                </article>
+            </div>
+
+            <div class="carousel-controls" *ngIf="hasMultipleTeachers">
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    (click)="scrollTeachers('prev')"
+                    [attr.aria-label]="isRtl ? 'Scroll right' : 'Scroll left'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="carousel-btn"
+                    (click)="scrollTeachers('next')"
+                    [attr.aria-label]="isRtl ? 'Scroll left' : 'Scroll right'">
+                    <i class="fa-solid" [ngClass]="isRtl ? 'fa-chevron-left' : 'fa-chevron-right'"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a routerLink="/teachers" class="view-all-btn">{{ 'VIEW_ALL_TEACHERS' | translate }}</a>
+        </div>
+    </div>
+</section>

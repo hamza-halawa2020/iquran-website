@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { CoursesService } from '../courses.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { PaginationComponent } from '../../../shared/components/pagination/pagination.component';
@@ -15,18 +15,32 @@ import { ContentCardComponent } from '../../../shared/components/content-card/co
 })
 export class CoursesListComponent implements OnInit {
     courses: any[] = [];
+    categories: any[] = [];
     isLoading: boolean = true;
     meta: any;
+    selectedCategoryId: number | null = null;
 
-    constructor(private coursesService: CoursesService) { }
+    constructor(
+        private coursesService: CoursesService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) { }
 
     ngOnInit(): void {
-        this.fetchCourses();
+        this.fetchCategories();
+        this.route.queryParamMap.subscribe((params) => {
+            const categoryParam = params.get('category');
+            this.selectedCategoryId = categoryParam ? Number(categoryParam) : null;
+            if (Number.isNaN(this.selectedCategoryId)) {
+                this.selectedCategoryId = null;
+            }
+            this.fetchCourses(1);
+        });
     }
 
     fetchCourses(page: number = 1) {
         this.isLoading = true;
-        this.coursesService.getCoursesList(page).subscribe({
+        this.coursesService.getCoursesList(page, this.selectedCategoryId).subscribe({
             next: (response: any) => {
                 this.courses = response.data;
                 this.meta = response.meta;
@@ -37,6 +51,29 @@ export class CoursesListComponent implements OnInit {
                 this.isLoading = false;
             }
         });
+    }
+
+    fetchCategories() {
+        this.coursesService.getCourseCategories().subscribe({
+            next: (response: any) => {
+                this.categories = response.data || [];
+            },
+            error: () => {
+                this.categories = [];
+            }
+        });
+    }
+
+    onCategoryChange(categoryId: number | null) {
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: { category: categoryId || null },
+            queryParamsHandling: 'merge'
+        });
+    }
+
+    isCategoryActive(categoryId: number | null): boolean {
+        return this.selectedCategoryId === categoryId;
     }
 
     onPageChange(page: number) {

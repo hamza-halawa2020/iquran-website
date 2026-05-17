@@ -1,0 +1,29 @@
+<section class="teachers-page">
+    <div class="container">
+        <div class="section-title text-center">
+            <h1>{{ 'OUR_TEACHERS' | translate }}</h1>
+        </div>
+
+        <div class="row" *ngIf="isLoading">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let item of [1,2,3,4,5,6]">
+                <div class="teacher-skeleton"></div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!isLoading">
+            <div class="col-lg-4 col-md-6 mb-4" *ngFor="let teacher of teachers">
+                <article class="teacher-card">
+                    <img [src]="teacher.image_url || 'assets/images/user.png'" [alt]="teacher.name" loading="lazy">
+                    <h3>{{ teacher.name }}</h3>
+                    <p>{{ teacher.description || ('TEACHER' | translate) }}</p>
+                </article>
+            </div>
+
+            <div class="col-12 text-center py-4" *ngIf="teachers.length === 0">
+                <div class="alert alert-info">{{ 'NO_STAFF_FOUND' | translate }}</div>
+            </div>
+        </div>
+
+        <app-pagination [meta]="meta" (pageChange)="onPageChange($event)" *ngIf="meta"></app-pagination>
+    </div>
+</section>

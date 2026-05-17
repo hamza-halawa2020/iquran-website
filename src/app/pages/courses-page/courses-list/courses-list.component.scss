@@ -26,6 +26,31 @@ $light-bg: var(--creamBg);
     }
 }
 
+.category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 28px;
+}
+
+.category-chip {
+    border: 1px solid rgba(6, 78, 59, 0.2);
+    background: #fff;
+    color: $primary-color;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+
+    &.active,
+    &:hover {
+        background: $primary-color;
+        color: #fff;
+        border-color: $primary-color;
+    }
+}
+
 .skeleton-loader {
     background: #f0f0f0;
     border-radius: 15px;

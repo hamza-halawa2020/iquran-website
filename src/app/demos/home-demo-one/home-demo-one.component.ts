@@ -17,6 +17,7 @@ import { ContactComponent } from '../../common/contact/contact.component';
 import { HomeService, HomeData } from './home.service';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 import { LearningBenefitsSectionComponent } from './components/learning-benefits-section/learning-benefits-section.component';
+import { TeachersSectionComponent } from './components/teachers-section/teachers-section.component';
 
 type IdleWindow = Window & {
     requestIdleCallback?: (callback: (_deadline: unknown) => void, options?: { timeout: number }) => number;
@@ -43,6 +44,7 @@ type IdleWindow = Window & {
         ContactComponent,
         ScrollRevealDirective,
         LearningBenefitsSectionComponent,
+        TeachersSectionComponent,
     ],
     templateUrl: './home-demo-one.component.html',
     styleUrl: './home-demo-one.component.scss',
@@ -123,6 +125,7 @@ export class HomeDemoOneComponent implements OnInit, AfterViewInit, OnDestroy {
                         testimonials: [],
                         latestPosts: [],
                         latestCourses: [],
+                        courseCategories: [],
                         certificates: [],
                         partners: [],
                         mediaItems: []
@@ -150,6 +153,9 @@ export class HomeDemoOneComponent implements OnInit, AfterViewInit, OnDestroy {
                 if (data.latestCourses && data.latestCourses.length > 0) {
                     this.homeData.latestCourses = data.latestCourses;
                 }
+                if (data.courseCategories && data.courseCategories.length > 0) {
+                    this.homeData.courseCategories = data.courseCategories;
+                }
                 if (data.certificates && data.certificates.length > 0) {
                     this.homeData.certificates = data.certificates;
                 }
@@ -169,6 +175,7 @@ export class HomeDemoOneComponent implements OnInit, AfterViewInit, OnDestroy {
                         testimonials: [],
                         latestPosts: [],
                         latestCourses: [],
+                        courseCategories: [],
                         certificates: [],
                         partners: [],
                         mediaItems: []

@@ -37,6 +37,10 @@ export const routes: Routes = [
         path: 'courses/:id',
         loadComponent: () => import('./pages/courses-page/course-details/course-details.component').then(m => m.CourseDetailsComponent)
     },
+    {
+        path: 'teachers',
+        loadComponent: () => import('./pages/teachers-page/teachers-list/teachers-list.component').then(m => m.TeachersListComponent)
+    },
 
     {
         path: 'testimonials',

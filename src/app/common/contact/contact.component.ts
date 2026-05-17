@@ -9,6 +9,7 @@ import {
     FormGroup,
     Validators,
 } from '@angular/forms';
+import { CoursesService } from '../../pages/courses-page/courses.service';
 
 @Component({
     selector: 'app-contact',
@@ -23,10 +24,12 @@ export class ContactComponent implements OnInit {
     successMessage: string = '';
     errorMessage: string = '';
     isSubmitting: boolean = false;
+    courses: any[] = [];
 
     constructor(
         public router: Router,
         private contactService: ContactService,
+        private coursesService: CoursesService,
         private fb: FormBuilder,
         private translate: TranslateService
     ) {
@@ -41,7 +44,16 @@ export class ContactComponent implements OnInit {
         });
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.coursesService.getCoursesList(1, null, 100).subscribe({
+            next: (response: any) => {
+                this.courses = response?.data || [];
+            },
+            error: () => {
+                this.courses = [];
+            }
+        });
+    }
 
     onSubmit() {
         if (this.contactForm.invalid) {
