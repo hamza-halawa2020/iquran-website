@@ -103,6 +103,63 @@ $text-color: var(--paragraphColor);
             resize: none;
             padding-top: 20px;
         }
+
+        .iti {
+            width: 100%;
+            display: block;
+        }
+
+        :host ::ng-deep .iti__selected-dial-code {
+            font-weight: 700;
+            color: $primary-color;
+        }
+
+        :host ::ng-deep .iti__country-list {
+            border: 1px solid rgba(6, 78, 59, 0.14);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            max-height: 280px;
+            overflow-y: auto;
+        }
+
+        :host ::ng-deep .iti__search-input {
+            border: 1px solid rgba(6, 78, 59, 0.18);
+            border-radius: 8px;
+            padding: 8px 10px;
+            margin: 8px;
+            width: calc(100% - 16px);
+            font-size: 14px;
+        }
+
+        :host ::ng-deep .iti__country.iti__highlight {
+            background-color: rgba(26, 122, 82, 0.08);
+        }
+
+        :host ::ng-deep .iti__country-name,
+        :host ::ng-deep .iti__dial-code {
+            font-size: 14px;
+        }
+
+        .phone-group {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 10px;
+            align-items: start;
+        }
+
+        .phone-code-select {
+            min-width: 0;
+        }
+
+        .phone-code-wrap {
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 8px;
+        }
+
+        .phone-code-search {
+            min-height: 48px;
+        }
         
         .invalid-feedback {
             display: block;
@@ -199,6 +256,11 @@ $text-color: var(--paragraphColor);
                 min-height: 58px;
                 padding: 15px 18px;
                 font-size: 16px;
+            }
+
+            .phone-group {
+                grid-template-columns: 1fr;
+                gap: 8px;
             }
 
             textarea.form-control {

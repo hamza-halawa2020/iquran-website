@@ -1,5 +1,5 @@
-﻿import { CommonModule, NgClass, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { CommonModule, NgClass, NgIf } from '@angular/common';
+import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { RouterLink, Router } from '@angular/router';
 import { ContactService } from './contact.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
@@ -10,6 +10,7 @@ import {
     Validators,
 } from '@angular/forms';
 import { CoursesService } from '../../pages/courses-page/courses.service';
+import intlTelInput from 'intl-tel-input';
 
 @Component({
     selector: 'app-contact',
@@ -19,12 +20,25 @@ import { CoursesService } from '../../pages/courses-page/courses.service';
     styleUrl: './contact.component.scss',
     providers: [ContactService],
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
+    @ViewChild('phoneInput') phoneInput?: ElementRef<HTMLInputElement>;
+
     contactForm: FormGroup;
     successMessage: string = '';
     errorMessage: string = '';
     isSubmitting: boolean = false;
     courses: any[] = [];
+    private itiReady: Promise<unknown> = Promise.resolve();
+    private iti?: {
+        getNumber: () => string;
+        isValidNumber: () => boolean;
+        getSelectedCountryData: () => {
+            name?: string;
+            iso2?: string;
+            dialCode?: string;
+        };
+        destroy: () => void;
+    };
 
     constructor(
         public router: Router,
@@ -35,7 +49,7 @@ export class ContactComponent implements OnInit {
     ) {
         this.contactForm = this.fb.group({
             name: ['', [Validators.required, Validators.minLength(2)]],
-            phone: ['', [Validators.required, Validators.minLength(10)]],
+            phone: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.email]],
             age: ['', [Validators.required, Validators.min(1), Validators.max(120)]],
             country: ['', [Validators.required]],
@@ -55,7 +69,28 @@ export class ContactComponent implements OnInit {
         });
     }
 
-    onSubmit() {
+    ngAfterViewInit(): void {
+        if (!this.phoneInput?.nativeElement) {
+            return;
+        }
+
+        this.iti = intlTelInput(this.phoneInput.nativeElement, {
+            initialCountry: 'eg',
+            preferredCountries: ['eg', 'sa', 'ae'],
+            allowDropdown: true,
+            countrySearch: true,
+            separateDialCode: true,
+            autoPlaceholder: 'polite',
+            loadUtils: () => import('intl-tel-input/build/js/utils.js'),
+        });
+        this.itiReady = (this.iti as any)?.promise ?? Promise.resolve();
+    }
+
+    ngOnDestroy(): void {
+        this.iti?.destroy();
+    }
+
+    async onSubmit() {
         if (this.contactForm.invalid) {
             this.markFormGroupTouched();
             this.translate.get('CONTACT_FORM_INVALID').subscribe((translation: string) => {
@@ -71,8 +106,40 @@ export class ContactComponent implements OnInit {
         this.errorMessage = '';
         this.successMessage = '';
 
-        this.contactService.store(this.contactForm.value).subscribe({
-            next: (response) => {
+        await this.itiReady;
+
+        const rawPhoneInput = this.phoneInput?.nativeElement?.value ?? '';
+        const formattedPhone = (this.iti?.getNumber() || '').trim() || null;
+        const isValidPhone = this.iti?.isValidNumber() ?? false;
+        const selectedCountryData = this.iti?.getSelectedCountryData?.();
+        const rawDigits = rawPhoneInput.replace(/[^\d]/g, '');
+        const fallbackDialCode = selectedCountryData?.dialCode ? `+${selectedCountryData.dialCode}` : '';
+        const fallbackPhone = fallbackDialCode && rawDigits ? `${fallbackDialCode}${rawDigits}` : null;
+        const fallbackIsAcceptable = rawDigits.length >= 8 && rawDigits.length <= 15;
+
+        console.log('[Contact][Phone Debug]', {
+            rawPhoneInput,
+            formattedPhone,
+            isValidPhone,
+            selectedCountryData,
+            fallbackPhone,
+            fallbackIsAcceptable,
+        });
+
+        if ((!formattedPhone || !isValidPhone) && !fallbackIsAcceptable) {
+            this.contactForm.get('phone')?.setErrors({ invalidPhone: true });
+            this.contactForm.get('phone')?.markAsTouched();
+            this.isSubmitting = false;
+            return;
+        }
+
+        const payload = {
+            ...this.contactForm.value,
+            phone: formattedPhone || fallbackPhone,
+        };
+
+        this.contactService.store(payload).subscribe({
+            next: () => {
                 this.translate.get('CONTACT_SUCCESS_MESSAGE').subscribe((translation: string) => {
                     this.successMessage = translation;
                 });
@@ -87,7 +154,7 @@ export class ContactComponent implements OnInit {
                 this.isSubmitting = false;
                 if (error.error?.errors) {
                     const errors = error.error.errors;
-                    const errorMessages = Object.keys(errors).map(key => 
+                    const errorMessages = Object.keys(errors).map(key =>
                         errors[key].join(', ')
                     ).join(' | ');
                     this.errorMessage = errorMessages;
@@ -121,6 +188,9 @@ export class ContactComponent implements OnInit {
             if (field.errors['minlength']) {
                 return this.translate.instant(`${fieldName.toUpperCase()}_MIN_LENGTH`);
             }
+            if (field.errors['invalidPhone']) {
+                return this.translate.instant('PHONE_INVALID');
+            }
             if (field.errors['email']) {
                 return this.translate.instant('EMAIL_INVALID');
             }
@@ -131,4 +201,3 @@ export class ContactComponent implements OnInit {
         return '';
     }
 }
-
