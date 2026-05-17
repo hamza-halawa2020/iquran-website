@@ -105,8 +105,47 @@ $text-color: var(--paragraphColor);
         }
 
         .iti {
-            width: 100%;
+            width: 100% !important;
             display: block;
+            max-width: 100% !important;
+        }
+
+        :host ::ng-deep #phone.form-control {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: block;
+        }
+
+        :host ::ng-deep .form-group > .iti {
+            width: 100% !important;
+            display: block !important;
+        }
+
+        :host ::ng-deep .iti.iti--allow-dropdown.iti--separate-dial-code {
+            width: 100% !important;
+        }
+
+        :host ::ng-deep .iti .iti__tel-input.form-control,
+        :host ::ng-deep .iti input[type="tel"].form-control {
+            width: 100% !important;
+            max-width: 100% !important;
+            display: block;
+            min-height: 62px;
+            height: 62px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+            font-size: 1.02rem;
+            line-height: 1.5;
+            border-radius: 12px;
+        }
+
+        :host ::ng-deep .iti--separate-dial-code .iti__selected-country {
+            height: 62px;
+            border-radius: 12px 0 0 12px;
+            display: inline-flex;
+            align-items: center;
+            background: #f8fafc;
+            border-right: 1px solid rgba(6, 78, 59, 0.08);
         }
 
         :host ::ng-deep .iti__selected-dial-code {
@@ -258,6 +297,21 @@ $text-color: var(--paragraphColor);
                 font-size: 16px;
             }
 
+            :host ::ng-deep .iti .iti__tel-input.form-control,
+            :host ::ng-deep .iti input[type="tel"].form-control {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: 58px;
+                height: 58px;
+                padding-top: 15px;
+                padding-bottom: 15px;
+                font-size: 16px;
+            }
+
+            :host ::ng-deep .iti--separate-dial-code .iti__selected-country {
+                height: 58px;
+            }
+
             .phone-group {
                 grid-template-columns: 1fr;
                 gap: 8px;
@@ -285,3 +339,84 @@ $text-color: var(--paragraphColor);
     }
 }
 
+/* intl-tel-input overrides must be top-level so Angular can apply them correctly */
+:host ::ng-deep .contact-form .form-group .iti {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+}
+
+:host ::ng-deep .contact-form .form-group > .iti.iti--allow-dropdown.iti--separate-dial-code {
+    width: 100% !important;
+}
+
+:host ::ng-deep .contact-form .form-group #phone.form-control,
+:host ::ng-deep .contact-form .form-group .iti .iti__tel-input.form-control,
+:host ::ng-deep .contact-form .form-group .iti input[type="tel"].form-control {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    min-height: 62px;
+    height: 62px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    font-size: 1.02rem;
+    line-height: 1.5;
+    border-radius: 12px;
+}
+
+:host ::ng-deep .contact-form .form-group .iti--separate-dial-code .iti__selected-country {
+    height: 62px;
+    border-radius: 12px 0 0 12px;
+    display: inline-flex;
+    align-items: center;
+    background: #f8fafc;
+    border-right: 1px solid rgba(6, 78, 59, 0.08);
+}
+
+:host ::ng-deep .contact-form .form-group .iti__selected-dial-code {
+    font-weight: 700;
+    color: $primary-color;
+}
+
+:host ::ng-deep .contact-form .form-group .iti__country-list {
+    border: 1px solid rgba(6, 78, 59, 0.14);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+:host ::ng-deep .contact-form .form-group .iti__search-input {
+    border: 1px solid rgba(6, 78, 59, 0.18);
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin: 8px;
+    width: calc(100% - 16px);
+    font-size: 14px;
+}
+
+:host ::ng-deep .contact-form .form-group .iti__country.iti__highlight {
+    background-color: rgba(26, 122, 82, 0.08);
+}
+
+:host ::ng-deep .contact-form .form-group .iti__country-name,
+:host ::ng-deep .contact-form .form-group .iti__dial-code {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    :host ::ng-deep .contact-form .form-group #phone.form-control,
+    :host ::ng-deep .contact-form .form-group .iti .iti__tel-input.form-control,
+    :host ::ng-deep .contact-form .form-group .iti input[type="tel"].form-control {
+        min-height: 58px;
+        height: 58px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 16px;
+    }
+
+    :host ::ng-deep .contact-form .form-group .iti--separate-dial-code .iti__selected-country {
+        height: 58px;
+    }
+}
