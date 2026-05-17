@@ -24,16 +24,16 @@ export class LearningBenefitsSectionComponent {
             title: 'Live Zoom Classes',
             description: 'Interactive sessions to ask questions and learn with confidence.',
         },
-        {
-            icon: 'fa-solid fa-play-circle',
-            title: 'Recorded Lessons',
-            description: 'Review each lesson anytime to strengthen memorization.',
-        },
-        {
-            icon: 'fa-solid fa-scroll',
-            title: 'Learning Materials',
-            description: 'Structured PDFs prepared for every level and goal.'
-        },
+        // {
+        //     icon: 'fa-solid fa-play-circle',
+        //     title: 'Recorded Lessons',
+        //     description: 'Review each lesson anytime to strengthen memorization.',
+        // },
+        // {
+        //     icon: 'fa-solid fa-scroll',
+        //     title: 'Learning Materials',
+        //     description: 'Structured PDFs prepared for every level and goal.'
+        // },
         {
             icon: 'fa-solid fa-chalkboard-user',
             title: 'Expert Teachers',
@@ -42,6 +42,16 @@ export class LearningBenefitsSectionComponent {
         {
             icon: 'fa-solid fa-users',
             title: 'Small Groups',
+            description: 'Better focus and personal attention in each class.'
+        },
+        {
+            icon: 'fa-solid fa-users',
+            title: 'Flexible Schedules',
+            description: 'A flexible schedule that fits your lifestyle.'
+        },
+        {
+            icon: 'fa-solid fa-users',
+            title: 'Private Lessons',
             description: 'Better focus and personal attention in each class.'
         },
         {

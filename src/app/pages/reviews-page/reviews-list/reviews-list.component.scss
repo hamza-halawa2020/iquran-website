@@ -113,18 +113,24 @@ textarea.form-control {
     border-radius: 14px;
     padding: 16px;
     box-shadow: 0 8px 22px rgba(7, 12, 9, 0.06);
+    min-width: 0;
+    overflow: hidden;
 }
 
 .review-text {
     margin: 0 0 12px;
     color: $text;
     line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .reviewer-info {
     display: flex;
     align-items: center;
     gap: 10px;
+    min-width: 0;
 }
 
 .reviewer-avatar {
@@ -140,10 +146,16 @@ textarea.form-control {
     font-weight: 700;
 }
 
+.reviewer-details {
+    min-width: 0;
+}
+
 .reviewer-name {
     margin: 0;
     color: $primary;
     font-size: 1rem;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .review-date {
