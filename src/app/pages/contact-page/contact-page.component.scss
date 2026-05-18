@@ -160,6 +160,14 @@ $line: rgba(15, 90, 58, 0.14);
         grid-template-columns: 1fr;
     }
 
+    .form-panel {
+        order: 1;
+    }
+
+    .contact-panel {
+        order: 2;
+    }
+
     .contact-panel {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
