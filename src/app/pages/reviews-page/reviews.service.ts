@@ -19,7 +19,7 @@ export class ReviewsService {
         return this.http.get(`${this.apiUrl}/reviews/${id}`);
     }
 
-    addReview(data: { name: string; country: string; review: string }): Observable<any> {
+    addReview(data: { name: string; review: string }): Observable<any> {
         return this.http.post(`${this.apiUrl}/reviews`, data);
     }
 }

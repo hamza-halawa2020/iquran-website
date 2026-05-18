@@ -18,7 +18,7 @@
                 </div>
 
                 <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
-                    <div class="form-grid">
+                    <div class="">
                         <div class="form-group">
                             <label for="name">{{ 'ADD_REVIEW_NAME' | translate }}</label>
                             <input
@@ -35,20 +35,6 @@
                             </small>
                         </div>
 
-                        <div class="form-group">
-                            <label for="country">{{ 'ADD_REVIEW_COUNTRY' | translate }}</label>
-                            <input
-                                id="country"
-                                type="text"
-                                class="form-control"
-                                formControlName="country"
-                                [placeholder]="'ADD_REVIEW_COUNTRY_PLACEHOLDER' | translate"
-                                [class.is-invalid]="country?.invalid && country?.touched"
-                            />
-                            <small class="field-error" *ngIf="country?.invalid && country?.touched">
-                                <span *ngIf="country?.errors?.['required']">{{ 'ADD_REVIEW_COUNTRY_REQUIRED' | translate }}</span>
-                            </small>
-                        </div>
                     </div>
 
                     <div class="form-group">
@@ -93,7 +79,6 @@
                             </div>
                             <div class="reviewer-details">
                                 <h4 class="reviewer-name">{{ review.name }}</h4>
-                                <div class="reviewer-name">{{ review.country }}</div>
                                 <p class="review-date">{{ formatDate(review.created_at) }}</p>
                             </div>
                         </div>

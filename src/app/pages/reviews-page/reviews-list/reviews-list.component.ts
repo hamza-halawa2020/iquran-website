@@ -29,7 +29,6 @@ export class ReviewsListComponent implements OnInit {
   ) {
     this.reviewForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(255)]],
-      country: ['', [Validators.required, Validators.maxLength(255)]],
       review: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
@@ -89,7 +88,6 @@ export class ReviewsListComponent implements OnInit {
 
     const payload = {
       name: (this.reviewForm.value.name || '').trim(),
-      country: (this.reviewForm.value.country || '').trim(),
       review: (this.reviewForm.value.review || '').trim()
     };
 
@@ -110,10 +108,6 @@ export class ReviewsListComponent implements OnInit {
 
   get name() {
     return this.reviewForm.get('name');
-  }
-
-  get country() {
-    return this.reviewForm.get('country');
   }
 
   get review() {

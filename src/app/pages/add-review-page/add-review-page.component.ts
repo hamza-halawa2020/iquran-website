@@ -26,7 +26,6 @@ export class AddReviewPageComponent {
   ) {
     this.reviewForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(255)]],
-      country: ['', [Validators.required, Validators.maxLength(255)]],
       review: ['', [Validators.required, Validators.minLength(10)]]
     });
   }
@@ -43,7 +42,12 @@ export class AddReviewPageComponent {
     this.submitError = false;
     this.submitSuccess = false;
 
-    this.reviewsService.addReview(this.reviewForm.value).subscribe({
+    const payload = {
+      name: (this.reviewForm.value.name || '').trim(),
+      review: (this.reviewForm.value.review || '').trim()
+    };
+
+    this.reviewsService.addReview(payload).subscribe({
       next: (response) => {
         this.submitSuccess = true;
         this.isSubmitting = false;
@@ -62,10 +66,6 @@ export class AddReviewPageComponent {
 
   get name() {
     return this.reviewForm.get('name');
-  }
-
-  get country() {
-    return this.reviewForm.get('country');
   }
 
   get review() {

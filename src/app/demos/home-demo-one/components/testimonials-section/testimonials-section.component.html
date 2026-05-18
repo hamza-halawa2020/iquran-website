@@ -16,9 +16,6 @@
                             <div class="author-info">
                                 <h5>{{ testimonial.client_name }}</h5>
                                 <p class="meta-line">
-                                    <span class="author-country" *ngIf="testimonial.country">
-                                        <i class="fa-solid fa-location-dot"></i> {{ testimonial.country }}
-                                    </span>
                                     <span class="author-date" *ngIf="testimonial.created_at">{{ formatDate(testimonial.created_at) }}</span>
                                 </p>
                             </div>
