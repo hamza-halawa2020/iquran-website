@@ -336,6 +336,10 @@ $gray: #9ca3af;
         gap: 12px;
     }
 
+    .navbar-brand {
+        margin-inline: auto;
+    }
+
     .navbar-menu {
         position: absolute;
         top: 100%;
@@ -424,6 +428,8 @@ $gray: #9ca3af;
 
     .navbar-mobile-controls {
         display: flex;
+        position: absolute;
+        inset-inline-end: 20px;
         margin-left: 0;
     }
 
@@ -462,6 +468,7 @@ $gray: #9ca3af;
 
     .navbar-mobile-controls {
         gap: 10px;
+        inset-inline-end: 15px;
         margin-left: 0;
     }
 
