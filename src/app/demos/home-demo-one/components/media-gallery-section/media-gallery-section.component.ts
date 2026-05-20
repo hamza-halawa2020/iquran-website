@@ -153,7 +153,7 @@ export class MediaGallerySectionComponent implements OnInit, OnChanges {
         return `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
       }
     }
-    return 'assets/images/logo.svg';
+    return 'assets/images/logo.webp';
   }
 
   private getVideoUrl(item: MediaItem | null): string | null {

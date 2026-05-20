@@ -16,7 +16,7 @@ export class CertificatesSectionComponent implements AfterViewInit, OnDestroy {
     @ViewChild('certificatesTrack') private certificatesTrack?: ElementRef<HTMLDivElement>;
     @ViewChildren('certificateSlide') private certificateSlides?: QueryList<ElementRef<HTMLDivElement>>;
 
-    fallbackImage = '/assets/images/logo.svg';
+    fallbackImage = '/assets/images/logo.webp';
     canScrollPrev = true;
     canScrollNext = true;
     private edgeObserver?: IntersectionObserver;

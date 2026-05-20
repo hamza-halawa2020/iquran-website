@@ -16,7 +16,7 @@ export class CertificatesListComponent implements OnInit {
     certificates: any[] = [];
     isLoading: boolean = true;
     meta: any;
-    fallbackImage: string = '/assets/images/logo.svg';
+    fallbackImage: string = '/assets/images/logo.webp';
 
     constructor(private certificatesService: CertificatesService) { }
 

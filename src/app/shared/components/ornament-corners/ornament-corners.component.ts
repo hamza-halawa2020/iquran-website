@@ -20,7 +20,7 @@ export class OrnamentCornersComponent {
     @Input() mirrorLeft?: boolean;
     @Input() mirrorRight?: boolean;
     @Input() flipY: boolean = false;
-    @Input() imageUrl: string = '/assets/images/pngtree-islamic-corner-frame-png-image_7096173.svg';
+    @Input() imageUrl: string = '/assets/images/pngtree-islamic-corner-frame-png-image_7096173.webp';
 
     get shouldMirrorLeft(): boolean {
         return this.mirrorLeft ?? false;

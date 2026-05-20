@@ -31,7 +31,7 @@ export class SeoService {
         const canonicalUrl = `${siteUrl}${config.canonicalPath ?? ''}`;
         const pageType = config.type ?? 'website';
         const locale = config.locale ?? 'en_US';
-        const image = config.image ?? `${siteUrl}/assets/images/logo.svg`;
+        const image = config.image ?? `${siteUrl}/assets/images/logo.webp`;
 
         this.title.setTitle(config.title);
         this.meta.updateTag({ name: 'description', content: config.description });
