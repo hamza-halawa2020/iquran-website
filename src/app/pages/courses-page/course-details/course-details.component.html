@@ -19,7 +19,7 @@
 
             <div class="content-wrapper animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
                 <div class="content-section" *ngIf="course.description">
-                    <div class="content-body" [innerHTML]="course.description"></div>
+                    <div class="content-body" [innerHTML]="processedDescription"></div>
                 </div>
             </div>
 
