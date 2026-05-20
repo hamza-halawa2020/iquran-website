@@ -171,23 +171,17 @@ body {
     font-family: var(--fontFamily);
 }
 
-body :not(.fa):not(.fas):not(.fa-solid):not(.fa-brands):not(.fab),
-body :not(.fa):not(.fas):not(.fa-solid):not(.fa-brands):not(.fab)::before,
-body :not(.fa):not(.fas):not(.fa-solid):not(.fa-brands):not(.fab)::after {
-    font-family: "Garamond", "Times New Roman", serif !important;
-}
-
 body::before {
     content: "";
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image: url("/assets/images/full_logo.svg");
+    background-image: url("/assets/images/full_logo.webp");
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: min(78vw, 980px);
-    opacity: 0.045;
+    background-size: min(68vw, 780px);
+    opacity: 0.025;
 }
 
 body::after {
@@ -210,9 +204,7 @@ body::after {
     }
 
     body::before {
-        background-size: 115vw;
-        opacity: 0.032;
-        background-position: center 52%;
+        content: none;
     }
 
     body::after {
@@ -239,7 +231,7 @@ body::after {
     font-family: 'Font Awesome 6 Free';
     font-style: normal;
     font-weight: 900;
-    font-display: block;
+    font-display: swap;
     src: url("/assets/fonts/fa-solid-subset.woff2") format("woff2");
 }
 
@@ -247,7 +239,7 @@ body::after {
     font-family: 'Font Awesome 6 Brands';
     font-style: normal;
     font-weight: 400;
-    font-display: block;
+    font-display: swap;
     src: url("/assets/fonts/fa-brands-subset.woff2") format("woff2");
 }
 

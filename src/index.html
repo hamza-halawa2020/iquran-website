@@ -13,26 +13,26 @@
         content="I Quran for Quran memorization, Tajweed, Arabic language, and Islamic studies with qualified teachers." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://iquran.co.uk/" />
-    <meta property="og:image" content="https://iquran.co.uk/assets/images/full_logo.svg" />
-    <meta property="og:image:secure_url" content="https://iquran.co.uk/assets/images/full_logo.svg" />
+    <meta property="og:image" content="https://iquran.co.uk/assets/images/full_logo.webp" />
+    <meta property="og:image:secure_url" content="https://iquran.co.uk/assets/images/full_logo.webp" />
     <meta property="og:image:type" content="image/svg+xml" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Quran And Arabic Learning" />
     <meta name="twitter:description"
         content="I Quran for Quran memorization, Tajweed, Arabic language, and Islamic studies with qualified teachers." />
-    <meta name="twitter:image" content="https://iquran.co.uk/assets/images/full_logo.svg" />
+    <meta name="twitter:image" content="https://iquran.co.uk/assets/images/full_logo.webp" />
     <link rel="canonical" href="https://iquran.co.uk/" />
 
     
     <title>Quran And Arabic Learning</title>
 
     
-    <link rel="preload" href="/assets/images/logo.svg" as="image" fetchpriority="high" />
+    <link rel="preload" href="/assets/images/logo.webp" as="image" fetchpriority="high" />
     <link rel="preload" href="/assets/fonts/fa-solid-subset.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/fa-brands-subset.woff2" as="font" type="font/woff2" crossorigin />
 
     
-    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo.webp" />
 </head>
 
 <body>
@@ -43,11 +43,19 @@
     </div>
     <app-root></app-root>
     <script>
-        window.addEventListener('load', function () {
-            window.setTimeout(function () {
+        (function () {
+            var markLoaded = function () {
                 document.body.classList.add('loaded');
-            }, 250);
-        }, { once: true });
+            };
+
+            if (document.readyState === 'interactive' || document.readyState === 'complete') {
+                markLoaded();
+                return;
+            }
+
+            document.addEventListener('DOMContentLoaded', markLoaded, { once: true });
+            window.addEventListener('load', markLoaded, { once: true });
+        })();
     </script>
 </body>
 
