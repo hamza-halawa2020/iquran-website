@@ -27,6 +27,7 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
     successMessage: string = '';
     errorMessage: string = '';
     isSubmitting: boolean = false;
+    categories: any[] = [];
     courses: any[] = [];
     private itiReady: Promise<unknown> = Promise.resolve();
     private iti?: {
@@ -53,13 +54,35 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
             email: ['', [Validators.required, Validators.email]],
             age: ['', [Validators.required, Validators.min(1), Validators.max(120)]],
             country: ['', [Validators.required]],
+            course_category_id: ['', [Validators.required]],
             course: ['', [Validators.required]],
             message: ['', [Validators.required, Validators.minLength(10)]],
         });
     }
 
     ngOnInit(): void {
-        this.coursesService.getCoursesList(1, null, 100).subscribe({
+        this.coursesService.getCourseCategories().subscribe({
+            next: (response: any) => {
+                this.categories = response?.data || [];
+            },
+            error: () => {
+                this.categories = [];
+            }
+        });
+
+        this.contactForm.get('course_category_id')?.valueChanges.subscribe((categoryId) => {
+            this.contactForm.get('course')?.setValue('');
+            this.loadCoursesByCategory(categoryId);
+        });
+    }
+
+    private loadCoursesByCategory(categoryId: number | string | null): void {
+        if (!categoryId) {
+            this.courses = [];
+            return;
+        }
+
+        this.coursesService.getCoursesList(1, Number(categoryId), 100).subscribe({
             next: (response: any) => {
                 this.courses = response?.data || [];
             },
@@ -183,6 +206,9 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
         const field = this.contactForm.get(fieldName);
         if (field?.errors && field?.touched) {
             if (field.errors['required']) {
+                if (fieldName === 'course_category_id') {
+                    return 'Category is required';
+                }
                 return this.translate.instant(`${fieldName.toUpperCase()}_REQUIRED`);
             }
             if (field.errors['minlength']) {

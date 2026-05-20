@@ -740,7 +740,7 @@
   "COUNTRY_REQUIRED": "Country is required",
   "COURSE_REQUIRED": "Course is required",
   "EMAIL_REQUIRED": "Email is required",
-  "WRITE_YOUR_MESSAGE": "Write your message here...",
+  "WRITE_YOUR_MESSAGE": "Tell us your current level, whether you studied this course before, and any details that help us place you in the right level.",
   "SENDING": "Sending...",
   "NAME_REQUIRED": "Name is required",
   "NAME_MIN_LENGTH": "Name must be at least 2 characters",

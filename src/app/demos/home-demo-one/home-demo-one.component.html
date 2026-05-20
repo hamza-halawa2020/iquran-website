@@ -94,4 +94,20 @@
     } @placeholder {
     <div class="home-defer-placeholder" style="--home-defer-min-h: 500px"></div>
     }
+
+    <section class="home-block home-block-seo">
+        <div class="container seo-content">
+            <h2>Learn Quran, Tajweed and Arabic Online</h2>
+            <p>iQuran Academy provides live learning programs with qualified teachers to help kids and adults memorize Quran correctly, master Tajweed rules, and build Arabic and Islamic studies foundations at every level.</p>
+            <h3>Frequently Asked Questions</h3>
+            <div class="seo-faq-list">
+                @for (item of seoFaqItems; track item.question) {
+                <article class="seo-faq-item">
+                    <h4>{{ item.question }}</h4>
+                    <p>{{ item.answer }}</p>
+                </article>
+                }
+            </div>
+        </div>
+    </section>
 </div>

@@ -18,6 +18,7 @@ import { HomeService, HomeData } from './home.service';
 import { ScrollRevealDirective } from '../../shared/directives/scroll-reveal.directive';
 import { LearningBenefitsSectionComponent } from './components/learning-benefits-section/learning-benefits-section.component';
 import { TeachersSectionComponent } from './components/teachers-section/teachers-section.component';
+import { SeoService } from '../../shared/services/seo.service';
 
 type IdleWindow = Window & {
     requestIdleCallback?: (callback: (_deadline: unknown) => void, options?: { timeout: number }) => number;
@@ -62,6 +63,8 @@ export class HomeDemoOneComponent implements OnInit, AfterViewInit, OnDestroy {
     private idleTimeoutId: number | null = null;
     private hasRequestedHomeData = false;
     private homeDataObserver?: IntersectionObserver;
+    private languageSubscription?: Subscription;
+    seoFaqItems: Array<{ question: string; answer: string }> = [];
 
     defaultStats = {
         completedStudies: 1500,  // Students graduated
@@ -73,10 +76,14 @@ export class HomeDemoOneComponent implements OnInit, AfterViewInit, OnDestroy {
     constructor(
         public translate: TranslateService,
         private homeService: HomeService,
-        private ngZone: NgZone
+        private ngZone: NgZone,
+        private seoService: SeoService
     ) { }
 
     ngOnInit(): void {
+        this.applySeoContent();
+        this.languageSubscription = this.translate.onLangChange.subscribe(() => this.applySeoContent());
+
         if (typeof window === 'undefined') {
             this.loadHomeData();
         }
@@ -92,6 +99,7 @@ export class HomeDemoOneComponent implements OnInit, AfterViewInit, OnDestroy {
         this.homeDataObserver?.disconnect();
         this.removeLoadListener?.();
         this.homeDataSubscription?.unsubscribe();
+        this.languageSubscription?.unsubscribe();
 
         if (typeof window === 'undefined') {
             return;
@@ -293,5 +301,34 @@ export class HomeDemoOneComponent implements OnInit, AfterViewInit, OnDestroy {
             window.clearTimeout(this.idleTimeoutId);
             this.idleTimeoutId = null;
         }
+    }
+
+    private applySeoContent(): void {
+
+        const title ='iQuran Academy - Online Quran Memorization, Tajweed and Arabic Lessons';
+
+        const description = 'Learn Quran online with qualified teachers in memorization, Tajweed, Arabic language, and Islamic studies for all ages.';
+
+        this.seoFaqItems = [
+                {
+                    question: 'What services does iQuran Academy provide?',
+                    answer: 'We provide online Quran memorization, Tajweed classes, Arabic language courses, and Islamic studies with qualified teachers.'
+                },
+                {
+                    question: 'Are online classes suitable for kids and adults?',
+                    answer: 'Yes. We offer age-appropriate plans and level-based programs with continuous progress tracking.'
+                },
+                {
+                    question: 'How can I register for classes?',
+                    answer: 'You can register through the contact page, and our team will follow up to assess your level and schedule your program.'
+                }
+            ];
+
+        this.seoService.update({
+            title,
+            description,
+            canonicalPath: '/',
+            faq: this.seoFaqItems
+        });
     }
 }

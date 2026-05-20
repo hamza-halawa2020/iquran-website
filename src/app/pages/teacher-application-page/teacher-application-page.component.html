@@ -1,0 +1,47 @@
+<section class="teacher-application-page">
+    <div class="container">
+        <div class="application-card">
+            <h1>Apply As A Teacher</h1>
+            <p>Fill out the form below. Your application will be sent to the dashboard for review.</p>
+
+            <div *ngIf="successMessage" class="alert success">{{ successMessage }}</div>
+            <div *ngIf="errorMessage" class="alert error">{{ errorMessage }}</div>
+
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <div class="grid">
+                    <div>
+                        <label>Full Name</label>
+                        <input type="text" formControlName="name" />
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input type="email" formControlName="email" />
+                    </div>
+                    <div>
+                        <label>Phone Number</label>
+                        <input #phoneInput type="tel" formControlName="phone" />
+                        <div class="field-error" *ngIf="form.get('phone')?.touched && form.get('phone')?.errors?.['invalidPhone']">
+                            Please enter a valid phone number.
+                        </div>
+                    </div>
+                    <div>
+                        <label>Country</label>
+                        <input type="text" formControlName="country" />
+                    </div>
+                    <div class="full">
+                        <label>Specialization / Job Title</label>
+                        <input type="text" formControlName="job_title" />
+                    </div>
+                    <div class="full">
+                        <label>About You & Experience</label>
+                        <textarea rows="5" formControlName="message"></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" [disabled]="isSubmitting || form.invalid">
+                    {{ isSubmitting? 'Submitting...': 'Submit Application' }}
+                </button>
+            </form>
+        </div>
+    </div>
+</section>

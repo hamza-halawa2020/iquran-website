@@ -197,6 +197,59 @@
     max-width: 1020px;
 }
 
+.home-block-seo {
+    border-top: 1px solid rgba(15, 90, 58, 0.1);
+}
+
+.seo-content {
+    max-width: 900px;
+
+    h2 {
+        margin: 0 0 12px;
+        color: var(--primaryColor);
+        font-size: clamp(1.35rem, 2.6vw, 1.95rem);
+        line-height: 1.35;
+        font-weight: 800;
+    }
+
+    > p {
+        margin: 0 0 20px;
+        color: var(--paragraphColor);
+        line-height: 1.85;
+    }
+
+    h3 {
+        margin: 0 0 14px;
+        color: var(--primaryColor);
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+}
+
+.seo-faq-list {
+    display: grid;
+    gap: 12px;
+}
+
+.seo-faq-item {
+    border: 1px solid rgba(15, 90, 58, 0.14);
+    border-radius: 12px;
+    padding: 14px;
+
+    h4 {
+        margin: 0 0 8px;
+        color: var(--primaryColor);
+        font-size: 1rem;
+        font-weight: 700;
+    }
+
+    p {
+        margin: 0;
+        color: var(--paragraphColor);
+        line-height: 1.75;
+    }
+}
+
 .home-defer-placeholder {
     position: relative;
     isolation: isolate;
@@ -239,6 +292,10 @@
         margin: 14px auto;
         width: calc(100% - 24px);
         border-radius: 12px;
+    }
+
+    .seo-faq-item {
+        padding: 12px;
     }
 
     :host ::ng-deep .home-block .section-title,

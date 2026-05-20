@@ -118,13 +118,35 @@
 
             <div class="col-lg-12">
                 <div class="form-group">
+                    <label for="course_category_id">Category*</label>
+                    <select
+                        id="course_category_id"
+                        class="form-control"
+                        [class.is-invalid]="contactForm.get('course_category_id')?.invalid && contactForm.get('course_category_id')?.touched"
+                        formControlName="course_category_id">
+                        <option value="" disabled>Select category</option>
+                        <option *ngFor="let category of categories" [value]="category.id">
+                            {{ category.name }}
+                        </option>
+                    </select>
+                    <div class="invalid-feedback" *ngIf="getFieldError('course_category_id')">
+                        {{ getFieldError('course_category_id') }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="form-group">
                     <label for="course">{{ 'DESIRED_COURSE' | translate }} *</label>
                     <select
                         id="course"
                         class="form-control"
                         [class.is-invalid]="contactForm.get('course')?.invalid && contactForm.get('course')?.touched"
-                        formControlName="course">
-                        <option value="" disabled>{{ 'SELECT_COURSE' | translate }}</option>
+                        formControlName="course"
+                        [disabled]="!contactForm.get('course_category_id')?.value">
+                        <option value="" disabled>
+                            {{ contactForm.get('course_category_id')?.value ?? 'Select category first' }}
+                        </option>
                         <option *ngFor="let courseItem of courses" [value]="courseItem.id">
                             {{ courseItem.title }}
                         </option>
@@ -137,7 +159,7 @@
 
             <div class="col-lg-12">
                 <div class="form-group">
-                    <label for="message">{{ 'MESSAGE' | translate }} *</label>
+                    <label for="message">Your Previous Knowledge About The Desired Course *</label>
                     <textarea
                         id="message"
                         rows="6"
