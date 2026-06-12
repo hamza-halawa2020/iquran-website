@@ -56,6 +56,7 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
             country: ['', [Validators.required]],
             course_category_id: ['', [Validators.required]],
             course: ['', [Validators.required]],
+            course_type: ['', [Validators.required]],
             message: ['', [Validators.required, Validators.minLength(10)]],
         });
     }
@@ -113,6 +114,11 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
         this.iti?.destroy();
     }
 
+    selectCourseType(type: 'group' | 'one_to_one'): void {
+        this.contactForm.get('course_type')?.setValue(type);
+        this.contactForm.get('course_type')?.markAsTouched();
+    }
+
     async onSubmit() {
         if (this.contactForm.invalid) {
             this.markFormGroupTouched();
@@ -156,9 +162,17 @@ export class ContactComponent implements OnInit, AfterViewInit, OnDestroy {
             return;
         }
 
+        const courseTypeLabel = this.contactForm.value.course_type === 'group'
+            ? 'Group Course (3 months | 1.5 hours/week | £99 | Zoom)'
+            : 'One-to-One Course (3 months | 40 minutes/week | £140 | Zoom)';
+
+        const { course_type, message, ...rest } = this.contactForm.value;
+        const mergedMessage = `${message}\n\nPreferred Course Type: ${courseTypeLabel}`;
+
         const payload = {
-            ...this.contactForm.value,
+            ...rest,
             phone: formattedPhone || fallbackPhone,
+            message: mergedMessage,
         };
 
         this.contactService.store(payload).subscribe({

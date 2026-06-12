@@ -159,6 +159,58 @@
 
             <div class="col-lg-12">
                 <div class="form-group">
+                    <label>Course Type *</label>
+                    <div class="course-type-grid">
+                        <div
+                            class="course-type-card"
+                            [class.selected]="contactForm.get('course_type')?.value === 'group'"
+                            (click)="selectCourseType('group')"
+                            role="radio"
+                            [attr.aria-checked]="contactForm.get('course_type')?.value === 'group'"
+                            tabindex="0"
+                            (keydown.enter)="selectCourseType('group')"
+                            (keydown.space)="selectCourseType('group')">
+                            <div class="ctype-header">
+                                <span class="radio-dot"></span>
+                                <strong>Group Course</strong>
+                            </div>
+                            <ul>
+                                <li><span>Duration:</span> 3 months</li>
+                                <li><span>Schedule:</span> 1.5 hours / week</li>
+                                <li><span>Fee:</span> £99</li>
+                                <li><span>Platform:</span> Online via Zoom</li>
+                            </ul>
+                        </div>
+                        <div
+                            class="course-type-card"
+                            [class.selected]="contactForm.get('course_type')?.value === 'one_to_one'"
+                            (click)="selectCourseType('one_to_one')"
+                            role="radio"
+                            [attr.aria-checked]="contactForm.get('course_type')?.value === 'one_to_one'"
+                            tabindex="0"
+                            (keydown.enter)="selectCourseType('one_to_one')"
+                            (keydown.space)="selectCourseType('one_to_one')">
+                            <div class="ctype-header">
+                                <span class="radio-dot"></span>
+                                <strong>One‑to‑One Course</strong>
+                            </div>
+                            <ul>
+                                <li><span>Duration:</span> 3 months</li>
+                                <li><span>Schedule:</span> 40 minutes / week</li>
+                                <li><span>Fee:</span> £140</li>
+                                <li><span>Platform:</span> Online via Zoom</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="invalid-feedback" style="display:block"
+                        *ngIf="contactForm.get('course_type')?.invalid && contactForm.get('course_type')?.touched">
+                        Please select a course type.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div class="form-group">
                     <label for="message">Your Previous Knowledge About The Desired Course *</label>
                     <textarea
                         id="message"
