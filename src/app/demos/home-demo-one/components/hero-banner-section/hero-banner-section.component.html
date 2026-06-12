@@ -9,18 +9,25 @@
             </div>
 
             <div class="hero-visual" aria-hidden="true">
-                <img
-                    src="/assets/images/iquran.webp"
-                    srcset="/assets/images/iquran.webp 584w"
-                    sizes="(max-width: 991px) 76vw, 340px"
-                    alt=""
-                    class="hero-logo"
-                    width="584"
-                    height="621"
-                    fetchpriority="high"
-                    loading="eager"
-                    decoding="async"
-                />
+                <picture>
+                    <source
+                        media="(max-width: 991px)"
+                        srcset="/assets/images/generated/iquran-260.webp 260w, /assets/images/generated/iquran-340.webp 340w, /assets/images/generated/iquran-420.webp 420w"
+                        sizes="(max-width: 479px) 76vw, 340px"
+                    />
+                    <img
+                        src="/assets/images/generated/iquran-340.webp"
+                        srcset="/assets/images/generated/iquran-260.webp 260w, /assets/images/generated/iquran-340.webp 340w, /assets/images/generated/iquran-420.webp 420w"
+                        sizes="340px"
+                        alt=""
+                        class="hero-logo"
+                        width="420"
+                        height="446"
+                        fetchpriority="high"
+                        loading="eager"
+                        decoding="async"
+                    />
+                </picture>
             </div>
         </div>
     </div>

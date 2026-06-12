@@ -1,6 +1,14 @@
 <article class="content-card animate__animated animate__fadeInUp" [style.animation-delay]="animationDelay + 's'">
     <a class="card-image" [routerLink]="[routePath, item.id]" [attr.aria-label]="item?.title">
-        <img [src]="getImageUrl()" [alt]="item.title">
+        <img
+            [src]="getImageUrl()"
+            [alt]="item.title"
+            width="404"
+            height="335"
+            loading="lazy"
+            decoding="async"
+            sizes="(max-width: 575px) 90vw, (max-width: 991px) 45vw, 404px"
+        >
     </a>
 
     <div class="card-body">
