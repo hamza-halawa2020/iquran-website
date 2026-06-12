@@ -28,14 +28,15 @@ $line: rgba(15, 90, 58, 0.14);
 
 .card-image {
     display: block;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #e8eee9;
 
     img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        background: #f5f7f5;
     }
 }
 

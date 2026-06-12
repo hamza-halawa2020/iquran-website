@@ -21,7 +21,8 @@ $text-color: var(--paragraphColor);
 .main-img {
     width: 100%;
     height: clamp(240px, 42vw, 460px);
-    object-fit: cover;
+    object-fit: contain;
+    background: #0d1a13;
 }
 
 .hero-overlay {
