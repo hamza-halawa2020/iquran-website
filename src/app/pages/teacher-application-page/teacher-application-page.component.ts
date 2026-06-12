@@ -21,6 +21,7 @@ export class TeacherApplicationPageComponent implements AfterViewInit, OnDestroy
     cvFile: File | null = null;
     cvFileName = '';
     cvError = '';
+    cvTouched = false;
     private itiReady: Promise<unknown> = Promise.resolve();
     private iti?: {
         getNumber: () => string;
@@ -83,7 +84,8 @@ export class TeacherApplicationPageComponent implements AfterViewInit, OnDestroy
     }
 
     async submit(): Promise<void> {
-        if (this.form.invalid) {
+        this.cvTouched = true;
+        if (this.form.invalid || !this.cvFile) {
             this.form.markAllAsTouched();
             return;
         }
@@ -127,6 +129,7 @@ export class TeacherApplicationPageComponent implements AfterViewInit, OnDestroy
                 this.form.reset();
                 this.cvFile = null;
                 this.cvFileName = '';
+                this.cvTouched = false;
                 this.successMessage = 'Your application has been submitted successfully and is now under review.';
             },
             error: (error) => {
