@@ -19,7 +19,7 @@ export class TeacherApplicationService {
 
     constructor(private http: HttpClient) { }
 
-    submit(payload: TeacherApplicationPayload) {
+    submit(payload: FormData) {
         return this.http.post(`${this.apiUrl}/teacher-applications`, payload);
     }
 }

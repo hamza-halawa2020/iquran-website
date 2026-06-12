@@ -36,6 +36,16 @@
                         <label>About You & Experience</label>
                         <textarea rows="5" formControlName="message"></textarea>
                     </div>
+                    <div class="full">
+                        <label>CV / Resume <span class="optional">(PDF only, max 5MB — optional)</span></label>
+                        <div class="file-upload-wrap" (click)="cvInput.click()" (keydown.enter)="cvInput.click()" tabindex="0" role="button">
+                            <input #cvInput type="file" accept=".pdf" (change)="onCvChange($event)" hidden />
+                            <i class="fa-solid fa-file-arrow-up"></i>
+                            <span>{{ cvFileName || 'Click to upload your CV' }}</span>
+                        </div>
+                        <div class="field-error" *ngIf="cvError">{{ cvError }}</div>
+                        <div class="field-error" *ngIf="cvTouched && !cvFile">CV is required.</div>
+                    </div>
                 </div>
 
                 <button type="submit" [disabled]="isSubmitting || form.invalid">

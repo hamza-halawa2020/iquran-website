@@ -18,6 +18,9 @@ export class TeacherApplicationPageComponent implements AfterViewInit, OnDestroy
     isSubmitting = false;
     successMessage = '';
     errorMessage = '';
+    cvFile: File | null = null;
+    cvFileName = '';
+    cvError = '';
     private itiReady: Promise<unknown> = Promise.resolve();
     private iti?: {
         getNumber: () => string;
@@ -62,6 +65,23 @@ export class TeacherApplicationPageComponent implements AfterViewInit, OnDestroy
         this.iti?.destroy();
     }
 
+    onCvChange(event: Event): void {
+        const input = event.target as HTMLInputElement;
+        const file = input.files?.[0];
+        this.cvError = '';
+        if (!file) return;
+        if (file.type !== 'application/pdf') {
+            this.cvError = 'Only PDF files are allowed.';
+            return;
+        }
+        if (file.size > 5 * 1024 * 1024) {
+            this.cvError = 'File size must not exceed 5MB.';
+            return;
+        }
+        this.cvFile = file;
+        this.cvFileName = file.name;
+    }
+
     async submit(): Promise<void> {
         if (this.form.invalid) {
             this.form.markAllAsTouched();
@@ -89,15 +109,24 @@ export class TeacherApplicationPageComponent implements AfterViewInit, OnDestroy
             return;
         }
 
-        const payload = {
-            ...this.form.getRawValue(),
-            phone: formattedPhone || fallbackPhone,
-        };
+        const formValues = this.form.getRawValue();
+        const fd = new FormData();
+        fd.append('name', formValues.name ?? '');
+        fd.append('email', formValues.email ?? '');
+        fd.append('phone', formattedPhone || fallbackPhone || '');
+        fd.append('country', formValues.country ?? '');
+        fd.append('job_title', formValues.job_title ?? '');
+        fd.append('message', formValues.message ?? '');
+        if (this.cvFile) {
+            fd.append('cv', this.cvFile);
+        }
 
-        this.teacherApplicationService.submit(payload as any).subscribe({
+        this.teacherApplicationService.submit(fd).subscribe({
             next: () => {
                 this.isSubmitting = false;
                 this.form.reset();
+                this.cvFile = null;
+                this.cvFileName = '';
                 this.successMessage = 'Your application has been submitted successfully and is now under review.';
             },
             error: (error) => {

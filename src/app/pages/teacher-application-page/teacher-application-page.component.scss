@@ -54,6 +54,37 @@ textarea {
     font-size: 0.86rem;
 }
 
+.optional {
+    font-weight: 400;
+    color: var(--paragraphColor);
+    font-size: 0.85rem;
+}
+
+.file-upload-wrap {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px dashed #d6ddd9;
+    border-radius: 10px;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    color: var(--paragraphColor);
+
+    i {
+        font-size: 1.2rem;
+        color: var(--primaryColor);
+    }
+
+    span {
+        font-size: 0.95rem;
+    }
+
+    &:hover {
+        border-color: var(--primaryColor);
+    }
+}
+
 button {
     margin-top: 16px;
     border: 0;
